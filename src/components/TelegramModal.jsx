@@ -61,7 +61,7 @@ export default function TelegramModal() {
 						</p>
 
 						<p className="mt-6 border-t border-white/10 pt-4 font-semibold text-white">
-							Weitere hilfreiche Links:
+							Hilfe und Infos:
 						</p>
 						<ul className="mt-3 list-inside list-disc space-y-2">
 							<li>
@@ -85,19 +85,20 @@ export default function TelegramModal() {
 								</a>
 							</li>
 							<li>
+								Alby Extension unterstützt die Funktion leider nicht. Siehe Issue{' '}
 								<a
 									href="https://github.com/getAlby/lightning-browser-extension/issues/3348"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-brand-400 hover:underline"
 								>
-									#3348 (Erklärung zur Alby Extension)
+									#3348
 								</a>
 							</li>
 						</ul>
 					</div>
 
-					<div className="h-48 w-48 shrink-0 rounded-xl bg-white p-3 shadow-lg">
+					<div className="h-48 w-48 shrink-0 rounded-xl bg-white p-3 shadow-lg md:mt-20">
 						<img
 							src="/telegram-qr.jpg"
 							alt="QR-Code für den Zugang zur Telegram-Gruppe"
