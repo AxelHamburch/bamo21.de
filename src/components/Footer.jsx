@@ -7,7 +7,7 @@ export default function Footer() {
 		<footer className="border-t border-earth-200 px-6 py-10">
 			<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-earth-700 sm:flex-row">
 				<p>&copy; {new Date().getFullYear()} BAMO21 · Free and Open Source</p>
-				<p className="text-xs text-earth-600">Erstellt mit ❤️ und 🎈 – Block {__BLOCK_HEIGHT__}</p>
+				<p className="text-xs text-earth-600">Erstellt mit 🎈 und ❤️ – Block {__BLOCK_HEIGHT__}</p>
 				<div className="flex items-center gap-6">
 					<Link to="/de/impressum" className="hover:text-forest-700">
 						Impressum
