@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function Impressum() {
 	return (
-		<section className="mx-auto max-w-3xl px-6 py-20 text-slate-300">
-			<h1 className="text-3xl font-bold text-white">Impressum</h1>
+		<section className="mx-auto max-w-3xl px-6 py-20 text-earth-800">
+			<h1 className="text-3xl font-bold text-forest-800">Impressum</h1>
 
 			<div className="mt-8 space-y-6 text-sm leading-relaxed">
 				<div>
-					<h2 className="font-semibold text-white">Angaben gemäß § 5 DDG</h2>
+					<h2 className="font-semibold text-earth-900">Angaben gemäß § 5 DDG</h2>
 					<p>
 						Axel Schlautmann
 						<br />

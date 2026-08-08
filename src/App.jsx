@@ -6,6 +6,8 @@ import Hero from '@/components/Hero';
 import Facts from '@/components/Facts';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
+import Community from '@/components/Community';
+import Support from '@/components/Support';
 import Footer from '@/components/Footer';
 import Impressum from '@/components/Impressum';
 import Datenschutz from '@/components/Datenschutz';
@@ -19,6 +21,8 @@ function HomePage() {
 			<Facts />
 			<About />
 			<Contact />
+			<Support />
+			<Community />
 		</>
 	);
 }

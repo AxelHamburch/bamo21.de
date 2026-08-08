@@ -3,16 +3,18 @@ import { MapPin, Car, Bus } from 'lucide-react';
 
 export default function Contact() {
 	return (
-		<section id="location" className="scroll-mt-24 px-6 py-20">
-			<div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-10">
-				<h2 className="text-center text-3xl font-bold text-white sm:text-4xl">Location</h2>
-				<p className="mt-4 text-center text-slate-400">
+		<section id="location" className="scroll-mt-24 bg-lake-50 px-6 py-20">
+			<div className="mx-auto max-w-3xl rounded-3xl border border-lake-200 bg-white/80 p-10">
+				<h2 className="text-center text-3xl font-bold text-lake-700 sm:text-4xl">
+					Ort &amp; Anreise
+				</h2>
+				<p className="mt-4 text-center text-earth-700">
 					Die Veranstaltung findet auf dem Hof von{' '}
 					<a
 						href="https://www.axelsgaerten.de/"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-brand-400 underline hover:text-brand-300"
+						className="text-brand-600 underline hover:text-brand-500"
 					>
 						Axels Gemüsegärten
 					</a>{' '}
@@ -20,19 +22,28 @@ export default function Contact() {
 				</p>
 
 				<div className="mt-8 flex items-start gap-3">
-					<MapPin className="mt-1 shrink-0 text-brand-400" size={20} />
-					<p className="text-slate-300">
-						Axels Gemüsegärten
+					<MapPin className="mt-1 shrink-0 text-forest-500" size={20} />
+					<p className="text-earth-800">
+						<a
+							href="https://maps.app.goo.gl/85WSP7aaTJG4RrRZA"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="transition hover:text-forest-700 hover:underline"
+						>
+							Axels Gemüsegärten
+							<br />
+							Ochsenwerder Elbdeich 195
+							<br />
+							21037 Hamburg
+						</a>
 						<br />
-						Ochsenwerder Elbdeich 195
-						<br />
-						21037 Hamburg
+						<span className="text-xs text-earth-600">(öffnet Google Maps)</span>
 					</p>
 				</div>
 
 				<div className="mt-6 flex items-start gap-3">
-					<Car className="mt-1 shrink-0 text-brand-400" size={20} />
-					<p className="text-slate-300">
+					<Car className="mt-1 shrink-0 text-forest-500" size={20} />
+					<p className="text-earth-800">
 						In unmittelbarer Nähe gibt es leider nicht ausreichend Parkmöglichkeiten für
 						PKWs. Entlang des Ochsenwerder Hauptdeichs und des Oortkatener Ufers gibt es
 						aber ausreichend Parkmöglichkeiten am Straßenrand. Von dort aus sind es dann
@@ -41,9 +52,9 @@ export default function Contact() {
 				</div>
 
 				<div className="mt-6 flex items-start gap-3">
-					<Bus className="mt-1 shrink-0 text-brand-400" size={20} />
-					<p className="text-slate-300">
-						<span className="font-semibold text-white">Öffentliche Verkehrsmittel:</span>
+					<Bus className="mt-1 shrink-0 text-forest-500" size={20} />
+					<p className="text-earth-800">
+						<span className="font-semibold text-earth-900">Öffentliche Verkehrsmittel:</span>
 						<br />
 						Am besten mit dem Bus 120. Ab der Haltestelle „Oortkaten“ sind es noch ca. 11
 						Minuten Fußweg bis zu den Gemüsegärten. Ansonsten steigst du aus den Bussen
@@ -51,6 +62,10 @@ export default function Contact() {
 						du zu Fuß ca. 25 Minuten.
 					</p>
 				</div>
+
+				<p className="mt-8 border-t border-lake-100 pt-4 text-center text-sm text-earth-600">
+					Bilder zu Anfahrt und Parkmöglichkeiten folgen in Kürze.
+				</p>
 			</div>
 		</section>
 	);

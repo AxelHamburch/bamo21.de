@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 export default function Datenschutz() {
 	return (
-		<section className="mx-auto max-w-3xl px-6 py-20 text-slate-300">
-			<h1 className="text-3xl font-bold text-white">Datenschutzerklärung</h1>
+		<section className="mx-auto max-w-3xl px-6 py-20 text-earth-800">
+			<h1 className="text-3xl font-bold text-forest-800">Datenschutzerklärung</h1>
 
 			<div className="mt-8 space-y-6 text-sm leading-relaxed">
 				<div>
-					<h2 className="font-semibold text-white">Verantwortlicher</h2>
+					<h2 className="font-semibold text-earth-900">Verantwortlicher</h2>
 					<p>
 						Die Angaben zum Verantwortlichen im Sinne der DSGVO finden Sie im{' '}
-						<Link to="/de/impressum" className="underline hover:text-white">
+						<Link to="/de/impressum" className="underline hover:text-forest-700">
 							Impressum
 						</Link>{' '}
 						dieser Website.
@@ -19,7 +19,7 @@ export default function Datenschutz() {
 				</div>
 
 				<div>
-					<h2 className="font-semibold text-white">Datenverarbeitung</h2>
+					<h2 className="font-semibold text-earth-900">Datenverarbeitung</h2>
 					<p>
 						Diese Website erhebt keine personenbezogenen Daten, setzt keine Cookies und
 						verwendet kein Tracking. Der Webhoster speichert beim Aufruf technisch bedingt
@@ -30,7 +30,7 @@ export default function Datenschutz() {
 				</div>
 
 				<div>
-					<h2 className="font-semibold text-white">Ihre Rechte</h2>
+					<h2 className="font-semibold text-earth-900">Ihre Rechte</h2>
 					<p>
 						Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der
 						Verarbeitung Ihrer Daten sowie das Recht auf Datenübertragbarkeit und das Recht,

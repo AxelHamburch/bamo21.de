@@ -7,5 +7,9 @@ html {
 }
 
 body {
-	@apply bg-slate-950 text-slate-100 antialiased;
+	@apply bg-earth-50 text-earth-900 antialiased;
+}
+
+::selection {
+	@apply bg-brand-300 text-earth-900;
 }
