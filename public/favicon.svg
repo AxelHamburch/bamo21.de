@@ -20,6 +20,4 @@
   <ellipse cx="32" cy="46" rx="9.5" ry="7" fill="#5a442f"/>
   <ellipse cx="32" cy="43.5" rx="4.5" ry="3.5" fill="#0f0b08"/>
   <path d="M 28,50 Q 32,53 36,50" stroke="#0f0b08" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <!-- Halstuch -->
-  <path d="M 13,52 L 51,52 L 32,64 Z" fill="#f7931a"/>
 </svg>
