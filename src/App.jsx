@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
@@ -11,9 +11,21 @@ import Community from '@/components/Community';
 import Support from '@/components/Support';
 import Footer from '@/components/Footer';
 import Impressum from '@/components/Impressum';
+import Antrag from '@/components/Antrag';
 import Datenschutz from '@/components/Datenschutz';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
+
+// Beim Seitenwechsel nach oben scrollen – außer bei Anker-Links (#...)
+function ScrollToTop() {
+	const { pathname, hash } = useLocation();
+
+	useEffect(() => {
+		if (!hash) window.scrollTo(0, 0);
+	}, [pathname, hash]);
+
+	return null;
+}
 
 function HomePage() {
 	return (
@@ -33,6 +45,7 @@ function App() {
 	return (
 		<TelegramModalProvider>
 			<BrowserRouter>
+				<ScrollToTop />
 				<Helmet>
 					<title>BAMO21 – Bitcoin am Ottisee</title>
 				</Helmet>
@@ -40,6 +53,7 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<HomePage />} />
+						<Route path="/de/antrag" element={<Antrag />} />
 						<Route path="/de/impressum" element={<Impressum />} />
 						<Route path="/de/datenschutz" element={<Datenschutz />} />
 					</Routes>

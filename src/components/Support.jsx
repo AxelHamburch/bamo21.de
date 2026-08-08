@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { HandHeart } from 'lucide-react';
 
 export default function Support() {
@@ -24,6 +25,36 @@ export default function Support() {
 					Transparenzbericht geben, in dem alle Einnahmen und Ausgaben offen aufgelistet
 					werden.
 				</p>
+
+				<div className="mt-6 max-w-xl border-t border-forest-200 pt-6">
+					<h3 className="text-sm font-semibold uppercase tracking-wider text-earth-900">
+						EINUNDZWANZIG Antrag zur Projekt-Unterstützung
+					</h3>
+					<p className="mt-3 text-sm text-earth-700">
+						Wir haben auch einen{' '}
+						<a
+							href="https://verein.einundzwanzig.space/association/project-support/bitcoin-am-ottisee-bamo"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand-600 underline hover:text-brand-500"
+						>
+							Antrag bei EINUNDZWANZIG
+						</a>{' '}
+						eingereicht, um ein paar grundlegende Kosten zu decken.
+					</p>
+					<p className="mt-2 text-sm text-earth-700">
+						<Link to="/de/antrag" className="text-brand-600 underline hover:text-brand-500">
+							Hier gibt es den Antrag als Webversion
+						</Link>{' '}
+						– mit vernünftiger Formatierung.
+					</p>
+					<p className="mt-2 text-sm text-earth-700">
+						Ihr könnt uns auch unterstützen, indem ihr dem Antrag eure Stimme gebt. Dazu
+						braucht ihr einen Nostr-Account und die EINUNDZWANZIG-Vereinsmitgliedschaft
+						(21.000 Sats pro Jahr). Wenn ihr dabei Unterstützung benötigt, kommt gerne in
+						die nachfolgende Telegram-Gruppe.
+					</p>
+				</div>
 			</div>
 		</section>
 	);
