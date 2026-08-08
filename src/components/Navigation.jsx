@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
 	{ href: '/#facts', label: 'Auf einen Blick' },
 	{ href: '/#event', label: 'Das Event' },
+	{ href: '/#schedule', label: 'Programm' },
 	{ href: '/#location', label: 'Ort & Anreise' },
 	{ href: '/#community', label: 'Info-Gruppe' },
 ];
