@@ -65,6 +65,13 @@ export default function TelegramModal() {
 						</p>
 						<ul className="mt-3 list-inside list-disc space-y-2">
 							<li>
+								Folgende Mobil-Wallets unterstützen die Funktion: Wallet of Satoshi,
+								Phoenix, Zeus, LNbits
+								<br />
+								Aktuell nicht unterstützt wird es von: Blink, Electrum, Misty Breez,
+								BuhoGo (kommt)
+							</li>
+							<li>
 								<a
 									href="https://ereignishorizont.xyz/onboarding/"
 									target="_blank"
