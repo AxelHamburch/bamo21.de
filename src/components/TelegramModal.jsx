@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { useTelegramModal } from '@/context/TelegramModalContext';
 
+const TICKET_LNURL =
+	'LNURL1DP68GURN8GHJ7V33D45K7TNNWPSKXEF0D3H82UNVWQH45WRXW3TRSEJGTNC';
+
 export default function TelegramModal() {
 	const { isOpen, closeModal } = useTelegramModal();
+	const [copied, setCopied] = useState(false);
 
 	useEffect(() => {
 		if (!isOpen) return;
@@ -14,15 +18,30 @@ export default function TelegramModal() {
 		return () => document.removeEventListener('keydown', onKeyDown);
 	}, [isOpen, closeModal]);
 
+	useEffect(() => {
+		if (!copied) return;
+		const timer = setTimeout(() => setCopied(false), 2000);
+		return () => clearTimeout(timer);
+	}, [copied]);
+
+	const handleCopyLnurl = async () => {
+		try {
+			await navigator.clipboard.writeText(TICKET_LNURL);
+			setCopied(true);
+		} catch {
+			// Zwischenablage nicht verfügbar (z. B. fehlende Berechtigung) – kein Feedback nötig
+		}
+	};
+
 	if (!isOpen) return null;
 
 	return (
 		<div
-			className="fixed inset-0 z-[100] flex items-center justify-center bg-earth-900/60 px-4"
+			className="fixed inset-0 z-[100] overflow-y-auto bg-earth-900/60 px-4 py-8"
 			onClick={closeModal}
 		>
 			<div
-				className="relative w-full max-w-2xl rounded-3xl border border-earth-200 bg-earth-50 p-8 shadow-2xl"
+				className="relative mx-auto w-full max-w-2xl rounded-3xl border border-earth-200 bg-earth-50 p-8 shadow-2xl"
 				onClick={(event) => event.stopPropagation()}
 			>
 				<button
@@ -50,7 +69,7 @@ export default function TelegramModal() {
 						<p className="mt-4 leading-relaxed">
 							Scanne den QR-Code auf der rechten Seite oder klicke direkt hier für ein{' '}
 							<a
-								href="lightning:LNURL1DP68GURN8GHJ7V33D45K7TNNWPSKXEF0D3H82UNVWQH45WRXW3TRSEJGTNC"
+								href={`lightning:${TICKET_LNURL}`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="font-semibold text-brand-600 hover:underline"
@@ -105,12 +124,25 @@ export default function TelegramModal() {
 						</ul>
 					</div>
 
-					<div className="h-48 w-48 shrink-0 rounded-xl border border-earth-200 bg-white p-3 shadow-lg md:mt-20">
-						<img
-							src="/telegram-qr.jpg"
-							alt="QR-Code für den Zugang zur Telegram-Gruppe"
-							className="h-full w-full object-contain"
-						/>
+					<div className="shrink-0 pb-4 text-center md:mt-20 md:pb-0">
+						<button
+							type="button"
+							onClick={handleCopyLnurl}
+							className="relative block h-48 w-48 rounded-xl border border-earth-200 bg-white p-3 shadow-lg transition hover:border-brand-300"
+							aria-label="LNURL des Tickets in die Zwischenablage kopieren"
+						>
+							<img
+								src="/telegram-qr.jpg"
+								alt="QR-Code für den Zugang zur Telegram-Gruppe"
+								className="h-full w-full object-contain"
+							/>
+							{copied && (
+								<span className="absolute inset-0 flex items-center justify-center rounded-xl bg-earth-900/80 text-sm font-semibold text-white">
+									In die Zwischenablage kopiert
+								</span>
+							)}
+						</button>
+						<p className="mt-2 text-xs text-earth-600">Zum Kopieren antippen</p>
 					</div>
 				</div>
 			</div>
