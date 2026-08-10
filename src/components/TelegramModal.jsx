@@ -88,7 +88,8 @@ export default function TelegramModal() {
 								Phoenix, Zeus, LNbits
 								<br />
 								Aktuell nicht unterstützt wird es von: Blink, Electrum, Misty Breez,
-								BuhoGo (kommt)
+								Blitz Wallet, ecash bzw. cashu Wallets, BuhoGo (kommt aber mit nächster
+								Version)
 							</li>
 							<li>
 								<a
