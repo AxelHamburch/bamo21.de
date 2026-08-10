@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HandHeart } from 'lucide-react';
+import { Check, Copy, HandHeart } from 'lucide-react';
+
+const SILENT_PAYMENT_ADDRESS =
+	'sp1qqgf49ckkg60unm3zzzz8zdza696xtp3aj5ylg8q0lv2yku6t67xlsqhmr246e2v72gaz3cvzfnydckq6ca2w8wsvaj60mrqu07a6h5y9xcxygql9';
+
+const SILENT_PAYMENT_SHORT = `${SILENT_PAYMENT_ADDRESS.slice(0, 9)}....${SILENT_PAYMENT_ADDRESS.slice(-9)}`;
+
+const LIGHTNING_ADDRESS = 'bamo-support@21mio.space';
 
 export default function Support() {
+	// null | 'lightning' | 'silent-payment' – welche Adresse zuletzt kopiert wurde
+	const [copied, setCopied] = useState(null);
+
+	useEffect(() => {
+		if (!copied) return;
+		const timer = setTimeout(() => setCopied(null), 2000);
+		return () => clearTimeout(timer);
+	}, [copied]);
+
+	const copyToClipboard = async (value, key) => {
+		try {
+			await navigator.clipboard.writeText(value);
+			setCopied(key);
+		} catch {
+			// Zwischenablage nicht verfügbar (z. B. fehlende Berechtigung) – kein Feedback nötig
+		}
+	};
+
 	return (
 		<section id="support" className="scroll-mt-24 bg-forest-50 px-6 py-16">
 			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
@@ -14,12 +39,39 @@ export default function Support() {
 					kosten aber doch mehr als Luft und Liebe – deshalb freuen wir uns sehr über
 					Unterstützung in Form von Satoshi-Spenden:
 				</p>
-				<a
-					href="lightning:bamo-support@21mio.space"
-					className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-5 py-2 text-sm font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
+				<div className="flex items-center gap-2">
+					<a
+						href={`lightning:${LIGHTNING_ADDRESS}`}
+						className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-5 py-2 text-sm font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
+					>
+						⚡ {LIGHTNING_ADDRESS}
+					</a>
+					<button
+						type="button"
+						onClick={() => copyToClipboard(LIGHTNING_ADDRESS, 'lightning')}
+						title={LIGHTNING_ADDRESS}
+						aria-label="Lightning-Adresse in die Zwischenablage kopieren"
+						className="inline-flex items-center rounded-full border border-brand-300 p-2 text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
+					>
+						{copied === 'lightning' ? <Check size={16} /> : <Copy size={16} />}
+					</button>
+				</div>
+				<button
+					type="button"
+					onClick={() => copyToClipboard(SILENT_PAYMENT_ADDRESS, 'silent-payment')}
+					title={SILENT_PAYMENT_ADDRESS}
+					aria-label="Silent-Payment-Adresse in die Zwischenablage kopieren"
+					className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-5 py-2 font-mono text-sm font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
 				>
-					⚡ bamo-support@21mio.space
-				</a>
+					₿ {SILENT_PAYMENT_SHORT}
+					{copied === 'silent-payment' ? <Check size={16} /> : <Copy size={16} />}
+				</button>
+				<p className="text-xs text-earth-600">
+					{copied === 'lightning' && 'Lightning-Adresse in die Zwischenablage kopiert'}
+					{copied === 'silent-payment' &&
+						'Silent-Payment-Adresse in die Zwischenablage kopiert'}
+					{!copied && 'On-Chain spenden: Silent-Payment-Adresse zum Kopieren antippen'}
+				</p>
 				<p className="max-w-xl text-xs text-earth-600">
 					Jeder Satoshi zählt und wird sorgsam eingesetzt. Versprochen: Es wird einen
 					Transparenzbericht geben, in dem alle Einnahmen und Ausgaben offen aufgelistet
