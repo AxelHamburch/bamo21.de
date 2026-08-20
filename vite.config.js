@@ -2,6 +2,22 @@ import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
+// Eindeutige Build-ID, damit die App (siehe useStaleBuildReload) erkennen kann,
+// ob ein bereits vorgeladener/gecachter Tab (z. B. Telegrams Custom-Tabs-Vorlade-
+// mechanismus) eine veraltete Version zeigt, und sich selbst neu lädt.
+function writeVersionFilePlugin(buildId) {
+	return {
+		name: 'write-version-file',
+		async closeBundle() {
+			const fs = await import('node:fs/promises');
+			await fs.writeFile(
+				path.resolve(__dirname, 'dist/version.json'),
+				JSON.stringify({ buildId }),
+			);
+		},
+	};
+}
+
 // Aktuelle Blockhöhe wird beim Build von mempool.space geholt und im
 // Footer als "Versionsstand" der Seite angezeigt. Schlägt die Abfrage
 // fehl (z. B. offline), bleibt der Fallback-Wert stehen.
@@ -23,17 +39,22 @@ async function fetchBlockHeight() {
 	}
 }
 
-export default defineConfig(async () => ({
-	plugins: [react()],
-	define: {
-		__BLOCK_HEIGHT__: JSON.stringify(await fetchBlockHeight()),
-	},
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, './src'),
+export default defineConfig(async () => {
+	const buildId = new Date().toISOString();
+
+	return {
+		plugins: [react(), writeVersionFilePlugin(buildId)],
+		define: {
+			__BLOCK_HEIGHT__: JSON.stringify(await fetchBlockHeight()),
+			__BUILD_ID__: JSON.stringify(buildId),
 		},
-	},
-	server: {
-		port: 3000,
-	},
-}));
+		resolve: {
+			alias: {
+				'@': path.resolve(__dirname, './src'),
+			},
+		},
+		server: {
+			port: 3000,
+		},
+	};
+});

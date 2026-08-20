@@ -15,6 +15,7 @@ import Antrag from '@/components/Antrag';
 import Datenschutz from '@/components/Datenschutz';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
+import { useStaleBuildReload } from '@/hooks/useStaleBuildReload';
 
 // Beim Seitenwechsel nach oben scrollen – außer bei Anker-Links (#...)
 function ScrollToTop() {
@@ -42,6 +43,8 @@ function HomePage() {
 }
 
 function App() {
+	useStaleBuildReload();
+
 	return (
 		<TelegramModalProvider>
 			<BrowserRouter>
