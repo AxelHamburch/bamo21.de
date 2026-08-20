@@ -1,6 +1,8 @@
 import React from 'react';
 import { MapPin, Car, Bus } from 'lucide-react';
 
+import parkingMap from '../../assets/BAMO-Parken.webp';
+
 export default function Contact() {
 	return (
 		<section id="location" className="scroll-mt-24 bg-lake-50 px-6 py-20">
@@ -63,9 +65,18 @@ export default function Contact() {
 					</p>
 				</div>
 
-				<p className="mt-8 border-t border-lake-100 pt-4 text-center text-sm text-earth-600">
-					Bilder zu Anfahrt und Parkmöglichkeiten folgen in Kürze.
-				</p>
+				<figure className="mt-8 border-t border-lake-100 pt-8">
+					<a href={parkingMap} target="_blank" rel="noopener noreferrer">
+						<img
+							src={parkingMap}
+							alt="Karte der Anfahrt mit Parkmöglichkeiten am Overwerder Hauptdeich und Oortkatenufer, Bushaltestellen und dem ca. 600 m langen Fußweg zum Hof"
+							className="w-full rounded-2xl border border-lake-200 bg-white"
+						/>
+					</a>
+					<figcaption className="mt-3 text-center text-sm text-earth-600">
+						Anfahrt und Parkmöglichkeiten – zum Vergrößern anklicken.
+					</figcaption>
+				</figure>
 			</div>
 		</section>
 	);

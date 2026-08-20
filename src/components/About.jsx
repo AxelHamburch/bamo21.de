@@ -1,5 +1,7 @@
 import React from 'react';
 
+import areaMap from '../../assets/BAMO-Area.webp';
+
 export default function About() {
 	return (
 		<section id="event" className="scroll-mt-24 bg-forest-50 px-6 py-20">
@@ -29,6 +31,21 @@ export default function About() {
 						className="h-full w-full object-cover"
 					/>
 				</div>
+			</div>
+
+			<div className="mx-auto mt-12 max-w-6xl">
+				<figure className="mx-auto w-full md:w-3/4">
+					<a href={areaMap} target="_blank" rel="noopener noreferrer">
+						<img
+							src={areaMap}
+							alt="Lageplan des Hofgeländes mit Hofladen, Gewächshaus mit Ausstellungen, Scheune für Workshops, Großem und Kleinem Pavillon, Hüpfburg und Zugang zum Oortkatensee"
+							className="w-full rounded-2xl border border-forest-200 bg-white"
+						/>
+					</a>
+					<figcaption className="mt-3 text-center text-sm text-earth-600">
+						Lageplan des Hofgeländes – zum Vergrößern anklicken.
+					</figcaption>
+				</figure>
 			</div>
 		</section>
 	);
