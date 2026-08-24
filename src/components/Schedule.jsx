@@ -53,7 +53,13 @@ const tracks = [
 		titleClass: 'text-lake-700',
 		timeClass: 'text-lake-600',
 		slots: [
-			{ time: '09:00–11:00', title: 'Frei', free: true },
+			{ time: '09:00–10:15', title: 'Frei', free: true },
+			{
+				time: '10:15–10:45',
+				title: 'SeedSigner – Bitcoin-Sicherheit zum selber bauen',
+				speaker: 'Christin & Réno',
+			},
+			{ time: '10:45–11:00', title: 'Freie Diskussion zu Hardware Wallets und dem SeedSigner' },
 			{
 				time: '11:00–11:30',
 				title: 'Lightning Wallet für Einsteiger – erklärt und gezeigt',
@@ -64,7 +70,11 @@ const tracks = [
 				title: 'ZapBox – Schalten mit Bitcoin-Zahlungen (Vorstellung & Grundlagen)',
 				speaker: 'axelhamburch',
 			},
-			{ time: '12:00–12:30', title: 'Pause' },
+			{
+				time: '12:00–12:30',
+				title: 'xPubTracer: vibecoded Sat-Vergangenheitsbewältigung',
+				speaker: 'Juniormind',
+			},
 			{
 				time: '12:30–13:00',
 				title: 'ZapBox Workshop – Einrichten und Parametrieren',
@@ -95,6 +105,20 @@ const tracks = [
 
 // Programmpunkte ohne festen Zeitpunkt – werden vor Ort per Aushang bekannt gegeben.
 const openSlots = ['Hofführung durch den Eigner (ca. 20 Minuten)', 'Naturerlebnis für Kinder – Aukse'];
+
+// Telegram-Handles der Vortragenden – für Rückfragen zu Vorträgen und Workshops.
+const speakerContacts = [
+	{ name: 'axelhamburch', url: 'https://t.me/axelhamburch' },
+	{ name: 'willitowner', url: 'https://t.me/willitowner' },
+	{ name: 'Rune', url: 'https://t.me/losrunos' },
+	{ name: 'Robert', url: 'https://t.me/TreborEnno' },
+	{ name: 'Timo', url: 'https://t.me/machbarland' },
+	{ name: 'FinanzBewusst', url: 'https://t.me/finanz_bewusstsein' },
+	{ name: 'Juniormind', url: 'https://t.me/juniormind1' },
+	{ name: 'Noerdlicht', url: 'https://t.me/ElAAreEs' },
+	{ name: 'Christin', url: 'https://t.me/CHR1571N_21' },
+	{ name: 'Réno', url: 'https://t.me/ronin_960261' },
+];
 
 const exhibitors = [
 	{ name: 'ZapBox', url: 'https://zapbox.space/' },
@@ -167,6 +191,28 @@ export default function Schedule() {
 							</div>
 						)
 					)}
+				</div>
+
+				<div className="mx-auto mt-8 max-w-3xl text-center text-earth-800">
+					<p>
+						Bei Fragen zu einem Vortrag bzw. zu einem Workshop, bitte direkt an den
+						Vortragenden bzw. Durchführenden wenden. Die Telegram Handle:
+					</p>
+					<p className="mt-3">
+						{speakerContacts.map(({ name, url }, index) => (
+							<React.Fragment key={url}>
+								{index > 0 && <span className="text-earth-400"> / </span>}
+								<a
+									href={url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-brand-600 underline hover:text-brand-500"
+								>
+									{name}
+								</a>
+							</React.Fragment>
+						))}
+					</p>
 				</div>
 
 				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6">
