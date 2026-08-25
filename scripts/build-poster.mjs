@@ -89,6 +89,16 @@ function writeWebVersion(html) {
 				.poster {
 					box-shadow: 0 2mm 8mm rgba(0, 0, 0, 0.25);
 				}
+
+				.qr b a {
+					color: inherit;
+					text-decoration: none;
+				}
+
+				.qr b a:hover {
+					color: var(--brand-600);
+					text-decoration: underline;
+				}
 			}
 		</style>
 		<script>
@@ -105,6 +115,10 @@ function writeWebVersion(html) {
 	const web = html
 		.replace('src="BAMO-Illustration-4096.png"', 'src="illustration.webp"')
 		.replace('<title>BAMO21 – Plakat A4</title>', '<title>BAMO21 – Werbeposter</title>')
+		.replace(
+			'<b>bamo21.de</b>',
+			'<b><a href="https://bamo21.de">bamo21.de</a></b>',
+		)
 		.replace('\t</head>', screenExtras);
 
 	fs.writeFileSync(path.join(webDir, 'index.html'), web);
