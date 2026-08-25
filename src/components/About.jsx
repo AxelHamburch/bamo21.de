@@ -1,6 +1,7 @@
 import React from 'react';
 
 import areaMap from '../../assets/BAMO-Area.webp';
+import illustration from '../../assets/BAMO-Illustration.webp';
 
 export default function About() {
 	return (
@@ -26,9 +27,9 @@ export default function About() {
 				</div>
 				<div className="relative aspect-video overflow-hidden rounded-2xl border border-forest-200">
 					<img
-						src="/bamo-pic.jpg"
-						alt="Der Gemüsehof am Ottisee"
-						className="h-full w-full object-cover"
+						src={illustration}
+						alt="Illustration: Dachs mit Bitcoin-Halstuch im Gemüsegarten am Ottisee, im Hintergrund die Hamburger Skyline"
+						className="h-full w-full object-cover object-[50%_56%]"
 					/>
 				</div>
 			</div>

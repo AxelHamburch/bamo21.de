@@ -17,7 +17,7 @@ export default function Hero() {
 					transition={{ duration: 0.5 }}
 					className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-600"
 				>
-					₿ BAMO21
+					₿AMO21
 				</motion.p>
 
 				<motion.h1
