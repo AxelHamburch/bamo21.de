@@ -29,6 +29,23 @@ export default function Facts() {
 	return (
 		<section id="facts" className="scroll-mt-24 px-6 py-20">
 			<div className="mx-auto max-w-6xl">
+				{/* Stempel: Plakat zum Teilen und Aufhängen, öffnet die Plakatseite */}
+				<div className="flex justify-end md:-mb-10">
+					<a
+						href="/poster/index.html"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Werbeplakat ansehen, teilen und ausdrucken"
+						className="flex h-28 w-28 -rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
+					>
+						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
+							Werbeplakat
+							<br />
+							zum Teilen
+						</span>
+					</a>
+				</div>
+
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-3xl font-bold text-forest-800 sm:text-4xl">Auf einen Blick</h2>
 					<p className="mt-4 text-earth-700">
