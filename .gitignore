@@ -3,3 +3,6 @@ dist/
 .DS_Store
 *.log
 temp/
+
+# Plakat-PDFs werden aus poster/BAMO21-Plakat.html erzeugt (npm run poster)
+poster/*.pdf
