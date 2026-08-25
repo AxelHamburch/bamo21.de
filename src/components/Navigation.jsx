@@ -17,7 +17,7 @@ export default function Navigation() {
 		<header className="sticky top-0 z-50 border-b border-earth-200 bg-earth-50/90 backdrop-blur">
 			<nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 				<Link to="/" className="text-xl font-bold tracking-tight text-forest-800">
-					BAMO<span className="text-brand-500">21</span>
+					₿AMO<span className="text-brand-500">21</span>
 				</Link>
 
 				<div className="hidden items-center gap-8 md:flex">
