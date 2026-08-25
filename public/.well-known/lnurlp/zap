@@ -1,0 +1,19 @@
+{
+    "status": "OK",
+    "tag": "payRequest",
+    "commentAllowed": 255,
+    "callback": "https://getalby.com/lnurlp/bamo/callback",
+    "metadata": "[[\"text/identifier\",\"bamo@getalby.com\"],[\"text/plain\",\"Sats for BAMO\"]]",
+    "minSendable": 1000,
+    "maxSendable": 11000000000,
+    "payerData": {
+        "name": {
+            "mandatory": false
+        },
+        "email": {
+            "mandatory": false
+        }
+    },
+    "nostrPubkey": "6d7f8814826e6dde3cf83461bb72bb19a1f59c6358f6aa82e9e4dcd8af9757d8",
+    "allowsNostr": true
+}
