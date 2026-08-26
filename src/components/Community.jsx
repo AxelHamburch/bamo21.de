@@ -11,7 +11,16 @@ export default function Community() {
 				<MessageCircle className="text-lake-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Auf dem Laufenden bleiben?</h2>
 				<p className="max-w-xl text-sm text-earth-700">
-					Seit ihr schon bei Nostr? Ihr findet uns dort als BAMO21, schaut gern mal vorbei. Wir freuen uns über ein 👍 und jedes "Follow". Für Infos rund um BAMO21 gibt es auch eine öffentliche Telegram-Gruppe. Als
+					Seid ihr schon bei Nostr? Ihr findet uns dort als{' '}
+					<a
+						href="https://njump.me/npub1d4lcs9yzdekau08cx3smku4mrxslt8rrtrm24qhfunwd3tuh2lvqvvgqyx"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="font-medium text-lake-700 underline hover:text-lake-800"
+					>
+						BAMO21
+					</a>
+					, schaut gern mal vorbei. Wir freuen uns über ein 👍 und jedes "Follow". Für Infos rund um BAMO21 gibt es auch eine öffentliche Telegram-Gruppe. Als
 					kleiner Spamschutz kostet das „Ticket&quot; 10 Satoshi – bezahlbar per
 					Lightning.
 				</p>
