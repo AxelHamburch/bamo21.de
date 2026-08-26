@@ -11,7 +11,7 @@ export default function Community() {
 				<MessageCircle className="text-lake-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Auf dem Laufenden bleiben?</h2>
 				<p className="max-w-xl text-sm text-earth-700">
-					Für alle Infos rund um BAMO21 gibt es eine öffentliche Telegram-Gruppe. Als
+					Seit ihr schon bei Nostr? Ihr findet uns dort als BAMO21, schaut gern mal vorbei. Wir freuen uns über ein 👍 und jedes "Follow". Für Infos rund um BAMO21 gibt es auch eine öffentliche Telegram-Gruppe. Als
 					kleiner Spamschutz kostet das „Ticket&quot; 10 Satoshi – bezahlbar per
 					Lightning.
 				</p>
