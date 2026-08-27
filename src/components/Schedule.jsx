@@ -31,7 +31,7 @@ const tracks = [
 			{ time: '13:00–13:30', title: 'Bitcoin für Bauern – HODL DEIN HOF', speaker: 'Timo' },
 			{
 				time: '13:30–14:15',
-				title: 'Bewusstsein für Finanzen – ein Startpunkt, um Bitcoin zu verstehen',
+				title: 'Geld ist Energie. Bitcoin ist Energie. Wohin fließt deine?',
 				speaker: 'FinanzBewusst',
 			},
 			{ time: '14:15–14:30', title: 'Pause und Diskussion' },
