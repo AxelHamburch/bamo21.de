@@ -9,7 +9,8 @@
  * Outputs:
  *   poster/BAMO21-Plakat-A4.pdf   210 x 297 mm, illustration at ~495 dpi
  *   poster/BAMO21-Plakat-A2.pdf   420 x 594 mm, illustration at ~248 dpi
- *   public/poster/index.html      web version (small webp instead of the 3 MB jpg)
+ *   public/poster/index.html       web version (small webp instead of the 3 MB jpg)
+ *   public/poster/BAMO21-Plakat-A4.pdf   copy of the A4 PDF for the site's download button
  */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -75,6 +76,11 @@ function writeWebVersion(html) {
 		path.join(webDir, 'illustration.webp'),
 	);
 	fs.copyFileSync(path.join(posterDir, 'qr-bamo21.svg'), path.join(webDir, 'qr-bamo21.svg'));
+	// A4-PDF für den Download-Button auf der Website (Facts.jsx).
+	fs.copyFileSync(
+		path.join(posterDir, 'BAMO21-Plakat-A4.pdf'),
+		path.join(webDir, 'BAMO21-Plakat-A4.pdf'),
+	);
 
 	const screenExtras = `
 		<style>

@@ -29,8 +29,8 @@ export default function Facts() {
 	return (
 		<section id="facts" className="scroll-mt-24 px-6 py-20">
 			<div className="mx-auto max-w-6xl">
-				{/* Stempel: Plakat zum Teilen und Aufhängen, öffnet die Plakatseite */}
-				<div className="flex justify-end md:-mb-10">
+				{/* Stempel: Plakat zum Teilen/Aufhängen (öffnet die Plakatseite) und PDF-Download */}
+				<div className="flex justify-end gap-4 pr-6 md:-mb-10 md:pr-16">
 					<a
 						href="/poster/index.html"
 						target="_blank"
@@ -41,7 +41,20 @@ export default function Facts() {
 						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
 							Werbeplakat
 							<br />
-							zum Teilen
+							Link
+						</span>
+					</a>
+
+					<a
+						href="/poster/BAMO21-Plakat-A4.pdf"
+						download="BAMO21-Plakat-A4.pdf"
+						title="Werbeplakat als PDF (A4) herunterladen"
+						className="flex h-28 w-28 rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
+					>
+						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
+							Werbeplakat
+							<br />
+							PDF Download
 						</span>
 					</a>
 				</div>
