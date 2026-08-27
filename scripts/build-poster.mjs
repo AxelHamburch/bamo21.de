@@ -8,8 +8,8 @@
  *
  * Outputs:
  *   poster/BAMO21-Plakat-A4.pdf   210 x 297 mm, illustration at ~495 dpi
- *   poster/BAMO21-Plakat-A1.pdf   594 x 841 mm, illustration at ~175 dpi
- *   public/poster/index.html      web version (small webp instead of the 21 MB png)
+ *   poster/BAMO21-Plakat-A2.pdf   420 x 594 mm, illustration at ~248 dpi
+ *   public/poster/index.html      web version (small webp instead of the 3 MB jpg)
  */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -30,11 +30,11 @@ const BROWSERS = [
 	'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ].filter(Boolean);
 
-// A1 is not a valid CSS page-size keyword, so the size is spelled out. The zoom
-// factor is the linear ratio between A4 and A1 (sqrt(2)^3).
+// A2 is not a valid CSS page-size keyword, so the size is spelled out. The zoom
+// factor is the linear ratio between A4 and A2 (sqrt(2)^2).
 const FORMATS = [
 	{ name: 'A4', pageSize: 'A4 portrait', zoom: 1 },
-	{ name: 'A1', pageSize: '594mm 841mm', zoom: 2.8284 },
+	{ name: 'A2', pageSize: '420mm 594mm', zoom: 2 },
 ];
 
 function findBrowser() {
@@ -113,7 +113,7 @@ function writeWebVersion(html) {
 	</head>`;
 
 	const web = html
-		.replace('src="BAMO-Illustration-4096.png"', 'src="illustration.webp"')
+		.replace('src="BAMO-Illustration-4096.jpg"', 'src="illustration.webp"')
 		.replace('<title>BAMO21 – Plakat A4</title>', '<title>BAMO21 – Werbeposter</title>')
 		.replace(
 			'<b>bamo21.de</b>',
