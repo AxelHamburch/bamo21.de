@@ -7,8 +7,10 @@
  * override the browser binary.
  *
  * Outputs:
- *   poster/BAMO21-Plakat-A4.pdf   210 x 297 mm, illustration at ~495 dpi
- *   poster/BAMO21-Plakat-A2.pdf   420 x 594 mm, illustration at ~248 dpi
+ *   poster/BAMO21-Plakat-A4.pdf         210 x 297 mm, illustration at ~495 dpi
+ *   poster/BAMO21-Plakat-A2.pdf         420 x 594 mm, illustration at ~248 dpi
+ *   poster/BAMO21-Plakat-A2-Druck.pdf   426 x 600 mm (A2 + 3 mm Beschnittzugabe
+ *                                       rundum, wird nach dem Druck weggeschnitten)
  *   public/poster/index.html       web version (small webp instead of the 3 MB jpg)
  *   public/poster/BAMO21-Plakat-A4.pdf   copy of the A4 PDF for the site's download button
  */
@@ -38,6 +40,16 @@ const FORMATS = [
 	{ name: 'A2', pageSize: '420mm 594mm', zoom: 2 },
 ];
 
+// Druckversion mit Beschnittzugabe: A2 (420 x 594 mm) plus 3 mm weißer Rand
+// rundum, der nach dem Druck weggeschnitten wird -> 426 x 600 mm Seitengröße.
+// Der Bildinhalt bleibt wie bei A2 skaliert (zoom: 2), nur die Seite wächst.
+const BLEED_MM = 3;
+const PRINT_FORMAT = {
+	name: 'A2-Druck',
+	pageSize: `${420 + BLEED_MM * 2}mm ${594 + BLEED_MM * 2}mm`,
+	zoom: 2,
+};
+
 function findBrowser() {
 	const found = BROWSERS.find((candidate) => fs.existsSync(candidate));
 	if (!found) {
@@ -54,6 +66,28 @@ function variant(html, { pageSize, zoom }) {
 	return zoom === 1
 		? withSize
 		: withSize.replace('margin: 0 auto;', `margin: 0 auto;\n\t\t\t\tzoom: ${zoom};`);
+}
+
+/**
+ * Wie variant(), zentriert das (unveränderte) Plakat zusätzlich per Flexbox
+ * auf der größeren Seite, sodass rundum ein gleichmäßiger weißer Rand
+ * (Beschnittzugabe) entsteht.
+ */
+function bleedVariant(html, { pageSize, zoom }) {
+	const [pageWidth, pageHeight] = pageSize.split(' ');
+	const centering = `
+		<style>
+			/* ${BLEED_MM} mm weißer Rand rundum als Beschnittzugabe. */
+			body {
+				width: ${pageWidth};
+				height: ${pageHeight};
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+	</head>`;
+	return variant(html, { pageSize, zoom }).replace('\t</head>', centering);
 }
 
 function renderPdf(browser, htmlFile, pdfFile) {
@@ -146,6 +180,19 @@ for (const format of FORMATS) {
 	}
 	const mb = (fs.statSync(pdfFile).size / 1048576).toFixed(1);
 	console.log(`${format.name}: ${path.relative(root, pdfFile)} (${mb} MB)`);
+}
+
+{
+	const tempFile = path.join(posterDir, `_render-${PRINT_FORMAT.name}.html`);
+	const pdfFile = path.join(posterDir, `BAMO21-Plakat-${PRINT_FORMAT.name}.pdf`);
+	fs.writeFileSync(tempFile, bleedVariant(html, PRINT_FORMAT));
+	try {
+		renderPdf(browser, tempFile, pdfFile);
+	} finally {
+		fs.rmSync(tempFile, { force: true });
+	}
+	const mb = (fs.statSync(pdfFile).size / 1048576).toFixed(1);
+	console.log(`${PRINT_FORMAT.name}: ${path.relative(root, pdfFile)} (${mb} MB)`);
 }
 
 console.log(`Web: ${path.relative(root, writeWebVersion(html))}`);
