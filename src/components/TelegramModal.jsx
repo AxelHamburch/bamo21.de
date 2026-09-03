@@ -85,11 +85,20 @@ export default function TelegramModal() {
 						<ul className="mt-3 list-inside list-disc space-y-2">
 							<li>
 								Folgende Mobil-Wallets unterstützen die Funktion: Wallet of Satoshi,
-								Phoenix, Zeus, LNbits
+								Phoenix,{' '}
+								<a
+									href="https://home.mybuho.de/de/buhogo"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-brand-600 hover:underline"
+								>
+									BuhoGo
+								</a>
+								, AlbyGo, Zeus, LNbits.
 								<br />
-								Aktuell nicht unterstützt wird es von: Blink, Electrum, Misty Breez,
-								Blitz Wallet, ecash bzw. cashu Wallets, BuhoGo (kommt aber mit nächster
-								Version)
+								Aktuell <strong>nicht</strong> unterstützt wird es von: Strike, Blink,
+								Electrum (kommt irgendwann), Misty Breez, Fedi, Blitz Wallet (kommt
+								aber), Muun, ecash bzw. cashu Wallets.
 							</li>
 							<li>
 								<a
