@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Check, Copy } from 'lucide-react';
+import { Check, Copy, X } from 'lucide-react';
 import { SILENT_PAYMENT_ADDRESS, SILENT_PAYMENT_SHORT } from '@/components/Support';
 
 const VERLOSUNG_EMAIL = 'verlosung@bamo21.de';
@@ -7,6 +7,7 @@ const VERLOSUNG_EMAIL = 'verlosung@bamo21.de';
 export default function Verlosung() {
 	// null | 'silent-payment' – ob die Silent-Payment-Adresse gerade kopiert wurde
 	const [copied, setCopied] = useState(null);
+	const [qrExpanded, setQrExpanded] = useState(false);
 
 	useEffect(() => {
 		if (!copied) return;
@@ -71,18 +72,6 @@ export default function Verlosung() {
 									</td>
 									<td className="py-2">
 										<div className="flex items-center gap-3">
-											<a
-												href={`lightning:${VERLOSUNG_EMAIL}`}
-												title={`lightning:${VERLOSUNG_EMAIL}`}
-												aria-label="Lightning-Wallet mit der Verlosungs-Adresse öffnen"
-												className="shrink-0"
-											>
-												<img
-													src="/verlosung-lightning-qr.jpg"
-													alt={`QR-Code der Lightning-Adresse ${VERLOSUNG_EMAIL}`}
-													className="h-16 w-16 rounded-lg border border-earth-200"
-												/>
-											</a>
 											<span>
 												Ab 2.100 Sats an{' '}
 												<a
@@ -92,8 +81,21 @@ export default function Verlosung() {
 													{VERLOSUNG_EMAIL}
 												</a>{' '}
 												(Lightning-Adresse, auch per QR-Code scannbar) mit
-												Kontaktdaten im Kommentar.
+												Kontaktdaten im Kommentar / der Notiz.
 											</span>
+											<button
+												type="button"
+												onClick={() => setQrExpanded(true)}
+												title="QR-Code vergrößern"
+												aria-label="QR-Code der Lightning-Adresse vergrößert anzeigen"
+												className="ml-auto shrink-0"
+											>
+												<img
+													src="/verlosung-lightning-qr.png"
+													alt={`QR-Code der Lightning-Adresse ${VERLOSUNG_EMAIL}`}
+													className="h-16 w-16 rounded-lg border border-earth-200"
+												/>
+											</button>
 										</div>
 									</td>
 								</tr>
@@ -300,6 +302,35 @@ export default function Verlosung() {
 					</p>
 				</div>
 			</div>
+
+			{qrExpanded && (
+				<div
+					className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
+					onClick={() => setQrExpanded(false)}
+				>
+					<div
+						className="relative rounded-2xl bg-white p-4"
+						onClick={(event) => event.stopPropagation()}
+					>
+						<button
+							type="button"
+							onClick={() => setQrExpanded(false)}
+							aria-label="QR-Code schließen"
+							className="absolute -right-3 -top-3 rounded-full bg-white p-1 text-earth-800 shadow-md transition hover:text-brand-600"
+						>
+							<X size={20} />
+						</button>
+						<img
+							src="/verlosung-lightning-qr.png"
+							alt={`QR-Code der Lightning-Adresse ${VERLOSUNG_EMAIL}`}
+							className="h-72 w-72 max-w-[80vw] rounded-lg"
+						/>
+						<p className="mt-3 text-center font-mono text-sm text-earth-800">
+							{VERLOSUNG_EMAIL}
+						</p>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 }
