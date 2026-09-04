@@ -1,0 +1,8 @@
+{
+    "tag": "payRequest",
+    "callback": "https://21mio.space/lnurlp/api/v1/lnurl/cb/FpDXZ3",
+    "minSendable": 1000,
+    "maxSendable": 1000000000,
+    "metadata": "[[\"text/plain\", \"Payment to verlosung\"], [\"text/identifier\", \"verlosung@21mio.space\"]]",
+    "commentAllowed": 210
+}
