@@ -12,6 +12,7 @@ import Support from '@/components/Support';
 import Footer from '@/components/Footer';
 import Impressum from '@/components/Impressum';
 import Antrag from '@/components/Antrag';
+import Verlosung from '@/components/Verlosung';
 import Datenschutz from '@/components/Datenschutz';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
@@ -57,6 +58,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<HomePage />} />
 						<Route path="/de/antrag" element={<Antrag />} />
+						<Route path="/verlosung" element={<Verlosung />} />
 						<Route path="/de/impressum" element={<Impressum />} />
 						<Route path="/de/datenschutz" element={<Datenschutz />} />
 					</Routes>

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, Copy, HandHeart } from 'lucide-react';
 
-const SILENT_PAYMENT_ADDRESS =
+export const SILENT_PAYMENT_ADDRESS =
 	'sp1qqgf49ckkg60unm3zzzz8zdza696xtp3aj5ylg8q0lv2yku6t67xlsqhmr246e2v72gaz3cvzfnydckq6ca2w8wsvaj60mrqu07a6h5y9xcxygql9';
 
-const SILENT_PAYMENT_SHORT = `${SILENT_PAYMENT_ADDRESS.slice(0, 9)}....${SILENT_PAYMENT_ADDRESS.slice(-9)}`;
+export const SILENT_PAYMENT_SHORT = `${SILENT_PAYMENT_ADDRESS.slice(0, 9)}....${SILENT_PAYMENT_ADDRESS.slice(-9)}`;
 
 const LIGHTNING_ADDRESS = 'bamo-support@21mio.space';
 
