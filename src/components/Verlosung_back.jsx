@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Check, Copy, X } from 'lucide-react';
 import { SILENT_PAYMENT_ADDRESS, SILENT_PAYMENT_SHORT } from '@/components/Support';
 
@@ -37,12 +36,7 @@ export default function Verlosung() {
 			<p className="mt-4 leading-relaxed">
 				<strong>Teilnahme ist kostenlos.</strong> Wer mag, kann die Verlosung
 				zusätzlich mit einer kleinen Spende verbinden — mehr dazu weiter unten. Beides
-				ist völlig unabhängig voneinander möglich, und jede Losnummer hat unabhängig vom
-				gewählten Weg die exakt gleiche Gewinnchance.
-			</p>
-			<p className="mt-4 leading-relaxed">
-				Pro Person wird nur eine Losnummer vergeben — unabhängig davon, ob per E-Mail
-				oder per Spende teilgenommen wird, und auch bei mehreren Spenden.
+				ist völlig unabhängig voneinander möglich.
 			</p>
 
 			<div className="mt-10 space-y-10 leading-relaxed">
@@ -79,7 +73,7 @@ export default function Verlosung() {
 									<td className="py-2">
 										<div className="flex items-center gap-3">
 											<span>
-												Beliebiger Betrag an{' '}
+												Ab 2.100 Sats an{' '}
 												<a
 													href={`lightning:${VERLOSUNG_EMAIL}`}
 													className="text-brand-600 underline hover:text-brand-500"
@@ -225,17 +219,15 @@ export default function Verlosung() {
 						</a>
 						) könnt ihr an diese Adresse Satoshis spenden und gleichzeitig etwas Gutes
 						für den Bitcoin-Space tun. Bei den meisten Wallets könnt ihr neben dem
-						Betrag auch einen Kommentar (max. 210 Zeichen) hinterlassen — jede Spende
+						Betrag auch einen Kommentar (max. 500 Zeichen) hinterlassen — jede Spende
 						wird gelesen.
 					</p>
 					<blockquote className="mt-4 rounded-2xl border border-brand-200 bg-brand-50 px-5 py-4 text-earth-900">
 						<strong>
-							Jede Lightning-Spende — egal in welcher Höhe — mit Kontaktdaten im
-							Kommentar
+							Alle Lightning-Spenden ab 2.100 Satoshis mit Kontaktdaten im Kommentar
 						</strong>{' '}
 						(egal in welcher Form — Telefonnummer, Telegram-Username, E-Mail){' '}
-						<strong>nimmt automatisch an der Verlosung teil.</strong> Pro Person zählt
-						dabei nur eine Losnummer, auch bei mehreren Spenden.
+						<strong>nehmen automatisch an der Verlosung teil.</strong>
 					</blockquote>
 					<p className="mt-4">
 						Alternativ könnt ihr auf der Webseite On-Chain über die Silent-Payment-Adresse
@@ -261,16 +253,13 @@ export default function Verlosung() {
 						Wie läuft die Auswertung ab?
 					</h2>
 					<p className="mt-3">
-						Jede Teilnahme — per E-Mail oder per Lightning-Spende mit Kommentar —
-						bekommt eine fortlaufende Losnummer. Taucht dieselbe Person mehrfach auf
-						(z. B. durch mehrere Spenden oder E-Mail und Spende zugleich), fassen wir das
-						vor der Auslosung zu einer einzigen Losnummer zusammen — es zählt pro Person
-						immer nur ein Los. Die Gewinne sind ebenfalls nummeriert und werden per
-						Zufallsgenerator den Losnummern zugeordnet, live vor Ort. Per E-Mail
-						Angemeldete werden direkt benachrichtigt; bei Lightning-Spenden brauchen wir
-						dafür einen Kontakt-Hinweis im Kommentar. Lässt sich eine Zahlung niemandem
-						zuordnen, wird der Gewinn neu verlost, damit am Ende möglichst alle Preise
-						zugeordnet werden können.
+						Jede Teilnahme — per E-Mail oder per Lightning-Spende mit Kommentar (mind.
+						2.100 Sats) — bekommt eine fortlaufende Losnummer. Die Gewinne sind ebenfalls
+						nummeriert und werden per Zufallsgenerator den Losnummern zugeordnet, live
+						vor Ort. Per E-Mail Angemeldete werden direkt benachrichtigt; bei
+						Lightning-Spenden brauchen wir dafür einen Kontakt-Hinweis im Kommentar.
+						Lässt sich eine Zahlung niemandem zuordnen, wird der Gewinn neu verlost,
+						damit am Ende möglichst alle Preise zugeordnet werden können.
 					</p>
 				</div>
 
@@ -285,23 +274,6 @@ export default function Verlosung() {
 						(Einnahmen/Ausgaben) veröffentlichen wir später transparent auf dieser
 						Webseite. Reichen die Spenden nicht für die Kosten, trägt der Organisator die
 						Differenz selbst — als Lehrgeld fürs erste Mal.
-					</p>
-				</div>
-
-				<div>
-					<h2 className="text-xl font-semibold text-forest-800">
-						Was passiert mit euren Kontaktdaten?
-					</h2>
-					<p className="mt-3 text-sm">
-						Kontaktdaten (E-Mail, Kommentar-Angaben) nutzen wir ausschließlich für die
-						Durchführung und Gewinnbenachrichtigung und löschen sie spätestens 14 Tage
-						nach der Verlosung — außer bei Gewinnern, deren Daten wir so lange behalten,
-						wie es für die Übergabe des Gewinns nötig ist. Alle Details (Rechtsgrundlage,
-						Hinweise zu Lightning-Kommentaren und Blockchain-Daten) stehen in der{' '}
-						<Link to="/de/datenschutz" className="text-brand-600 underline hover:text-brand-500">
-							Datenschutzerklärung
-						</Link>
-						.
 					</p>
 				</div>
 

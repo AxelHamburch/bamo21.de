@@ -21,11 +21,47 @@ export default function Datenschutz() {
 				<div>
 					<h2 className="font-semibold text-earth-900">Datenverarbeitung</h2>
 					<p>
-						Diese Website erhebt keine personenbezogenen Daten, setzt keine Cookies und
-						verwendet kein Tracking. Der Webhoster speichert beim Aufruf technisch bedingt
-						automatisch Server-Logfiles (z. B. IP-Adresse, Datum, Uhrzeit, aufgerufene URL,
-						Browser), ausschließlich für den sicheren Betrieb des Servers, auf Grundlage von
-						Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+						Diese Website erhebt darüber hinaus keine personenbezogenen Daten, setzt
+						keine Cookies und verwendet kein Tracking. Der Webhoster speichert beim
+						Aufruf technisch bedingt automatisch Server-Logfiles (z. B. IP-Adresse,
+						Datum, Uhrzeit, aufgerufene URL, Browser), ausschließlich für den sicheren
+						Betrieb des Servers, auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+						(berechtigtes Interesse).
+					</p>
+				</div>
+
+				<div>
+					<h2 className="font-semibold text-earth-900">Verlosung</h2>
+					<p>
+						Für die{' '}
+						<Link to="/verlosung" className="underline hover:text-forest-700">
+							BAMO-Verlosung
+						</Link>{' '}
+						verarbeiten wir Kontaktdaten, die uns Teilnehmer freiwillig mitteilen: per
+						E-Mail-Anmeldung oder als Angabe (z. B. Telefonnummer, Telegram-Username,
+						E-Mail) im Kommentar/der Notiz einer Lightning-Spende. Rechtsgrundlage ist
+						unser berechtigtes Interesse an der Durchführung der Verlosung (Art. 6 Abs. 1
+						lit. f DSGVO) bzw. die durch aktive Teilnahme erteilte Einwilligung.
+					</p>
+					<p className="mt-3">
+						Kontaktdaten von Nicht-Gewinnern löschen wir spätestens 14 Tage nach der
+						Verlosung. Daten von Gewinnern speichern wir nur so lange, wie es für Versand
+						und Abwicklung des Gewinns nötig ist.
+					</p>
+					<p className="mt-3">
+						Diese Löschzusage bezieht sich auf die bei uns gespeicherten Kontaktdaten.
+						Zahlungsdaten auf der Bitcoin-Blockchain selbst sowie in Lightning-Node- bzw.
+						LSP-Logs können technisch bedingt nicht gelöscht werden.
+					</p>
+					<p className="mt-3">
+						Hinweis: Der Kommentar wird nicht über das Lightning-Netzwerk selbst
+						übertragen, sondern vorab per HTTPS direkt an unseren Zahlungsserver
+						geschickt, und ist damit technisch nicht
+						Ende-zu-Ende-verschlüsselt. Neben uns
+						kann in bestimmten Konstellationen auch der Wallet-Anbieter des Absenders
+						(z. B. bei Custodial- bzw. Hosted-Wallets) den Kommentar im Klartext
+						mitlesen. Gebt darin daher nur Kontaktdaten an, die ihr für diesen Zweck
+						teilen möchtet.
 					</p>
 				</div>
 
