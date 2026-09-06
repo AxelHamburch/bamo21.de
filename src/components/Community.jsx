@@ -29,7 +29,7 @@ export default function Community() {
 					onClick={openModal}
 					className="mt-2 inline-flex items-center gap-2 rounded-full border border-lake-300 px-5 py-2 text-sm font-medium text-lake-700 transition hover:border-lake-500 hover:text-lake-800"
 				>
-					Zur Info-Gruppe ⚡
+					Zur Telegram Gruppe ⚡
 				</button>
 			</div>
 		</section>

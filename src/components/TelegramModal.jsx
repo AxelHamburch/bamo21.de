@@ -55,19 +55,21 @@ export default function TelegramModal() {
 
 				<div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
 					<div className="flex-1 text-earth-800">
-						<h2 className="text-2xl font-bold text-forest-800 sm:text-3xl">
-							Komm in unsere Telegram-Gruppe
+						<h2 className="text-lg font-bold text-forest-800 sm:text-xl">
+							Komm in unsere BAMO-Gruppe
 						</h2>
-						<p className="mt-1 text-sm text-earth-600">Wir freuen uns auf den Austausch</p>
+						<p className="mt-1 text-sm text-earth-600">
+							Fragen, Infos und Austausch rund um BAMO21
+						</p>
 
 						<p className="mt-6 leading-relaxed">
-							Als Spamschutz nutzen wir ein Lightning-basiertes Ticket-System. Du benötigst
-							eine Lightning-Wallet, um das Ticket mit 10 Satoshi zu bezahlen und Zugang zu
-							erhalten.
+							Als Spamschutz läuft der Beitritt über ein Lightning-Ticket: Mit einer
+							Lightning-Wallet bezahlst du einmalig 10 Satoshi und bist sofort in der
+							Gruppe.
 						</p>
 
 						<p className="mt-4 leading-relaxed">
-							Scanne den QR-Code auf der rechten Seite oder klicke direkt hier für ein{' '}
+							Scanne dazu den QR-Code oder klicke direkt hier für dein{' '}
 							<a
 								href={`lightning:${TICKET_LNURL}`}
 								target="_blank"
@@ -78,63 +80,9 @@ export default function TelegramModal() {
 							</a>
 							.
 						</p>
-
-						<p className="mt-6 border-t border-earth-200 pt-4 font-semibold text-earth-900">
-							Hilfe und Infos:
-						</p>
-						<ul className="mt-3 list-inside list-disc space-y-2">
-							<li>
-								Folgende Mobil-Wallets unterstützen die Funktion: Wallet of Satoshi,
-								Phoenix,{' '}
-								<a
-									href="https://home.mybuho.de/de/buhogo"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand-600 hover:underline"
-								>
-									BuhoGo
-								</a>
-								, AlbyGo, Zeus, LNbits.
-								<br />
-								Aktuell <strong>nicht</strong> unterstützt wird es von: Strike, Blink,
-								Electrum (kommt irgendwann), Misty Breez, Fedi, Blitz Wallet (kommt
-								aber), Muun, ecash bzw. cashu Wallets.
-							</li>
-							<li>
-								<a
-									href="https://ereignishorizont.xyz/onboarding/"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand-600 hover:underline"
-								>
-									Onboarding (21 Sats erhalten)
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://ereignishorizont.xyz/boltfaucet/"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand-600 hover:underline"
-								>
-									BoltFaucet (21 Sats erhalten)
-								</a>
-							</li>
-							<li>
-								Alby Extension unterstützt die Funktion leider nicht. Siehe Issue{' '}
-								<a
-									href="https://github.com/getAlby/lightning-browser-extension/issues/3348"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand-600 hover:underline"
-								>
-									#3348
-								</a>
-							</li>
-						</ul>
 					</div>
 
-					<div className="shrink-0 pb-4 text-center md:mt-20 md:pb-0">
+					<div className="shrink-0 pb-4 text-center md:mt-10 md:pb-0">
 						<button
 							type="button"
 							onClick={handleCopyLnurl}
@@ -154,6 +102,63 @@ export default function TelegramModal() {
 						</button>
 						<p className="mt-2 text-xs text-earth-600">Zum Kopieren antippen</p>
 					</div>
+				</div>
+
+				<div className="text-earth-800">
+					<p className="mt-6 border-t border-earth-200 pt-4 font-semibold text-earth-900">
+						Hilfe und Infos:
+					</p>
+					<ul className="mt-3 list-inside list-disc space-y-2">
+						<li>
+							Diese Mobil-Wallets können die Ticket-Zahlung: AlbyGo,{' '}
+							<a
+								href="https://home.mybuho.de/de/buhogo"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 hover:underline"
+							>
+								BuhoGO
+							</a>
+							, LNbits, Phoenix, Wallet of Satoshi, Zeus. 👍
+						</li>
+						<li>
+							Aktuell <strong>nicht</strong>: Blink, Blitz Wallet (kommt aber), Electrum
+							(kommt irgendwann), Fedi, Misty Breez, Muun, Strike, ecash- bzw.
+							Cashu-Wallets. 👎
+						</li>
+						<li>
+							Noch keine Sats? Zieh dir 21 Satoshis am{' '}
+							<a
+								href="https://ereignishorizont.xyz/boltfaucet/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 hover:underline"
+							>
+								BoltFaucet
+							</a>
+							:{' '}
+							<a
+								href="https://t.me/BoltFaucet_bot?start=claim"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="BoltFaucet öffnen – 21 Satoshis ziehen"
+								className="ml-1 inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-brand-300 px-3 py-1 align-middle text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
+							>
+								⚡ 🚰
+							</a>
+						</li>
+						<li>
+							Alby Extension unterstützt die Funktion leider nicht. Siehe Issue{' '}
+							<a
+								href="https://github.com/getAlby/lightning-browser-extension/issues/3348"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 hover:underline"
+							>
+								#3348
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

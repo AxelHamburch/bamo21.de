@@ -7,7 +7,7 @@ const links = [
 	{ href: '/#event', label: 'Das Event' },
 	{ href: '/#schedule', label: 'Programm' },
 	{ href: '/#location', label: 'Ort & Anreise' },
-	{ href: '/#community', label: 'Info-Gruppe' },
+	{ href: '/#community', label: 'Telegram-Gruppe' },
 ];
 
 export default function Navigation() {

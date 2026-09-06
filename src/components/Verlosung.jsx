@@ -221,7 +221,7 @@ export default function Verlosung() {
 							rel="noopener noreferrer"
 							className="text-brand-600 underline hover:text-brand-500"
 						>
-							BuhoGo
+							BuhoGO
 						</a>
 						) könnt ihr an diese Adresse Satoshis spenden und gleichzeitig etwas Gutes
 						für den Bitcoin-Space tun. Bei den meisten Wallets könnt ihr neben dem
