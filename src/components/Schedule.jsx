@@ -74,8 +74,10 @@ const tracks = [
 			},
 			{
 				time: '12:00–12:30',
-				title: 'xPubTracer: vibecoded Sat-Vergangenheitsbewältigung',
+				title: 'SatSage - know your sats',
 				speaker: 'Juniormind',
+				description:
+					'Herkunft Deiner sats auf den Grund gehen: Haltefrist-Datum und Sanktionslisten-Check der Vorgängeradressen. Bei 100% Privatsphäre - notfalls auch ohne eigenen Node.',
 			},
 			{
 				time: '12:30–13:00',
