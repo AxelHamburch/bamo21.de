@@ -108,7 +108,18 @@ const tracks = [
 ];
 
 // Programmpunkte ohne festen Zeitpunkt – werden vor Ort per Aushang bekannt gegeben.
-const openSlots = ['Hofführung durch den Eigner (ca. 20 Minuten)', 'Naturerlebnis für Kinder – Aukse'];
+const openSlots = [
+	'Hofführung durch den Eigner (ca. 20 Minuten)',
+	'Naturerlebnis für Kinder – Aukse',
+	{
+		text: 'Schatzsuche am Ottisee – ',
+		link: {
+			label: 'Nostr Geocaching',
+			url: 'https://media.einundzwanzig.space/s/bamo21/draft-1788793189611',
+		},
+		suffix: ' 🔍😃',
+	},
+];
 
 // Telegram-Handles der Vortragenden – für Rückfragen zu Vorträgen und Workshops.
 const speakerContacts = [
@@ -230,9 +241,24 @@ export default function Schedule() {
 						</div>
 					</div>
 					<ul className="mt-4 list-disc space-y-2 pl-12 text-earth-800">
-						{openSlots.map((item) => (
-							<li key={item}>{item}</li>
-						))}
+						{openSlots.map((item) =>
+							typeof item === 'string' ? (
+								<li key={item}>{item}</li>
+							) : (
+								<li key={item.link.url}>
+									{item.text}
+									<a
+										href={item.link.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-brand-600 underline hover:text-brand-500"
+									>
+										{item.link.label}
+									</a>
+									{item.suffix}
+								</li>
+							)
+						)}
 					</ul>
 				</div>
 
