@@ -255,33 +255,6 @@ export default function Schedule() {
 					</p>
 				</div>
 
-				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6">
-					<h3 className="font-bold text-earth-900">Allerlei Sonstiges</h3>
-					<p className="text-sm text-earth-600">
-						Zeit &amp; Ort werden vor Ort per Aushang bekannt gegeben.
-					</p>
-					<ul className="mt-4 list-disc space-y-2 pl-6 text-earth-800">
-						{openSlots.map((item) =>
-							typeof item === 'string' ? (
-								<li key={item}>{item}</li>
-							) : (
-								<li key={item.link.url}>
-									{item.text}
-									<a
-										href={item.link.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-brand-600 underline hover:text-brand-500"
-									>
-										{item.link.label}
-									</a>
-									{item.suffix}
-								</li>
-							)
-						)}
-					</ul>
-				</div>
-
 				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6 text-center text-earth-800">
 					<p>
 						Im <span className="font-semibold">Kleinen Pavillon</span> und im{' '}
@@ -313,6 +286,33 @@ export default function Schedule() {
 							</div>
 						))}
 					</div>
+				</div>
+
+				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6">
+					<h3 className="font-bold text-earth-900">Allerlei Sonstiges</h3>
+					<p className="text-sm text-earth-600">
+						Zeit &amp; Ort werden vor Ort per Aushang bekannt gegeben.
+					</p>
+					<ul className="mt-4 list-disc space-y-2 pl-6 text-earth-800">
+						{openSlots.map((item) =>
+							typeof item === 'string' ? (
+								<li key={item}>{item}</li>
+							) : (
+								<li key={item.link.url}>
+									{item.text}
+									<a
+										href={item.link.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-brand-600 underline hover:text-brand-500"
+									>
+										{item.link.label}
+									</a>
+									{item.suffix}
+								</li>
+							)
+						)}
+					</ul>
 				</div>
 			</div>
 		</section>
