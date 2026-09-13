@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mic, Wrench, HelpCircle } from 'lucide-react';
+import { Mic, Wrench } from 'lucide-react';
 
 // Programm vom 26. September 2026. Slots ohne festen Inhalt bleiben als
 // "Frei" stehen – sie werden noch gefüllt.
@@ -31,7 +31,7 @@ const tracks = [
 			{ time: '13:00–13:30', title: 'Bitcoin für Bauern – HODL DEIN HOF', speaker: 'Timo' },
 			{
 				time: '13:30–14:15',
-				title: 'Geld ist Energie. Bitcoin ist Energie. Wohin fließt deine?',
+				title: 'Bewusst leben. Bewusst mit Geld umgehen. Wie Bitcoin hier hilft.',
 				speaker: 'FinanzBewusst',
 			},
 			{ time: '14:15–14:30', title: 'Pause und Diskussion' },
@@ -109,7 +109,7 @@ const tracks = [
 
 // Programmpunkte ohne festen Zeitpunkt – werden vor Ort per Aushang bekannt gegeben.
 const openSlots = [
-	'Hofführung durch den Eigner (ca. 20 Minuten)',
+	'Hofführung durch den Eigner (ca. 20 Minuten), 14:00 Uhr beim Hofladen',
 	'Naturerlebnis für Kinder – Aukse',
 	{
 		text: 'Schatzsuche am Ottisee – ',
@@ -136,11 +136,25 @@ const speakerContacts = [
 ];
 
 const exhibitors = [
-	{ name: 'ZapBox', url: 'https://zapbox.space/' },
-	{ name: 'bitcoin21.shop', url: 'https://bitcoin21.shop/' },
-	{ name: 'bitcointaps.com', url: 'https://bitcointaps.com' },
-	{ name: 'bitcoinerleben.space', url: 'https://bitcoinerleben.space/' },
-	{ name: 'bitucation.com', url: 'https://bitucation.com/' },
+	{ name: 'ZapBox', url: 'https://zapbox.space/', logo: '/logos/zapbox.png' },
+	{ name: 'bitcoin21.shop', url: 'https://bitcoin21.shop/', logo: '/logos/bitcoin21-shop.jpg' },
+	{
+		name: 'bitcointaps.com',
+		url: 'https://bitcointaps.com',
+		logo: '/logos-event/bitcointaps.png',
+		dark: true,
+	},
+	{
+		name: 'bitcoinerleben.space',
+		url: 'https://bitcoinerleben.space/',
+		logo: '/logos-event/bitcoinerleben.webp',
+	},
+	{ name: 'bitucation.com', url: 'https://bitucation.com/', logo: '/logos/bitucation.svg' },
+	{
+		name: 'orangepin21.com',
+		url: 'https://www.orangepin21.com/',
+		logo: '/logos-event/orangepin21.jpg',
+	},
 ];
 
 export default function Schedule() {
@@ -231,16 +245,11 @@ export default function Schedule() {
 				</div>
 
 				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6">
-					<div className="flex items-center gap-3">
-						<HelpCircle className="shrink-0 text-earth-500" size={20} />
-						<div>
-							<h3 className="font-bold text-earth-900">Allerlei Sonstiges</h3>
-							<p className="text-sm text-earth-600">
-								Zeit &amp; Ort werden vor Ort per Aushang bekannt gegeben.
-							</p>
-						</div>
-					</div>
-					<ul className="mt-4 list-disc space-y-2 pl-12 text-earth-800">
+					<h3 className="font-bold text-earth-900">Allerlei Sonstiges</h3>
+					<p className="text-sm text-earth-600">
+						Zeit &amp; Ort werden vor Ort per Aushang bekannt gegeben.
+					</p>
+					<ul className="mt-4 list-disc space-y-2 pl-6 text-earth-800">
 						{openSlots.map((item) =>
 							typeof item === 'string' ? (
 								<li key={item}>{item}</li>
@@ -262,27 +271,30 @@ export default function Schedule() {
 					</ul>
 				</div>
 
-				<div className="mx-auto mt-8 max-w-3xl text-center text-earth-800">
+				<div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-earth-200 bg-earth-50/60 p-6 text-center text-earth-800">
 					<p>
 						Im <span className="font-semibold">Kleinen Pavillon</span> und im{' '}
 						<span className="font-semibold">Gewächshaus</span> beim Hofladen finden diverse
 						kleine Ausstellungen und Präsentationen statt. Mit dabei sind unter anderem:
 					</p>
-					<p className="mt-3">
-						{exhibitors.map(({ name, url }, index) => (
-							<React.Fragment key={url}>
-								{index > 0 && <span className="text-earth-400"> · </span>}
-								<a
-									href={url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand-600 underline hover:text-brand-500"
-								>
-									{name}
-								</a>
-							</React.Fragment>
+					<div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+						{exhibitors.map(({ name, url, logo, dark }) => (
+							<a
+								key={url}
+								href={url}
+								target="_blank"
+								rel="noopener noreferrer"
+								title={name}
+								className={dark ? 'rounded-lg bg-earth-900 px-3 py-2' : undefined}
+							>
+								<img
+									src={logo}
+									alt={name}
+									className="h-12 w-auto object-contain"
+								/>
+							</a>
 						))}
-					</p>
+					</div>
 				</div>
 			</div>
 		</section>
