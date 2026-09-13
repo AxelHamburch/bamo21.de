@@ -7,7 +7,7 @@ export default function Community() {
 
 	return (
 		<section id="community" className="scroll-mt-24 px-6 py-16">
-			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-lake-200 bg-white/80 p-10 text-center">
 				<MessageCircle className="text-lake-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Auf dem Laufenden bleiben?</h2>
 				<p className="max-w-xl text-sm text-earth-700">

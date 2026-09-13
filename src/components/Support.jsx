@@ -30,7 +30,7 @@ export default function Support() {
 
 	return (
 		<section id="support" className="scroll-mt-24 bg-forest-50 px-6 py-16">
-			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-forest-200 bg-white/80 p-10 text-center">
 				<HandHeart className="text-brand-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Ein Event von Plebs für Plebs</h2>
 				<p className="max-w-xl text-sm text-earth-700">
