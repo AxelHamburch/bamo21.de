@@ -153,15 +153,7 @@ export default function Verlosung() {
 							>
 								Lightning Piggy
 							</a>{' '}
-							und ein{' '}
-							<a
-								href="https://www.gobrrr.me/product/orange-clock/"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-brand-600 underline hover:text-brand-500"
-							>
-								OrangeClock mini
-							</a>
+							und eine OrangeClock mini
 						</li>
 						<li>
 							Eine kleine <strong>Parzelle</strong> (ca. 28 m²) von{' '}

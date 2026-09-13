@@ -79,10 +79,14 @@ export default function Contact() {
 					</figcaption>
 				</figure>
 
-				<div className="mt-8 flex justify-center border-t border-lake-100 pt-8">
+				<div className="mt-8 border-t border-lake-100 pt-8 text-center">
+					<p className="text-earth-800">
+						₿AMO21 macht eine Verlosung, an der ihr teilnehmen könnt – und wenn ihr wollt,
+						dabei auch die Bitcoin-Lightning-Technologie nutzen könnt.
+					</p>
 					<Link
 						to="/verlosung"
-						className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+						className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
 					>
 						Hier gehts zur Verlosung
 					</Link>
