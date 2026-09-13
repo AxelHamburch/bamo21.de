@@ -135,26 +135,37 @@ const speakerContacts = [
 	{ name: 'Réno', url: 'https://t.me/ronin_960261' },
 ];
 
-const exhibitors = [
-	{ name: 'ZapBox', url: 'https://zapbox.space/', logo: '/logos/zapbox.png' },
-	{ name: 'bitcoin21.shop', url: 'https://bitcoin21.shop/', logo: '/logos/bitcoin21-shop.jpg' },
-	{
-		name: 'bitcointaps.com',
-		url: 'https://bitcointaps.com',
-		logo: '/logos-event/bitcointaps.png',
-		dark: true,
-	},
-	{
-		name: 'bitcoinerleben.space',
-		url: 'https://bitcoinerleben.space/',
-		logo: '/logos-event/bitcoinerleben.webp',
-	},
-	{ name: 'bitucation.com', url: 'https://bitucation.com/', logo: '/logos/bitucation.svg' },
-	{
-		name: 'orangepin21.com',
-		url: 'https://www.orangepin21.com/',
-		logo: '/logos-event/orangepin21.jpg',
-	},
+const exhibitorRows = [
+	[
+		{ name: 'ZapBox', url: 'https://zapbox.space/', logo: '/logos/zapbox.png' },
+		{
+			name: 'bitcointaps.com',
+			url: 'https://bitcointaps.com',
+			logo: '/logos-event/bitcointaps.png',
+			dark: true,
+		},
+		{ name: 'bitucation.com', url: 'https://bitucation.com/', logo: '/logos/bitucation.svg' },
+	],
+	[
+		{
+			name: 'bitcoin21.shop',
+			url: 'https://bitcoin21.shop/',
+			logo: '/logos/bitcoin21-shop.jpg',
+			size: 'h-16',
+		},
+		{
+			name: 'bitcoinerleben.space',
+			url: 'https://bitcoinerleben.space/',
+			logo: '/logos-event/bitcoinerleben.webp',
+			size: 'h-16',
+		},
+		{
+			name: 'orangepin21.com',
+			url: 'https://www.orangepin21.com/',
+			logo: '/logos-event/orangepin21.jpg',
+			size: 'h-24',
+		},
+	],
 ];
 
 export default function Schedule() {
@@ -277,22 +288,29 @@ export default function Schedule() {
 						<span className="font-semibold">Gewächshaus</span> beim Hofladen finden diverse
 						kleine Ausstellungen und Präsentationen statt. Mit dabei sind unter anderem:
 					</p>
-					<div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-						{exhibitors.map(({ name, url, logo, dark }) => (
-							<a
-								key={url}
-								href={url}
-								target="_blank"
-								rel="noopener noreferrer"
-								title={name}
-								className={dark ? 'rounded-lg bg-earth-900 px-3 py-2' : undefined}
+					<div className="mt-5 space-y-6">
+						{exhibitorRows.map((row, rowIndex) => (
+							<div
+								key={rowIndex}
+								className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
 							>
-								<img
-									src={logo}
-									alt={name}
-									className="h-12 w-auto object-contain"
-								/>
-							</a>
+								{row.map(({ name, url, logo, dark, size }) => (
+									<a
+										key={url}
+										href={url}
+										target="_blank"
+										rel="noopener noreferrer"
+										title={name}
+										className={dark ? 'rounded-lg bg-earth-900 px-3 py-2' : undefined}
+									>
+										<img
+											src={logo}
+											alt={name}
+											className={`${size ?? 'h-12'} w-auto object-contain`}
+										/>
+									</a>
+								))}
+							</div>
 						))}
 					</div>
 				</div>
