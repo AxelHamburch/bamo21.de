@@ -30,6 +30,19 @@ export default function Support() {
 
 	return (
 		<section id="support" className="scroll-mt-24 bg-forest-50 px-6 py-16">
+			<div className="mx-auto mb-8 max-w-3xl text-center">
+				<p className="text-earth-800">
+					₿AMO21 macht eine Verlosung, an der ihr teilnehmen könnt – und wenn ihr wollt,
+					dabei auch die Bitcoin-Lightning-Technologie nutzen könnt.
+				</p>
+				<Link
+					to="/verlosung"
+					className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+				>
+					Hier gehts zur Verlosung
+				</Link>
+			</div>
+
 			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-forest-200 bg-white/80 p-10 text-center">
 				<HandHeart className="text-brand-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Ein Event von Plebs für Plebs</h2>

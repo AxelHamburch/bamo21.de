@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MapPin, Car, Bus } from 'lucide-react';
 
 import parkingMap from '../../assets/BAMO-Parken.webp';
@@ -78,19 +77,6 @@ export default function Contact() {
 						Anfahrt und Parkmöglichkeiten – zum Vergrößern anklicken.
 					</figcaption>
 				</figure>
-			</div>
-
-			<div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-lake-200 bg-white/80 p-10 text-center">
-				<p className="text-earth-800">
-					₿AMO21 macht eine Verlosung, an der ihr teilnehmen könnt – und wenn ihr wollt,
-					dabei auch die Bitcoin-Lightning-Technologie nutzen könnt.
-				</p>
-				<Link
-					to="/verlosung"
-					className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
-				>
-					Hier gehts zur Verlosung
-				</Link>
 			</div>
 		</section>
 	);
