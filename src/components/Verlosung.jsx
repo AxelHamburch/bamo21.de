@@ -156,7 +156,7 @@ export default function Verlosung() {
 							und eine OrangeClock mini
 						</li>
 						<li>
-							Eine kleine <strong>Parzelle</strong> (ca. 28 m²) von{' '}
+							Eine <strong>kleine Parzelle</strong> (ca. 28 m²) von{' '}
 							<a
 								href="https://www.axelsgaerten.de/"
 								target="_blank"
