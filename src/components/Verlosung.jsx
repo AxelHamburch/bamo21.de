@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Copy, X } from 'lucide-react';
-import { SILENT_PAYMENT_ADDRESS, SILENT_PAYMENT_SHORT } from '@/components/Support';
+import { X } from 'lucide-react';
 
 const VERLOSUNG_EMAIL = 'verlosung@bamo21.de';
 
 export default function Verlosung() {
-	// null | 'silent-payment' – ob die Silent-Payment-Adresse gerade kopiert wurde
-	const [copied, setCopied] = useState(null);
 	const [qrExpanded, setQrExpanded] = useState(false);
-
-	useEffect(() => {
-		if (!copied) return;
-		const timer = setTimeout(() => setCopied(null), 2000);
-		return () => clearTimeout(timer);
-	}, [copied]);
-
-	const copyToClipboard = async (value, key) => {
-		try {
-			await navigator.clipboard.writeText(value);
-			setCopied(key);
-		} catch {
-			// Zwischenablage nicht verfügbar (z. B. fehlende Berechtigung) – kein Feedback nötig
-		}
-	};
 
 	return (
 		<section className="mx-auto max-w-3xl px-6 py-20 text-earth-800">
@@ -105,40 +87,11 @@ export default function Verlosung() {
 										</div>
 									</td>
 								</tr>
-								<tr>
-									<td className="py-2 pr-4 align-top font-medium text-earth-900">
-										⛓️ Per On-Chain-Spende
-									</td>
-									<td className="py-2">
-										<div className="flex flex-col items-start gap-2">
-											<span>
-												Über die Silent-Payment-Adresse spenden, danach kurz E-Mail
-												an uns.
-											</span>
-											<button
-												type="button"
-												onClick={() =>
-													copyToClipboard(SILENT_PAYMENT_ADDRESS, 'silent-payment')
-												}
-												title={SILENT_PAYMENT_ADDRESS}
-												aria-label="Silent-Payment-Adresse in die Zwischenablage kopieren"
-												className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-4 py-1.5 font-mono text-xs font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
-											>
-												₿ {SILENT_PAYMENT_SHORT}
-												{copied === 'silent-payment' ? (
-													<Check size={14} />
-												) : (
-													<Copy size={14} />
-												)}
-											</button>
-										</div>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
 					<p className="mt-3 text-sm text-earth-600">
-						Details zu den Lightning- und On-Chain-Spenden findest du weiter unten.
+						Details zu den Lightning-Spenden findest du weiter unten.
 					</p>
 				</div>
 
@@ -147,7 +100,7 @@ export default function Verlosung() {
 					<p className="mt-3">Aktuell im Verlosungstopf:</p>
 					<ul className="mt-3 list-inside list-disc space-y-1">
 						<li>
-							Eine <strong>ZapBox Simple</strong> im Wert von 100 € —{' '}
+							Eine <strong>ZapBox Simple</strong> im Wert von 125 € —{' '}
 							<a
 								href="https://zapbox.space"
 								target="_blank"
@@ -158,7 +111,7 @@ export default function Verlosung() {
 							</a>
 						</li>
 						<li>
-							Drei Gutscheine von{' '}
+							Drei <strong>Gutscheine</strong> von{' '}
 							<a
 								href="https://bitcoin21.shop/"
 								target="_blank"
@@ -182,7 +135,7 @@ export default function Verlosung() {
 							</a>
 						</li>
 						<li>
-							Drei Gutscheine von{' '}
+							Drei <strong>Gutscheine</strong> von{' '}
 							<a
 								href="https://bitucation.com/"
 								target="_blank"
@@ -191,10 +144,27 @@ export default function Verlosung() {
 							>
 								bitucation.com
 							</a>{' '}
-							für Bitcoin-Bildung, im Wert von je 50 €
+							für Bitcoin-Bildung, im Wert von je 50 €, ein{' '}
+							<a
+								href="https://lightningpiggy.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 underline hover:text-brand-500"
+							>
+								Lightning Piggy
+							</a>{' '}
+							und ein{' '}
+							<a
+								href="https://www.gobrrr.me/product/orange-clock/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 underline hover:text-brand-500"
+							>
+								OrangeClock mini
+							</a>
 						</li>
 						<li>
-							Eine kleine Parzelle (ca. 28 m²) von{' '}
+							Eine kleine <strong>Parzelle</strong> (ca. 28 m²) von{' '}
 							<a
 								href="https://www.axelsgaerten.de/"
 								target="_blank"
@@ -206,6 +176,44 @@ export default function Verlosung() {
 							für die Saison 2027, im Wert von 149 €
 						</li>
 					</ul>
+				</div>
+
+				<div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+					<a href="https://zapbox.space" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/zapbox.png"
+							alt="ZapBox"
+							className="h-12 w-auto object-contain"
+						/>
+					</a>
+					<a href="https://bitcoin21.shop/" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/bitcoin21-shop.jpg"
+							alt="bitcoin21.shop"
+							className="h-12 w-auto object-contain"
+						/>
+					</a>
+					<a href="https://bitbox.swiss" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/bitbox.png"
+							alt="BitBox"
+							className="h-12 w-auto object-contain"
+						/>
+					</a>
+					<a href="https://bitucation.com/" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/bitucation.svg"
+							alt="bitucation"
+							className="h-12 w-auto object-contain"
+						/>
+					</a>
+					<a href="https://www.axelsgaerten.de/" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/axelsgaerten.png"
+							alt="Axels Gemüsegärten"
+							className="h-12 w-auto object-contain"
+						/>
+					</a>
 				</div>
 
 				<div>
@@ -233,16 +241,10 @@ export default function Verlosung() {
 							Jede Lightning-Spende — egal in welcher Höhe — mit Kontaktdaten im
 							Kommentar
 						</strong>{' '}
-						(egal in welcher Form — Telefonnummer, Telegram-Username, E-Mail){' '}
+						(egal in welcher Form — Telefonnummer, Telegram-Username, E-Mail, etc.){' '}
 						<strong>nimmt automatisch an der Verlosung teil.</strong> Pro Person zählt
 						dabei nur eine Losnummer, auch bei mehreren Spenden.
 					</blockquote>
-					<p className="mt-4">
-						Alternativ könnt ihr auf der Webseite On-Chain über die Silent-Payment-Adresse
-						spenden. Für die Teilnahme an der Verlosung schickt uns danach einfach kurz
-						eine E-Mail. Fragen oder andere Wege zu spenden? Meldet euch vor Ort bei den
-						Organisatoren oder per E-Mail an info@bamo21.de.
-					</p>
 				</div>
 
 				<div>
@@ -271,6 +273,10 @@ export default function Verlosung() {
 						dafür einen Kontakt-Hinweis im Kommentar. Lässt sich eine Zahlung niemandem
 						zuordnen, wird der Gewinn neu verlost, damit am Ende möglichst alle Preise
 						zugeordnet werden können.
+					</p>
+					<p className="mt-3">
+						Der Einsendeschluss für Teilnahme an der Verlosung ist Samstag der
+						26.09.2026 um 15:00 Uhr.
 					</p>
 				</div>
 
@@ -308,26 +314,6 @@ export default function Verlosung() {
 				<div>
 					<h2 className="text-xl font-semibold text-forest-800">Wer darf teilnehmen?</h2>
 					<p className="mt-3">Alle — außer den Organisatoren der Verlosung selbst.</p>
-				</div>
-
-				<div>
-					<h2 className="text-xl font-semibold text-forest-800">
-						Ihr wollt auch einen Gewinn spenden?
-					</h2>
-					<p className="mt-3">
-						Alle Preise wurden von Privatpersonen oder Unternehmen gestiftet. Könnt auch
-						ihr etwas beisteuern, um die Verlosung noch attraktiver zu machen? Meldet
-						euch gerne über{' '}
-						<a
-							href="https://t.me/axelhamburch"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-brand-600 underline hover:text-brand-500"
-						>
-							Telegram
-						</a>{' '}
-						oder per E-Mail an info@bamo21.de.
-					</p>
 				</div>
 			</div>
 
