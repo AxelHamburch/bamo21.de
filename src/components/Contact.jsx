@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Car, Bus } from 'lucide-react';
 
 import parkingMap from '../../assets/BAMO-Parken.webp';
@@ -77,6 +78,15 @@ export default function Contact() {
 						Anfahrt und Parkmöglichkeiten – zum Vergrößern anklicken.
 					</figcaption>
 				</figure>
+
+				<div className="mt-8 flex justify-center border-t border-lake-100 pt-8">
+					<Link
+						to="/verlosung"
+						className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+					>
+						Hier gehts zur Verlosung
+					</Link>
+				</div>
 			</div>
 		</section>
 	);

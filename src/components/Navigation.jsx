@@ -7,6 +7,7 @@ const links = [
 	{ href: '/#event', label: 'Das Event' },
 	{ href: '/#schedule', label: 'Programm' },
 	{ href: '/#location', label: 'Ort & Anreise' },
+	{ href: '/verlosung', label: 'Verlosung' },
 	{ href: '/#community', label: 'Telegram-Gruppe' },
 ];
 
@@ -21,15 +22,25 @@ export default function Navigation() {
 				</Link>
 
 				<div className="hidden items-center gap-8 md:flex">
-					{links.map((link) => (
-						<a
-							key={link.href}
-							href={link.href}
-							className="text-sm text-earth-700 transition hover:text-forest-700"
-						>
-							{link.label}
-						</a>
-					))}
+					{links.map((link) =>
+						link.href.startsWith('/#') ? (
+							<a
+								key={link.href}
+								href={link.href}
+								className="text-sm text-earth-700 transition hover:text-forest-700"
+							>
+								{link.label}
+							</a>
+						) : (
+							<Link
+								key={link.href}
+								to={link.href}
+								className="text-sm text-earth-700 transition hover:text-forest-700"
+							>
+								{link.label}
+							</Link>
+						)
+					)}
 				</div>
 
 				<button
@@ -44,16 +55,27 @@ export default function Navigation() {
 			{open && (
 				<div className="border-t border-earth-200 bg-earth-50 px-6 py-4 md:hidden">
 					<div className="flex flex-col gap-4">
-						{links.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								className="text-sm text-earth-700 hover:text-forest-700"
-								onClick={() => setOpen(false)}
-							>
-								{link.label}
-							</a>
-						))}
+						{links.map((link) =>
+							link.href.startsWith('/#') ? (
+								<a
+									key={link.href}
+									href={link.href}
+									className="text-sm text-earth-700 hover:text-forest-700"
+									onClick={() => setOpen(false)}
+								>
+									{link.label}
+								</a>
+							) : (
+								<Link
+									key={link.href}
+									to={link.href}
+									className="text-sm text-earth-700 hover:text-forest-700"
+									onClick={() => setOpen(false)}
+								>
+									{link.label}
+								</Link>
+							)
+						)}
 					</div>
 				</div>
 			)}
