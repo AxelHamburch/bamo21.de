@@ -14,6 +14,7 @@ import Impressum from '@/components/Impressum';
 import Antrag from '@/components/Antrag';
 import Verlosung from '@/components/Verlosung';
 import Datenschutz from '@/components/Datenschutz';
+import WoS from '@/components/WoS';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
 import { useStaleBuildReload } from '@/hooks/useStaleBuildReload';
@@ -61,6 +62,7 @@ function App() {
 						<Route path="/verlosung" element={<Verlosung />} />
 						<Route path="/de/impressum" element={<Impressum />} />
 						<Route path="/de/datenschutz" element={<Datenschutz />} />
+						<Route path="/WoS-Tutorial" element={<WoS />} />
 					</Routes>
 				</main>
 				<Footer />

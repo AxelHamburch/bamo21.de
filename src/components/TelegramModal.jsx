@@ -119,12 +119,21 @@ export default function TelegramModal() {
 							>
 								BuhoGO
 							</a>
-							, LNbits, Phoenix, Wallet of Satoshi, Zeus. 👍
+							, LNbits, Phoenix,{' '}
+							<a
+								href="https://bamo21.de/wos-tutorial"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 hover:underline"
+							>
+								Wallet of Satoshi
+							</a>
+							, Zeus. 👍
 						</li>
 						<li>
 							Aktuell <strong>nicht</strong>: Blink, Blitz Wallet (kommt aber), Electrum
 							(kommt irgendwann), Fedi, Misty Breez, Muun, Strike, ecash- bzw.
-							Cashu-Wallets. 👎
+							Cashu-Wallets wie z. B. Minibits. 👎
 						</li>
 						<li>
 							Noch keine Sats? Zieh dir 21 Satoshis am{' '}

@@ -214,14 +214,14 @@ export default function Verlosung() {
 					</h2>
 					<p className="mt-3">
 						Die E-Mail-Adresse verlosung@bamo21.de ist zugleich eine
-						Bitcoin-Lightning-Adresse. Mit einem Lightning-Wallet (z. B.{' '}
+						Bitcoin-Lightning-Adresse. Mit einem Lightning-Wallet (siehe{' '}
 						<a
-							href="https://home.mybuho.de/de/buhogo"
+							href="https://bamo21.de/wos-tutorial"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-brand-600 underline hover:text-brand-500"
 						>
-							BuhoGO
+							WoS-Tutorial
 						</a>
 						) könnt ihr an diese Adresse Satoshis spenden und gleichzeitig etwas Gutes
 						für den Bitcoin-Space tun. Bei den meisten Wallets könnt ihr neben dem
