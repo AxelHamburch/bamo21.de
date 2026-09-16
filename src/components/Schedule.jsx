@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mic, Wrench } from 'lucide-react';
 
 // Programm vom 26. September 2026. Slots ohne festen Inhalt bleiben als
@@ -118,6 +119,14 @@ const openSlots = [
 			url: 'https://media.einundzwanzig.space/s/bamo21/draft-1788793189611',
 		},
 		suffix: ' 🔍😃',
+	},
+	{
+		text: 'Digitale Event-Badges mit Nostr - ',
+		link: {
+			label: 'Infos hier🍊',
+			url: '/event-badges',
+		},
+		suffix: '',
 	},
 ];
 
@@ -300,14 +309,23 @@ export default function Schedule() {
 							) : (
 								<li key={item.link.url}>
 									{item.text}
-									<a
-										href={item.link.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-brand-600 underline hover:text-brand-500"
-									>
-										{item.link.label}
-									</a>
+									{item.link.url.startsWith('http') ? (
+										<a
+											href={item.link.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-brand-600 underline hover:text-brand-500"
+										>
+											{item.link.label}
+										</a>
+									) : (
+										<Link
+											to={item.link.url}
+											className="text-brand-600 underline hover:text-brand-500"
+										>
+											{item.link.label}
+										</Link>
+									)}
 									{item.suffix}
 								</li>
 							)

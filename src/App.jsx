@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import Impressum from '@/components/Impressum';
 import Antrag from '@/components/Antrag';
 import Verlosung from '@/components/Verlosung';
+import EventBadges from '@/components/EventBadges';
 import Datenschutz from '@/components/Datenschutz';
 import WoS from '@/components/WoS';
 import TelegramModal from '@/components/TelegramModal';
@@ -60,6 +61,7 @@ function App() {
 						<Route path="/" element={<HomePage />} />
 						<Route path="/de/antrag" element={<Antrag />} />
 						<Route path="/verlosung" element={<Verlosung />} />
+						<Route path="/event-badges" element={<EventBadges />} />
 						<Route path="/de/impressum" element={<Impressum />} />
 						<Route path="/de/datenschutz" element={<Datenschutz />} />
 						<Route path="/WoS-Tutorial" element={<WoS />} />
