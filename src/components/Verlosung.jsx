@@ -167,6 +167,19 @@ export default function Verlosung() {
 							</a>{' '}
 							für die Saison 2027, im Wert von 149 €
 						</li>
+						<li>
+							Je 1 Magazin <strong>„Souverän“</strong> und <strong>„Freiheit“</strong> für 36 €
+							sowie 1x <strong>Kürbiskernöl 0,5l</strong> aus der Steiermark + 1x{' '}
+							<strong>BitcoinNudeln 400g</strong> für 33 € von{' '}
+							<a
+								href="https://www.orangepin21.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 underline hover:text-brand-500"
+							>
+								orangepin21.com
+							</a>
+						</li>
 					</ul>
 				</div>
 
@@ -204,6 +217,13 @@ export default function Verlosung() {
 							src="/logos/axelsgaerten.png"
 							alt="Axels Gemüsegärten"
 							className="h-12 w-auto object-contain"
+						/>
+					</a>
+					<a href="https://www.orangepin21.com/" target="_blank" rel="noopener noreferrer">
+						<img
+							src="/logos/orangepin21.jpg"
+							alt="orangepin21"
+							className="h-[5.25rem] w-auto object-contain"
 						/>
 					</a>
 				</div>
