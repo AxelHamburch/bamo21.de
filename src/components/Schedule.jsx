@@ -111,14 +111,12 @@ const tracks = [
 					'Herkunft Deiner sats auf den Grund gehen: Haltefrist-Datum und Sanktionslisten-Check der Vorgängeradressen. Bei 100% Privatsphäre - notfalls auch ohne eigenen Node.',
 			},
 			{
-				time: '13:30–14:30',
-				title: 'Nostr - keine Plattform, sondern ein Protokoll mit Bitcoin⚡Lightning',
-				speaker: 'Noerdlicht',
-				description:
-					'Einfach und verständlich für Noobs, anschließend legen wir gemeinsam einen Nostr-Account an. Es gibt ein Handout mit den nötigen Apps und Schritten.',
+				time: '13:30–14:00',
+				title: 'Bitcoin für Einsteiger - Quick & Dirty',
+				speaker: 'willitowner',
 			},
 			{
-				time: '14:30–15:00',
+				time: '14:00–14:30',
 				title: 'Bolt Card & Bolt Ring – Einführung und kleiner Workshop',
 				speaker: 'axelhamburch',
 				description: (
@@ -138,11 +136,13 @@ const tracks = [
 				),
 			},
 			{
-				time: '15:00–15:30',
-				title: 'Netzstabilität durch Bitcoin-Mining – Vortrag mit anschließender Diskussion',
-				speaker: 'willitowner',
+				time: '14:30–15:30',
+				title: 'Nostr - keine Plattform, sondern ein Protokoll mit Bitcoin⚡Lightning',
+				speaker: 'Noerdlicht',
+				description:
+					'Einfach und verständlich für Noobs, anschließend legen wir gemeinsam einen Nostr-Account an. Es gibt ein Handout mit den nötigen Apps und Schritten.',
 			},
-			{ time: '15:30–16:00', title: 'Frei', free: true },
+			{ time: '15:30–16:00', title: 'Raum für Diskussion oder etwas Anderes' },
 		],
 	},
 ];
