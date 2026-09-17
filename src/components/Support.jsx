@@ -12,7 +12,8 @@ const LIGHTNING_ADDRESS = 'bamo-support@21mio.space';
 export default function Support() {
 	// null | 'lightning' | 'silent-payment' – welche Adresse zuletzt kopiert wurde
 	const [copied, setCopied] = useState(null);
-	const [qrExpanded, setQrExpanded] = useState(false);
+	// null | 'lightning' | 'silent-payment' – welcher QR-Code vergrößert angezeigt wird
+	const [qrExpanded, setQrExpanded] = useState(null);
 
 	useEffect(() => {
 		if (!copied) return;
@@ -72,7 +73,7 @@ export default function Support() {
 					</button>
 					<button
 						type="button"
-						onClick={() => setQrExpanded(true)}
+						onClick={() => setQrExpanded('lightning')}
 						title="QR-Code vergrößern"
 						aria-label="QR-Code der Lightning-Adresse vergrößert anzeigen"
 					>
@@ -83,16 +84,30 @@ export default function Support() {
 						/>
 					</button>
 				</div>
-				<button
-					type="button"
-					onClick={() => copyToClipboard(SILENT_PAYMENT_ADDRESS, 'silent-payment')}
-					title={SILENT_PAYMENT_ADDRESS}
-					aria-label="Silent-Payment-Adresse in die Zwischenablage kopieren"
-					className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-5 py-2 font-mono text-sm font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
-				>
-					₿ {SILENT_PAYMENT_SHORT}
-					{copied === 'silent-payment' ? <Check size={16} /> : <Copy size={16} />}
-				</button>
+				<div className="flex items-center gap-2">
+					<button
+						type="button"
+						onClick={() => copyToClipboard(SILENT_PAYMENT_ADDRESS, 'silent-payment')}
+						title={SILENT_PAYMENT_ADDRESS}
+						aria-label="Silent-Payment-Adresse in die Zwischenablage kopieren"
+						className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-5 py-2 font-mono text-sm font-medium text-brand-600 transition hover:border-brand-500 hover:text-brand-700"
+					>
+						₿ {SILENT_PAYMENT_SHORT}
+						{copied === 'silent-payment' ? <Check size={16} /> : <Copy size={16} />}
+					</button>
+					<button
+						type="button"
+						onClick={() => setQrExpanded('silent-payment')}
+						title="QR-Code vergrößern"
+						aria-label="QR-Code der Silent-Payment-Adresse vergrößert anzeigen"
+					>
+						<img
+							src="/Silent-Payment-Adresse.png"
+							alt="QR-Code der BAMO-Silent-Payment-Adresse"
+							className="h-12 w-12 rounded-lg border border-forest-200"
+						/>
+					</button>
+				</div>
 				<p className="text-xs text-earth-600">
 					{copied === 'lightning' && 'Lightning-Adresse in die Zwischenablage kopiert'}
 					{copied === 'silent-payment' &&
@@ -139,7 +154,7 @@ export default function Support() {
 			{qrExpanded && (
 				<div
 					className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
-					onClick={() => setQrExpanded(false)}
+					onClick={() => setQrExpanded(null)}
 				>
 					<div
 						className="relative rounded-2xl bg-white p-4"
@@ -147,20 +162,35 @@ export default function Support() {
 					>
 						<button
 							type="button"
-							onClick={() => setQrExpanded(false)}
+							onClick={() => setQrExpanded(null)}
 							aria-label="QR-Code schließen"
 							className="absolute -right-3 -top-3 rounded-full bg-white p-1 text-earth-800 shadow-md transition hover:text-brand-600"
 						>
 							<X size={20} />
 						</button>
-						<img
-							src="/bamo-support-lightning-adresse-qr.png"
-							alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
-							className="h-72 w-72 max-w-[80vw] rounded-lg"
-						/>
-						<p className="mt-3 text-center font-mono text-sm text-earth-800">
-							{LIGHTNING_ADDRESS}
-						</p>
+						{qrExpanded === 'lightning' ? (
+							<>
+								<img
+									src="/bamo-support-lightning-adresse-qr.png"
+									alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
+									className="h-72 w-72 max-w-[80vw] rounded-lg"
+								/>
+								<p className="mt-3 text-center font-mono text-sm text-earth-800">
+									{LIGHTNING_ADDRESS}
+								</p>
+							</>
+						) : (
+							<>
+								<img
+									src="/Silent-Payment-Adresse.png"
+									alt="QR-Code der BAMO-Silent-Payment-Adresse"
+									className="h-72 w-72 max-w-[80vw] rounded-lg"
+								/>
+								<p className="mt-3 text-center font-mono text-sm text-earth-800">
+									BAMO-Silent-Payment-Adresse
+								</p>
+							</>
+						)}
 					</div>
 				</div>
 			)}
