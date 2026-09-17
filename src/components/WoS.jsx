@@ -34,7 +34,7 @@ const stepTexts = [
 	'Jetzt seid ihr fertig mit der Einrichtung und könnt ihr das Wallet mit Satoshis füllen.',
 	'Geht unten auf den Button "Empfangen".',
 	'Falls ihr noch keine Wallet mit Lightning Satoshis habt, wählt unten einfach On-Chain. Ihr bekommt eine ganz normale Bitcoin-Adresse angezeigt. An der könnt ihr jetzt von eurem Hardware Wallet oder direkt von eurem Exchange z. B. mal 50 Euro in Satoshis schicken.',
-	'Sobald die Transaktion im Mempool aufgenommen und Wallet of Satoshi das registriert, seht ihr, dass die Bitcoin unterwegs sind.',
+	'Sobald die Transaktion im Mempool aufgenommen wurde und die erste Bestätigung erfolgt ist, seht ihr, dass die Bitcoin unterwegs sind.',
 	'Ihr müsst jetzt nur noch ein paar Bestätigungen abwarten, bis sie eurem Konto vollständig gutgeschrieben werden.',
 	'Nach einiger Zeit sollte euch der Betrag dann auch angezeigt werden. Die On-Chain gesendeten Bitcoin wurden euch automatisch als Lightning⚡Satoshis gutgeschrieben. Wallet of Satoshi hat wie angekündigt eine Gebühr von 1,95 % + Netzwerkgebühren zurückgehalten. Das macht bei 50 Euro ungefähr 1 Euro.',
 	'Noch ein Tipp: Oben rechts findet ihr drei Balken um zu der Übersicht mit den Einstellungen zu kommen. Dort könnt ihr die Sprache auf Deutsch und die Währung Euro umstellen.',
@@ -74,7 +74,7 @@ const stepTexts = [
 		klicken oder den QR-Code scannen.
 	</>,
 	'Jetzt könnt ihr einen Betrag eurer Wahl angeben und darunter eine Nachricht hinterlassen. Tragt mindestens einen Namen oder Kontaktdaten ein, damit wir den Gewinner oder die Gewinnerin auch ausfindig machen können.',
-	'Als Bestätigung erhaltet ihr den Hinweis über die erfolgreiche Zahlung und damit auch Teilnahme. ✅',
+	'Als Bestätigung erhaltet ihr den Hinweis über die erfolgreiche Zahlung und damit auch Teilnahme. ✅ Hinweis: Der Einsendeschluss für Teilnahme an der Verlosung ist Samstag der 26.09.2026 um 15:00 Uhr. Darüber hinaus könnt ihr uns natürlich weiterhin gerne eine Spende mit Nachricht zukommen lassen. Karmapunkte sind euch gewiss. ♥️',
 ];
 
 const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
