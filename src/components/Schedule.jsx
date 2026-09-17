@@ -18,17 +18,24 @@ const tracks = [
 			{ time: '09:45–10:00', title: 'Begrüßung & kurze Vorstellung der Veranstalter' },
 			{
 				time: '10:00–10:30',
-				title: 'Bitcoin for Beginners – Vortrag für Einsteiger',
+				title: 'Bitcoin - Vortrag für Einsteiger',
+				description: 'Teil 1 - Was ist Geld?',
 				speaker: 'willitowner',
 			},
-			{ time: '10:30–11:30', title: 'Was ist das Problem?', speaker: 'Rune' },
-			{ time: '11:30–11:45', title: 'Diskussionen und Pause' },
+			{ time: '10:30–10:45', title: 'Kleine Pause oder Zeit für Fragen' },
 			{
-				time: '11:45–12:30',
+				time: '10:45–11:15',
+				title: 'Bitcoin - Vortrag für Einsteiger',
+				description: 'Teil 2 - Was ist Bitcoin?',
+				speaker: 'willitowner',
+			},
+			{ time: '11:15–11:30', title: 'Zeit für Diskussionen & Kleine Pause' },
+			{
+				time: '11:30–12:15',
 				title: 'Die Entwicklung der Gesellschaft nach der Entkopplung des Dollars vom Gold',
 				speaker: 'Robert',
 			},
-			{ time: '12:30–13:00', title: 'Große Pause' },
+			{ time: '12:15–13:00', title: 'Große Pause' },
 			{ time: '13:00–13:30', title: 'Bitcoin für Bauern – HODL DEIN HOF', speaker: 'Timo' },
 			{
 				time: '13:30–14:15',
@@ -43,8 +50,8 @@ const tracks = [
 			},
 			{ time: '15:15–15:30', title: 'Pause' },
 			{ time: '15:30–16:00', title: 'Puffer für weiteren Vortrag oder Spontanes', free: true },
-			{ time: '16:00–16:15', title: 'Abschlussversammlung & freie Diskussionen' },
-			{ time: '16:15–18:00', title: 'Ausklang – Ende der Veranstaltung' },
+			{ time: '16:00–16:30', title: 'Abschlussversammlung mit Verlosung & freie Diskussionen' },
+			{ time: '16:30–18:00', title: 'Ausklang – Ende der Veranstaltung' },
 		],
 	},
 	{
@@ -65,44 +72,76 @@ const tracks = [
 			{ time: '10:45–11:00', title: 'Freie Diskussion zu Hardware Wallets und dem SeedSigner' },
 			{
 				time: '11:00–11:30',
-				title: 'Lightning Wallet für Einsteiger – erklärt und gezeigt',
-				speaker: 'noch offen',
-			},
-			{
-				time: '11:30–12:00',
 				title: 'ZapBox – Schalten mit Bitcoin-Zahlungen (Vorstellung & Grundlagen)',
 				speaker: 'axelhamburch',
 			},
 			{
-				time: '12:00–12:30',
+				time: '11:30–12:00',
+				title: 'ZapBox Workshop – Einrichten und Parametrieren',
+				speaker: 'axelhamburch',
+				description:
+					'Wer mitmachen möchte, bringt bitte einen Laptop mit! Vor Ort können ZapBoxen am Automaten gekauft werden. Anmeldung erwünscht – spontanes Vorbeikommen ist möglich, solange Plätze und ZapBoxen verfügbar sind.',
+			},
+			{ time: '12:00–12:15', title: 'Pause / Diskussionen' },
+			{
+				time: '12:15–12:45',
+				title: (
+					<>
+						Lightning Wallet für Einsteiger – erklärt und gezeigt am{' '}
+						<a
+							href="https://home.mybuho.de/de/buhogo"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand-600 underline hover:text-brand-500"
+						>
+							BuhoGo
+						</a>{' '}
+						Wallet
+					</>
+				),
+				speaker: 'axelhamburch',
+				description: 'Mitmachen ausdrücklich erwünscht. Ein Handy genügt.',
+			},
+			{ time: '12:45–13:00', title: 'Pause / Diskussionen' },
+			{
+				time: '13:00–13:30',
 				title: 'SatSage - know your sats',
 				speaker: 'Juniormind',
 				description:
 					'Herkunft Deiner sats auf den Grund gehen: Haltefrist-Datum und Sanktionslisten-Check der Vorgängeradressen. Bei 100% Privatsphäre - notfalls auch ohne eigenen Node.',
 			},
 			{
-				time: '12:30–13:00',
-				title: 'ZapBox Workshop – Einrichten und Parametrieren',
-				speaker: 'axelhamburch',
-			},
-			{
-				time: '13:00–14:00',
+				time: '13:30–14:30',
 				title: 'Nostr – keine Plattform, sondern ein Protokoll',
 				speaker: 'Noerdlicht',
 				description:
 					'Einfach und verständlich für Noobs, anschließend legen wir gemeinsam einen Nostr-Account an. Es gibt ein Handout mit den nötigen Apps und Schritten.',
 			},
 			{
-				time: '14:00–14:30',
-				title: 'Netzstabilität durch Bitcoin-Mining – Vortrag mit anschließender Diskussion',
-				speaker: 'willitowner',
-			},
-			{
 				time: '14:30–15:00',
 				title: 'Bolt Card & Bolt Ring – Einführung und kleiner Workshop',
 				speaker: 'axelhamburch',
+				description: (
+					<>
+						Bold Card Black Beauty ca. 7.500 Satoshis am Automaten, solange der Vorrat reicht.
+						Zur Einrichtung ist ein Smartphone erforderlich. Anleitung vorab auf{' '}
+						<a
+							href="https://ereignishorizont.xyz/boltcard/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand-600 underline hover:text-brand-500"
+						>
+							ereignishorizont.xyz
+						</a>
+						.
+					</>
+				),
 			},
-			{ time: '15:00–15:30', title: 'Frei', free: true },
+			{
+				time: '15:00–15:30',
+				title: 'Netzstabilität durch Bitcoin-Mining – Vortrag mit anschließender Diskussion',
+				speaker: 'willitowner',
+			},
 			{ time: '15:30–16:00', title: 'Frei', free: true },
 		],
 	},
@@ -134,7 +173,6 @@ const openSlots = [
 const speakerContacts = [
 	{ name: 'axelhamburch', url: 'https://t.me/axelhamburch' },
 	{ name: 'willitowner', url: 'https://t.me/willitowner' },
-	{ name: 'Rune', url: 'https://t.me/losrunos' },
 	{ name: 'Robert', url: 'https://t.me/TreborEnno' },
 	{ name: 'Timo', url: 'https://t.me/machbarland' },
 	{ name: 'FinanzBewusst', url: 'https://t.me/finanz_bewusstsein' },
@@ -229,10 +267,10 @@ export default function Schedule() {
 											</span>
 											<div>
 												<p className="text-earth-900">{title}</p>
-												{speaker && <p className="mt-0.5 text-sm text-earth-600">{speaker}</p>}
 												{description && (
-													<p className="mt-1 text-sm text-earth-600">{description}</p>
+													<p className="mt-0.5 text-sm text-earth-600">{description}</p>
 												)}
+												{speaker && <p className="mt-1 text-sm text-earth-600">{speaker}</p>}
 											</div>
 										</li>
 									))}
