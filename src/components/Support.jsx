@@ -69,6 +69,11 @@ export default function Support() {
 					>
 						{copied === 'lightning' ? <Check size={16} /> : <Copy size={16} />}
 					</button>
+					<img
+						src="/bamo-support-lightning-adresse-qr.png"
+						alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
+						className="h-12 w-12 rounded-lg border border-forest-200"
+					/>
 				</div>
 				<button
 					type="button"
