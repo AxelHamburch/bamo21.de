@@ -64,7 +64,8 @@ const stepTexts = [
 		Wir haben auch eine Verlosung, bei der ihr etwas gewinnen könnt. Und weil
 		wir jetzt ein vollwertiges Lightning Wallet haben, wollen wir auch die
 		Funktionen nutzen, die es bietet. Geht dazu wieder auf die BAMO21.de
-		Seite und wählt wieder die drei Balken und diesmal "Verlosung". Ihr
+		Seite und wählt wieder die drei Balken und diesmal "Sonstiges &gt; Verlosung".
+		Ihr
 		könnt per E-Mail teilnehmen, aber auch mit einer kleinen Lightning
 		Zahlung. Ihr müsst nur einen Kommentar mit Kontaktdaten hinterlassen.
 		Dazu einfach auf die Lightning-Adresse{' '}
@@ -74,7 +75,15 @@ const stepTexts = [
 		klicken oder den QR-Code scannen.
 	</>,
 	'Jetzt könnt ihr einen Betrag eurer Wahl angeben und darunter eine Nachricht hinterlassen. Tragt mindestens einen Namen oder Kontaktdaten ein, damit wir den Gewinner oder die Gewinnerin auch ausfindig machen können.',
-	'Als Bestätigung erhaltet ihr den Hinweis über die erfolgreiche Zahlung und damit auch Teilnahme. ✅ Hinweis: Der Einsendeschluss für Teilnahme an der Verlosung ist Samstag der 26.09.2026 um 15:00 Uhr. Darüber hinaus könnt ihr uns natürlich weiterhin gerne eine Spende mit Nachricht zukommen lassen. Karmapunkte sind euch gewiss. ♥️',
+	<>
+		Als Bestätigung erhaltet ihr den Hinweis über die erfolgreiche Zahlung und
+		damit auch Teilnahme. ✅
+		<hr className="my-4 border-forest-200" />
+		Hinweis: Der Einsendeschluss für Teilnahme an der Verlosung ist Samstag der
+		26.09.2026 um 15:00 Uhr. Darüber hinaus könnt ihr uns natürlich weiterhin
+		gerne eine Spende mit Nachricht zukommen lassen. Karmapunkte sind euch
+		gewiss. ♥️
+	</>,
 ];
 
 const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
