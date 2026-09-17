@@ -167,7 +167,7 @@ const openSlots = [
 		},
 		suffix: '',
 	},
-	'"Erneuerbare Energien - Überschuss in Bitcoin-Mining" (ca. 20-30 min), 15:30 Uhr an den PV-Modulen – willitowner',
+	'"Erneuerbare Energien - Überschuss in Bitcoin-Mining" (ca. 20-30 min), 15:30 Uhr an den ☀️PV-Modulen – willitowner',
 ];
 
 // Telegram-Handles der Vortragenden – für Rückfragen zu Vorträgen und Workshops.
