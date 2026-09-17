@@ -112,7 +112,7 @@ const tracks = [
 			},
 			{
 				time: '13:30–14:30',
-				title: 'Nostr - keine Plattform, sondern ein Protokoll mit Bitcoin Lightning',
+				title: 'Nostr - keine Plattform, sondern ein Protokoll mit Bitcoin⚡Lightning',
 				speaker: 'Noerdlicht',
 				description:
 					'Einfach und verständlich für Noobs, anschließend legen wir gemeinsam einen Nostr-Account an. Es gibt ein Handout mit den nötigen Apps und Schritten.',
