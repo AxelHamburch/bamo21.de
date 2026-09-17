@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Copy, HandHeart } from 'lucide-react';
+import { Check, Copy, HandHeart, X } from 'lucide-react';
 
 export const SILENT_PAYMENT_ADDRESS =
 	'sp1qqgf49ckkg60unm3zzzz8zdza696xtp3aj5ylg8q0lv2yku6t67xlsqhmr246e2v72gaz3cvzfnydckq6ca2w8wsvaj60mrqu07a6h5y9xcxygql9';
@@ -12,6 +12,7 @@ const LIGHTNING_ADDRESS = 'bamo-support@21mio.space';
 export default function Support() {
 	// null | 'lightning' | 'silent-payment' – welche Adresse zuletzt kopiert wurde
 	const [copied, setCopied] = useState(null);
+	const [qrExpanded, setQrExpanded] = useState(false);
 
 	useEffect(() => {
 		if (!copied) return;
@@ -69,11 +70,18 @@ export default function Support() {
 					>
 						{copied === 'lightning' ? <Check size={16} /> : <Copy size={16} />}
 					</button>
-					<img
-						src="/bamo-support-lightning-adresse-qr.png"
-						alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
-						className="h-12 w-12 rounded-lg border border-forest-200"
-					/>
+					<button
+						type="button"
+						onClick={() => setQrExpanded(true)}
+						title="QR-Code vergrößern"
+						aria-label="QR-Code der Lightning-Adresse vergrößert anzeigen"
+					>
+						<img
+							src="/bamo-support-lightning-adresse-qr.png"
+							alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
+							className="h-12 w-12 rounded-lg border border-forest-200"
+						/>
+					</button>
 				</div>
 				<button
 					type="button"
@@ -127,6 +135,35 @@ export default function Support() {
 					</p>
 				</div>
 			</div>
+
+			{qrExpanded && (
+				<div
+					className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
+					onClick={() => setQrExpanded(false)}
+				>
+					<div
+						className="relative rounded-2xl bg-white p-4"
+						onClick={(event) => event.stopPropagation()}
+					>
+						<button
+							type="button"
+							onClick={() => setQrExpanded(false)}
+							aria-label="QR-Code schließen"
+							className="absolute -right-3 -top-3 rounded-full bg-white p-1 text-earth-800 shadow-md transition hover:text-brand-600"
+						>
+							<X size={20} />
+						</button>
+						<img
+							src="/bamo-support-lightning-adresse-qr.png"
+							alt={`QR-Code für ${LIGHTNING_ADDRESS}`}
+							className="h-72 w-72 max-w-[80vw] rounded-lg"
+						/>
+						<p className="mt-3 text-center font-mono text-sm text-earth-800">
+							{LIGHTNING_ADDRESS}
+						</p>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 }
