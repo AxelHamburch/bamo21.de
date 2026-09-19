@@ -10,15 +10,43 @@ $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
 # behebt Mojibake wie "Ã¶" statt "ö" (UTF-8-Bytes, die faelschlich als Windows-1252 gespeichert wurden).
-# Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc sind nur ein Font-Problem, kein Encoding-Fehler.
+# Arbeitet byteweise: repariert nur tatsaechlich gueltige UTF-8-Sequenzen und laesst
+# einzelne kaputte/verlorene Bytes (z.B. bei "ß") unangetastet, statt den ganzen String
+# aufzugeben. Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc
+# sind nur ein Font-Problem, kein Encoding-Fehler.
+$cp1252 = [System.Text.Encoding]::GetEncoding(1252)
 $strictUtf8 = [System.Text.UTF8Encoding]::new($false, $true)
 function Repair-Mojibake([string]$s) {
   if ([string]::IsNullOrEmpty($s)) { return $s }
   if ($s -match '[\uD800-\uDFFF]') { return $s }
-  try {
-    $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
-    $strictUtf8.GetString($bytes)
-  } catch { $s }
+  $bytes = $cp1252.GetBytes($s)
+  $sb = New-Object System.Text.StringBuilder
+  $i = 0
+  while ($i -lt $bytes.Length) {
+    $b0 = $bytes[$i]
+    $len = 0
+    if ($b0 -lt 0x80) { $len = 1 }
+    elseif (($b0 -band 0xE0) -eq 0xC0) { $len = 2 }
+    elseif (($b0 -band 0xF0) -eq 0xE0) { $len = 3 }
+    elseif (($b0 -band 0xF8) -eq 0xF0) { $len = 4 }
+    $valid = $false
+    if ($len -gt 0 -and ($i + $len) -le $bytes.Length) {
+      $valid = $true
+      for ($j = 1; $j -lt $len; $j++) {
+        if (($bytes[$i+$j] -band 0xC0) -ne 0x80) { $valid = $false; break }
+      }
+    }
+    if ($valid) {
+      try {
+        [void]$sb.Append($strictUtf8.GetString($bytes, $i, $len))
+        $i += $len
+        continue
+      } catch {}
+    }
+    [void]$sb.Append($cp1252.GetString($bytes, $i, 1))
+    $i += 1
+  }
+  $sb.ToString()
 }
 
 # bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
@@ -64,15 +92,43 @@ $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
 # behebt Mojibake wie "Ã¶" statt "ö" (UTF-8-Bytes, die faelschlich als Windows-1252 gespeichert wurden).
-# Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc sind nur ein Font-Problem, kein Encoding-Fehler.
+# Arbeitet byteweise: repariert nur tatsaechlich gueltige UTF-8-Sequenzen und laesst
+# einzelne kaputte/verlorene Bytes (z.B. bei "ß") unangetastet, statt den ganzen String
+# aufzugeben. Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc
+# sind nur ein Font-Problem, kein Encoding-Fehler.
+$cp1252 = [System.Text.Encoding]::GetEncoding(1252)
 $strictUtf8 = [System.Text.UTF8Encoding]::new($false, $true)
 function Repair-Mojibake([string]$s) {
   if ([string]::IsNullOrEmpty($s)) { return $s }
   if ($s -match '[\uD800-\uDFFF]') { return $s }
-  try {
-    $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
-    $strictUtf8.GetString($bytes)
-  } catch { $s }
+  $bytes = $cp1252.GetBytes($s)
+  $sb = New-Object System.Text.StringBuilder
+  $i = 0
+  while ($i -lt $bytes.Length) {
+    $b0 = $bytes[$i]
+    $len = 0
+    if ($b0 -lt 0x80) { $len = 1 }
+    elseif (($b0 -band 0xE0) -eq 0xC0) { $len = 2 }
+    elseif (($b0 -band 0xF0) -eq 0xE0) { $len = 3 }
+    elseif (($b0 -band 0xF8) -eq 0xF0) { $len = 4 }
+    $valid = $false
+    if ($len -gt 0 -and ($i + $len) -le $bytes.Length) {
+      $valid = $true
+      for ($j = 1; $j -lt $len; $j++) {
+        if (($bytes[$i+$j] -band 0xC0) -ne 0x80) { $valid = $false; break }
+      }
+    }
+    if ($valid) {
+      try {
+        [void]$sb.Append($strictUtf8.GetString($bytes, $i, $len))
+        $i += $len
+        continue
+      } catch {}
+    }
+    [void]$sb.Append($cp1252.GetString($bytes, $i, 1))
+    $i += 1
+  }
+  $sb.ToString()
 }
 
 # bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
