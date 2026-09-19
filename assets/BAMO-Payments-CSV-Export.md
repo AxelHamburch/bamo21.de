@@ -1,6 +1,8 @@
 # Filter für BAMO Spenden (nur mit Kommentare und mehr als 210 Sats Spende)
-# Ablage unter "$HOME\Downloads\bamo-payments.csv"
 
+Ablage unter `$HOME\Downloads\bamo-payments.csv`
+
+```powershell
 $LnbitsUrl = "https://deine-lnbits.example"
 $Key       = "<INVOICE_KEY_DES_WALLETS>"
 
@@ -28,12 +30,11 @@ $payments |
     }
   } |
   Export-Csv -Path "$HOME\Downloads\bamo-payments.csv" -NoTypeInformation -Encoding UTF8
-
-
-
+```
 
 # Ungefilterte Abfrage
 
+```powershell
 $LnbitsUrl = "https://deine-lnbits.example"
 $Key       = "<INVOICE_KEY_DES_WALLETS>"
 
@@ -66,3 +67,4 @@ $cols = $flat | ForEach-Object { $_.PSObject.Properties.Name } | Select-Object -
 $flat |
   Select-Object $cols |
   Export-Csv -Path "$HOME\Downloads\bamo-payments-full.csv" -NoTypeInformation -Encoding UTF8
+```
