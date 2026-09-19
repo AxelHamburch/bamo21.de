@@ -1,4 +1,4 @@
-# Filter für BAMO Spenden (nur mit Kommentare und mehr als 1 Sat Spende)
+# Filter für BAMO Spende ab 1 Sat
 
 Ablage unter `$HOME\Downloads\bamo-payments.csv`
 
@@ -32,7 +32,7 @@ $payments |
   Export-Csv -Path "$HOME\Downloads\bamo-payments.csv" -NoTypeInformation -Encoding UTF8
 ```
 
-# Filter für BAMO Spenden (nur mit Kommentare und mehr als 210 Sats Spende)
+# Filter ab 210 Sats
 
 Ablage unter `$HOME\Downloads\bamo-payments.csv`
 
