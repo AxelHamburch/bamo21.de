@@ -9,6 +9,15 @@ $Key       = "<INVOICE_KEY_DES_WALLETS>"
 $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
+# behebt doppelt-kodierte Emojis (UTF-8 Bytes, die fälschlich als Windows-1252 gespeichert wurden)
+function Repair-Mojibake([string]$s) {
+  if ([string]::IsNullOrEmpty($s)) { return $s }
+  try {
+    $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
+    [System.Text.Encoding]::UTF8.GetString($bytes)
+  } catch { $s }
+}
+
 $payments |
   Where-Object {
     $_.status -eq "success" -and
@@ -21,8 +30,8 @@ $payments |
       date          = $_.time
       sats          = $_.amount / 1000
       status        = $_.status
-      memo          = $_.memo
-      comment       = $_.extra.comment
+      memo          = Repair-Mojibake $_.memo
+      comment       = Repair-Mojibake $_.extra.comment
       lnaddress     = $_.extra.lnaddress
       fiat_amount   = $_.extra.wallet_fiat_amount
       fiat_currency = $_.extra.wallet_fiat_currency
@@ -43,6 +52,15 @@ $Key       = "<INVOICE_KEY_DES_WALLETS>"
 $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
+# behebt doppelt-kodierte Emojis (UTF-8 Bytes, die fälschlich als Windows-1252 gespeichert wurden)
+function Repair-Mojibake([string]$s) {
+  if ([string]::IsNullOrEmpty($s)) { return $s }
+  try {
+    $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
+    [System.Text.Encoding]::UTF8.GetString($bytes)
+  } catch { $s }
+}
+
 $payments |
   Where-Object {
     $_.status -eq "success" -and
@@ -55,8 +73,8 @@ $payments |
       date          = $_.time
       sats          = $_.amount / 1000
       status        = $_.status
-      memo          = $_.memo
-      comment       = $_.extra.comment
+      memo          = Repair-Mojibake $_.memo
+      comment       = Repair-Mojibake $_.extra.comment
       lnaddress     = $_.extra.lnaddress
       fiat_amount   = $_.extra.wallet_fiat_amount
       fiat_currency = $_.extra.wallet_fiat_currency
