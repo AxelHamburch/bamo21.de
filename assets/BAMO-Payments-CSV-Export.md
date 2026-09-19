@@ -21,6 +21,14 @@ function Repair-Mojibake([string]$s) {
   } catch { $s }
 }
 
+# bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
+# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - hart ersetzen
+$knownMemoFix = @{ "BAMO Verlosung ð & â¥ï¸" = "BAMO Verlosung 🎈 & ♥️" }
+function Repair-Memo([string]$s) {
+  if ($knownMemoFix.ContainsKey($s)) { return $knownMemoFix[$s] }
+  Repair-Mojibake $s
+}
+
 $payments |
   Where-Object {
     $_.status -eq "success" -and
@@ -33,7 +41,7 @@ $payments |
       date          = $_.time
       sats          = $_.amount / 1000
       status        = $_.status
-      memo          = Repair-Mojibake $_.memo
+      memo          = Repair-Memo $_.memo
       comment       = Repair-Mojibake $_.extra.comment
       lnaddress     = $_.extra.lnaddress
       fiat_amount   = $_.extra.wallet_fiat_amount
@@ -67,6 +75,14 @@ function Repair-Mojibake([string]$s) {
   } catch { $s }
 }
 
+# bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
+# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - hart ersetzen
+$knownMemoFix = @{ "BAMO Verlosung ð & â¥ï¸" = "BAMO Verlosung 🎈 & ♥️" }
+function Repair-Memo([string]$s) {
+  if ($knownMemoFix.ContainsKey($s)) { return $knownMemoFix[$s] }
+  Repair-Mojibake $s
+}
+
 $payments |
   Where-Object {
     $_.status -eq "success" -and
@@ -79,7 +95,7 @@ $payments |
       date          = $_.time
       sats          = $_.amount / 1000
       status        = $_.status
-      memo          = Repair-Mojibake $_.memo
+      memo          = Repair-Memo $_.memo
       comment       = Repair-Mojibake $_.extra.comment
       lnaddress     = $_.extra.lnaddress
       fiat_amount   = $_.extra.wallet_fiat_amount
