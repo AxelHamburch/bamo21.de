@@ -50,10 +50,11 @@ function Repair-Mojibake([string]$s) {
 }
 
 # bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
-# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - hart ersetzen
-$knownMemoFix = @{ "BAMO Verlosung ð & â¥ï¸" = "BAMO Verlosung 🎈 & ♥️" }
+# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - per Praefix
+# erkennen statt exaktem String-Vergleich, da die kaputten Bytes je nach Konsole/
+# Sitzung leicht unterschiedlich ankommen koennen
 function Repair-Memo([string]$s) {
-  if ($knownMemoFix.ContainsKey($s)) { return $knownMemoFix[$s] }
+  if ($s -like "BAMO Verlosung *") { return "BAMO Verlosung 🎈 & ♥️" }
   Repair-Mojibake $s
 }
 
@@ -132,10 +133,11 @@ function Repair-Mojibake([string]$s) {
 }
 
 # bekannte, verlustbehaftet beschaedigte Memo-Vorlage (Bytes gingen beim Entstehen
-# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - hart ersetzen
-$knownMemoFix = @{ "BAMO Verlosung ð & â¥ï¸" = "BAMO Verlosung 🎈 & ♥️" }
+# verloren, ein reines Roundtrip-Repair ist hier nicht mehr moeglich) - per Praefix
+# erkennen statt exaktem String-Vergleich, da die kaputten Bytes je nach Konsole/
+# Sitzung leicht unterschiedlich ankommen koennen
 function Repair-Memo([string]$s) {
-  if ($knownMemoFix.ContainsKey($s)) { return $knownMemoFix[$s] }
+  if ($s -like "BAMO Verlosung *") { return "BAMO Verlosung 🎈 & ♥️" }
   Repair-Mojibake $s
 }
 
