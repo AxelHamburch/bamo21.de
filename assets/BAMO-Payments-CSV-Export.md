@@ -1,3 +1,37 @@
+# Filter für BAMO Spenden (nur mit Kommentare und mehr als 1 Sat Spende)
+
+Ablage unter `$HOME\Downloads\bamo-payments.csv`
+
+```powershell
+$LnbitsUrl = "https://deine-lnbits.example"
+$Key       = "<INVOICE_KEY_DES_WALLETS>"
+
+$payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
+                              -Headers @{ "X-Api-Key" = $Key }
+
+$payments |
+  Where-Object {
+    $_.status -eq "success" -and
+    $_.extra.tag -eq "lnurlp" -and
+    ($_.amount / 1000) -ge 1 -and
+    -not [string]::IsNullOrWhiteSpace($_.extra.comment)
+  } |
+  ForEach-Object {
+    [pscustomobject]@{
+      date          = $_.time
+      sats          = $_.amount / 1000
+      status        = $_.status
+      memo          = $_.memo
+      comment       = $_.extra.comment
+      lnaddress     = $_.extra.lnaddress
+      fiat_amount   = $_.extra.wallet_fiat_amount
+      fiat_currency = $_.extra.wallet_fiat_currency
+      payment_hash  = $_.payment_hash
+    }
+  } |
+  Export-Csv -Path "$HOME\Downloads\bamo-payments.csv" -NoTypeInformation -Encoding UTF8
+```
+
 # Filter für BAMO Spenden (nur mit Kommentare und mehr als 210 Sats Spende)
 
 Ablage unter `$HOME\Downloads\bamo-payments.csv`
