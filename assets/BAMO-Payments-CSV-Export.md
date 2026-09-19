@@ -9,12 +9,15 @@ $Key       = "<INVOICE_KEY_DES_WALLETS>"
 $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
-# behebt doppelt-kodierte Emojis (UTF-8 Bytes, die fälschlich als Windows-1252 gespeichert wurden)
+# behebt Mojibake wie "Ã¶" statt "ö" (UTF-8-Bytes, die faelschlich als Windows-1252 gespeichert wurden).
+# Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc sind nur ein Font-Problem, kein Encoding-Fehler.
+$strictUtf8 = [System.Text.UTF8Encoding]::new($false, $true)
 function Repair-Mojibake([string]$s) {
   if ([string]::IsNullOrEmpty($s)) { return $s }
+  if ($s -match '[\uD800-\uDFFF]') { return $s }
   try {
     $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
-    [System.Text.Encoding]::UTF8.GetString($bytes)
+    $strictUtf8.GetString($bytes)
   } catch { $s }
 }
 
@@ -52,12 +55,15 @@ $Key       = "<INVOICE_KEY_DES_WALLETS>"
 $payments = Invoke-RestMethod -Uri "$LnbitsUrl/api/v1/payments?limit=1000" `
                               -Headers @{ "X-Api-Key" = $Key }
 
-# behebt doppelt-kodierte Emojis (UTF-8 Bytes, die fälschlich als Windows-1252 gespeichert wurden)
+# behebt Mojibake wie "Ã¶" statt "ö" (UTF-8-Bytes, die faelschlich als Windows-1252 gespeichert wurden).
+# Echte Emojis (z.B. 🎈) bleiben unangetastet - Kaestchen dafuer in Calc sind nur ein Font-Problem, kein Encoding-Fehler.
+$strictUtf8 = [System.Text.UTF8Encoding]::new($false, $true)
 function Repair-Mojibake([string]$s) {
   if ([string]::IsNullOrEmpty($s)) { return $s }
+  if ($s -match '[\uD800-\uDFFF]') { return $s }
   try {
     $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
-    [System.Text.Encoding]::UTF8.GetString($bytes)
+    $strictUtf8.GetString($bytes)
   } catch { $s }
 }
 
