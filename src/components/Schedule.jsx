@@ -168,6 +168,7 @@ const openSlots = [
 		suffix: '',
 	},
 	'"Erneuerbare Energien - Überschuss in Bitcoin-Mining" (ca. 20-30 min), 15:30 Uhr an den ☀️PV-Modulen – willitowner',
+	'BitcoinWalk am Ottisee – Ein gemütlicher Spaziergang (ca. 6 km) um den Ottisee. Start 12 Uhr beim Hofladen. Alle Teilnehmer erhalten selbstverständlich ein extra Nostr Badge. 🏅',
 ];
 
 // Telegram-Handles der Vortragenden – für Rückfragen zu Vorträgen und Workshops.

@@ -180,6 +180,18 @@ export default function Verlosung() {
 								orangepin21.com
 							</a>
 						</li>
+						<li>
+							Eine <strong>Sturmkind-Tasche</strong> von{' '}
+							<a
+								href="https://www.mare-grafikdesign.de/sturmkind-shop/taschen/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-brand-600 underline hover:text-brand-500"
+							>
+								mare-grafikdesign.de
+							</a>{' '}
+							mit persönlichem Text im Wert von 31 Euro. Jedes Stück ein Unikat 🧡
+						</li>
 					</ul>
 				</div>
 
@@ -224,6 +236,17 @@ export default function Verlosung() {
 							src="/logos/orangepin21.jpg"
 							alt="orangepin21"
 							className="h-[5.25rem] w-auto object-contain"
+						/>
+					</a>
+					<a
+						href="https://www.mare-grafikdesign.de/sturmkind-shop/taschen/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img
+							src="/logos/stumkind.jpg"
+							alt="Sturmkind"
+							className="h-12 w-auto object-contain"
 						/>
 					</a>
 				</div>
