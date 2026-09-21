@@ -150,7 +150,7 @@ const tracks = [
 // Programmpunkte ohne festen Zeitpunkt – werden vor Ort per Aushang bekannt gegeben.
 const openSlots = [
 	'Hofführung durch den Eigner (ca. 20 Minuten), 14:00 Uhr beim Hofladen',
-	'Naturerlebnis für Kinder – Aukse',
+	'Naturerlebnis für Kinder - Kinderbespaßung mit Aukse. 🎈 13:00 Uhr beim Hofladen.',
 	{
 		text: 'Schatzsuche am Ottisee – ',
 		link: {
