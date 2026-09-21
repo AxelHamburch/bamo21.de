@@ -170,7 +170,7 @@ const openSlots = [
 	'"Erneuerbare Energien - Überschuss in Bitcoin-Mining" (ca. 20-30 min), 15:30 Uhr an den ☀️PV-Modulen – willitowner',
 	'BitcoinWalk am Ottisee – Ein gemütlicher Spaziergang (ca. 6 km) um den Ottisee. 🚶 Start 12 Uhr beim Hofladen. Alle Teilnehmer erhalten selbstverständlich ein extra Nostr🏅Badge.',
 	{
-		text: 'Tauschbörse für Zitadelle Sammelkarten 🎭 um 12:21 Uhr und nach Vereinbarung mit ',
+		text: 'Tauschbörse für Zitadelle Sammelkarten 🎭 um 12:21 Uhr am kleinen Pavillion und nach Vereinbarung mit ',
 		link: {
 			label: '@Bithomator',
 			url: 'https://t.me/Bithomator',
