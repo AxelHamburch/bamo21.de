@@ -190,7 +190,7 @@ export default function Verlosung() {
 							>
 								mare-grafikdesign.de
 							</a>{' '}
-							mit persönlichem Text im Wert von 31 Euro. Jedes Stück ein Unikat 🧡
+							mit persönlichem Text im Wert von 31 €. Jedes Stück ein Unikat 🧡
 						</li>
 					</ul>
 				</div>
