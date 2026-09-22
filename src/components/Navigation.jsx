@@ -13,6 +13,7 @@ const links = [
 const otherLinks = [
 	{ href: 'https://bamo21.de/verlosung', label: '₿AMO Verlosung' },
 	{ href: 'https://bamo21.de/wos-tutorial', label: 'Wallet-of-Satoshi Tutorial' },
+	{ href: 'https://bamo21.de/buhogo-tutorial', label: 'BuhoGO Tutorial' },
 	{ href: '/event-badges', label: '₿AMO Event-Badges' },
 ];
 
