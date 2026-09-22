@@ -112,7 +112,6 @@ const stepTexts = [
 		auch den QR-Code von einem anderen Gerät scannen.
 	</>,
 	'Ihr seht jetzt ein Fenster, wo ihr festlegen könnt, wie viel ihr senden möchtet, und über dem Senden-Button findet ihr ein Kommentarfeld, wo ihr eine Notiz bzw. Nachricht hinterlassen könnt. Für die Teilnahme an der Verlosung hinterlasst ihr einfach Kontaktdaten wie Telegram-Handle, Telefonnummer, E-Mail, etc.',
-	'Ihr seht jetzt ein Fenster, wo ihr festlegen könnt, wie viel ihr senden möchtet, und über dem Senden-Button findet ihr ein Kommentarfeld, wo ihr eine Notiz bzw. Nachricht hinterlassen könnt. Für die Teilnahme an der Verlosung hinterlasst ihr einfach Kontaktdaten wie Telegram-Handle, Telefonnummer, E-Mail, etc.',
 	'Als Bestätigung erhaltet ihr die Information, dass eure Zahlung eingegangen ist und dass wir uns für eure Unterstützung bedanken. Plebs, together strong! 🤜🤛',
 ];
 
