@@ -121,7 +121,7 @@ const tracks = [
 				speaker: 'axelhamburch',
 				description: (
 					<>
-						Bold Card Black Beauty ca. 7.500 Satoshis am Automaten, solange der Vorrat reicht.
+						Schwarze, blanko Bolt Cards gibt es am Automaten, solange der Vorrat reicht.
 						Zur Einrichtung ist ein Smartphone erforderlich. Anleitung vorab auf{' '}
 						<a
 							href="https://ereignishorizont.xyz/boltcard/"
