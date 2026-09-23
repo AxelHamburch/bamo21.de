@@ -282,13 +282,21 @@ export default function BuhoGo() {
 					<h1 className="text-3xl font-bold text-forest-800">Geschafft!</h1>
 					<p className="mt-6 leading-relaxed">Viel Glück 🐷☘️ bei der Verlosung!</p>
 
-					<button
-						type="button"
-						onClick={() => setStep(INTRO)}
-						className="mt-8 inline-flex items-center gap-2 rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-700 transition hover:border-forest-500 hover:text-forest-800"
-					>
-						Von vorn beginnen
-					</button>
+					<div className="mt-8 flex flex-wrap items-center gap-4">
+						<button
+							type="button"
+							onClick={() => setStep(INTRO)}
+							className={outlineButtonClass}
+						>
+							Von vorn beginnen
+						</button>
+						<Link
+							to="/"
+							className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+						>
+							Zur Startseite
+						</Link>
+					</div>
 				</div>
 			)}
 			{step === OUTRO_ADVANCED && (
