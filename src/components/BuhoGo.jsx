@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const images = import.meta.glob('../../assets/BuhoGO/*.webp', {
@@ -113,13 +114,42 @@ const stepTexts = [
 	</>,
 	'Ihr seht jetzt ein Fenster, wo ihr festlegen könnt, wie viel ihr senden möchtet, und über dem Senden-Button findet ihr ein Kommentarfeld, wo ihr eine Notiz bzw. Nachricht hinterlassen könnt. Für die Teilnahme an der Verlosung hinterlasst ihr einfach Kontaktdaten wie Telegram-Handle, Telefonnummer, E-Mail, etc.',
 	'Als Bestätigung erhaltet ihr die Information, dass eure Zahlung eingegangen ist und dass wir uns für eure Unterstützung bedanken. Plebs, together strong! 🤜🤛',
+	'Für Fortgeschrittene: Über die Profil-Funktion erhaltet ihr eine Nostr-Identität. Öffnet auf dem Hauptscreen oben rechts das Seitenmenü.',
+	'Wählt in diesem Menü den Punkt "Profil" aus.',
+	<>
+		Im oberen dunklen Kasten seht ihr bereits den öffentlichen Schlüssel,
+		beginnend mit "npub…", der bei der Einrichtung automatisch erstellt wurde.
+		Über das kleine Symbol rechts neben dem npub kopiert ihr den gesamten
+		öffentlichen Schlüssel in die Zwischenablage. Speichert ihn an einem
+		sicheren Ort, am besten in einem Passwortmanager. Dieser npub ist der Teil
+		eurer digitalen Identität, den ihr später an andere weitergeben könnt.
+		<br />
+		<br />
+		Wählt anschließend im unteren Teil "Identitäten" aus.
+	</>,
+	'Hier brauchen wir erst einmal nur den mittleren Teil. Wählt bitte "Privater Schlüssel" aus.',
+	<>
+		Über den dunklen Button "Privaten Schlüssel kopieren" kopiert ihr nun den
+		privaten Schlüssel. Dieser beginnt bei Nostr mit "nsec…". Speichert ihn
+		ebenfalls an einem sicheren Ort, am besten in einem Passwortmanager. Dieser
+		nsec ist der Teil eurer digitalen Identität, auf den ihr selbst
+		verantwortungsvoll aufpassen müsst.{' '}
+		<strong>Gebt diesen nsec niemals an andere weiter!</strong>
+	</>,
 ];
 
 const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
 
 const INTRO = -1;
-const OUTRO = steps.length;
+const OUTRO = -2;
+const OUTRO_ADVANCED = -3;
 const EXAMPLES_START = 19;
+// Images 39-43 (indices 38-42) form the separate "Nostr Identität" flow.
+const ADVANCED_START = 38;
+const MAIN_LAST = ADVANCED_START - 1;
+
+const outlineButtonClass =
+	'inline-flex items-center gap-2 rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-700 transition hover:border-forest-500 hover:text-forest-800';
 
 export default function BuhoGo() {
 	const [step, setStep] = useState(INTRO);
@@ -183,6 +213,13 @@ export default function BuhoGo() {
 						den ihr auch für Nostr verwenden könnt. Dann könnt ihr auch eure
 						Nostr-Identität in Stahl stanzen.
 					</p>
+					<button
+						type="button"
+						onClick={() => setStep(ADVANCED_START)}
+						className={`mt-6 ${outlineButtonClass}`}
+					>
+						Nostr Identität
+					</button>
 				</div>
 			)}
 
@@ -192,7 +229,7 @@ export default function BuhoGo() {
 						<p className="leading-relaxed">{steps[step].text}</p>
 
 						<div className="mt-8 flex items-center gap-4">
-							{step > 0 && (
+							{step > 0 && step !== ADVANCED_START && (
 								<button
 									type="button"
 									onClick={() => setStep((s) => s - 1)}
@@ -205,16 +242,28 @@ export default function BuhoGo() {
 
 							{step > 0 && (
 								<span className="text-sm font-medium text-earth-500">
-									{step + 1}/{steps.length}
+									{step >= ADVANCED_START
+										? `${step - ADVANCED_START + 1}/${steps.length - ADVANCED_START}`
+										: `${step + 1}/${ADVANCED_START}`}
 								</span>
 							)}
 
 							<button
 								type="button"
-								onClick={() => setStep((s) => s + 1)}
+								onClick={() =>
+									setStep((s) =>
+										s === MAIN_LAST
+											? OUTRO
+											: s === steps.length - 1
+												? OUTRO_ADVANCED
+												: s + 1,
+									)
+								}
 								className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
 							>
-								{step === steps.length - 1 ? 'Fertig' : 'Nächste'}
+								{step === MAIN_LAST || step === steps.length - 1
+										? 'Fertig'
+										: 'Nächste'}
 								<ArrowRight size={16} />
 							</button>
 						</div>
@@ -240,6 +289,30 @@ export default function BuhoGo() {
 					>
 						Von vorn beginnen
 					</button>
+				</div>
+			)}
+			{step === OUTRO_ADVANCED && (
+				<div>
+					<h1 className="text-3xl font-bold text-forest-800">Geschafft!</h1>
+					<p className="mt-6 leading-relaxed">
+						Eure Nostr-Identität ist eingerichtet und gesichert. 🔑
+					</p>
+
+					<div className="mt-8 flex flex-wrap items-center gap-4">
+						<button
+							type="button"
+							onClick={() => setStep(INTRO)}
+							className={outlineButtonClass}
+						>
+							Von vorn beginnen
+						</button>
+						<Link
+							to="/"
+							className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+						>
+							Zur Startseite
+						</Link>
+					</div>
 				</div>
 			)}
 		</section>
