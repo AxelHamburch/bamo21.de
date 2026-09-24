@@ -32,7 +32,6 @@ const stepTexts = [
 	'Bestätigt "Bei Nutzung der App" für die Kamerafreigabe.',
 	'Jetzt könnt ihr am Münzer den QR-Code scannen.',
 	'Jetzt müsst ihr nur noch bestätigen, dass ihr die Satoshis empfangen möchtet.',
-	'Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei euch im Wallet. 🚀',
 	<>
 		Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei
 		euch im Wallet. 🚀
@@ -47,6 +46,7 @@ const stepTexts = [
 		Hier der Hinweis, wie ihr das macht: Wählt dazu oben links das
 		Schlüsselbund-Symbol. 🔑
 	</>,
+	'Wählt jetzt "Bitcoin Backup". 🔐',
 	'Bestätigt, dass ihr die Sicherheitshinweise verstanden habt.',
 	'Jetzt werden euch die 12 Wörter angezeigt. Schreibt sie bitte sorgfältig auf und bewahrt sie gut auf, das ist eure Versicherung.',
 	<>
