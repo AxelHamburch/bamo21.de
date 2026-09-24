@@ -31,16 +31,16 @@ export default function Facts() {
 		<section id="facts" className="scroll-mt-24 px-6 py-20">
 			<div className="mx-auto max-w-6xl">
 				{/* Stempel: btcmap.org-Eintrag links, Plakat zum Teilen/Aufhängen (öffnet die Plakatseite) und PDF-Download rechts */}
-				<div className="flex flex-wrap items-center justify-between gap-4 pl-6 pr-6 md:-mb-10 md:pl-16 md:pr-16">
+				<div className="flex flex-wrap items-center justify-between gap-4 pl-6 pr-6 md:-mb-16 md:pl-16 md:pr-16">
 					<a
 						href="https://btcmap.org/merchant/42872"
 						target="_blank"
 						rel="noopener noreferrer"
 						title="BAMO21 auf btcmap.org ansehen"
-						className="flex h-[17.5rem] w-[17.5rem] -rotate-[6deg] flex-col items-center justify-center gap-2 rounded-full border-[3px] border-dashed border-forest-500/70 bg-white/70 text-center text-forest-600 transition hover:rotate-0 hover:border-forest-500 hover:text-forest-700 md:h-80 md:w-80"
+						className="flex h-[8.75rem] w-[8.75rem] -rotate-[6deg] flex-col items-center justify-center gap-1 rounded-full border-[3px] border-dashed border-forest-500/70 bg-white/70 text-center text-forest-600 transition hover:rotate-0 hover:border-forest-500 hover:text-forest-700 md:h-40 md:w-40"
 					>
-						<img src={btcmapLogo} alt="" aria-hidden="true" className="h-14 w-14 md:h-16 md:w-16" />
-						<span className="text-2xl font-bold uppercase leading-tight tracking-[0.08em] md:text-3xl">
+						<img src={btcmapLogo} alt="" aria-hidden="true" className="h-7 w-7 md:h-8 md:w-8" />
+						<span className="text-xs font-bold uppercase leading-tight tracking-[0.08em] md:text-sm">
 							Jetzt auch auf
 							<br />
 							btcmap.org
