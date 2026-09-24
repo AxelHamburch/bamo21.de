@@ -1,5 +1,6 @@
 import React from 'react';
 import { CalendarDays, Sprout, Waves } from 'lucide-react';
+import btcmapLogo from '../../assets/logo-btcmap.svg';
 
 const facts = [
 	{
@@ -29,34 +30,51 @@ export default function Facts() {
 	return (
 		<section id="facts" className="scroll-mt-24 px-6 py-20">
 			<div className="mx-auto max-w-6xl">
-				{/* Stempel: Plakat zum Teilen/Aufhängen (öffnet die Plakatseite) und PDF-Download */}
-				<div className="flex justify-end gap-4 pr-6 md:-mb-10 md:pr-16">
+				{/* Stempel: btcmap.org-Eintrag links, Plakat zum Teilen/Aufhängen (öffnet die Plakatseite) und PDF-Download rechts */}
+				<div className="flex flex-wrap items-center justify-between gap-4 pl-6 pr-6 md:-mb-10 md:pl-16 md:pr-16">
 					<a
-						href="/poster/index.html"
+						href="https://btcmap.org/merchant/42872"
 						target="_blank"
 						rel="noopener noreferrer"
-						title="Werbeplakat ansehen, teilen und ausdrucken"
-						className="flex h-28 w-28 -rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
+						title="BAMO21 auf btcmap.org ansehen"
+						className="flex h-28 w-28 -rotate-[6deg] flex-col items-center justify-center gap-1 rounded-full border-[3px] border-dashed border-forest-500/70 bg-white/70 text-center text-forest-600 transition hover:rotate-0 hover:border-forest-500 hover:text-forest-700 md:h-32 md:w-32"
 					>
+						<img src={btcmapLogo} alt="" aria-hidden="true" className="h-6 w-6" />
 						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
-							Werbeplakat
+							Jetzt auch auf
 							<br />
-							Link
+							btcmap.org
 						</span>
 					</a>
 
-					<a
-						href="/poster/BAMO21-Plakat-A4.pdf"
-						download="BAMO21-Plakat-A4.pdf"
-						title="Werbeplakat als PDF (A4) herunterladen"
-						className="flex h-28 w-28 rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
-					>
-						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
-							Werbeplakat
-							<br />
-							PDF Download
-						</span>
-					</a>
+					<div className="flex gap-4">
+						<a
+							href="/poster/index.html"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Werbeplakat ansehen, teilen und ausdrucken"
+							className="flex h-28 w-28 -rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
+						>
+							<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
+								Werbeplakat
+								<br />
+								Link
+							</span>
+						</a>
+
+						<a
+							href="/poster/BAMO21-Plakat-A4.pdf"
+							download="BAMO21-Plakat-A4.pdf"
+							title="Werbeplakat als PDF (A4) herunterladen"
+							className="flex h-28 w-28 rotate-[8deg] items-center justify-center rounded-full border-[3px] border-dashed border-brand-500/70 bg-white/70 text-center text-brand-600 transition hover:rotate-0 hover:border-brand-500 hover:text-brand-700 md:h-32 md:w-32"
+						>
+							<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
+								Werbeplakat
+								<br />
+								PDF Download
+							</span>
+						</a>
+					</div>
 				</div>
 
 				<div className="mx-auto max-w-2xl text-center">
