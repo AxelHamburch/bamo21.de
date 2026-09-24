@@ -41,13 +41,13 @@ const buhoGoStepTexts = [
 	'Jetzt müsst ihr nur noch bestätigen, dass ihr die Satoshis empfangen möchtet.',
 	<>
 		Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei
-		euch im Wallet. 🚀
+		euch im Wallet. 🎉
 		<br />
 		<br />
-		Ganz fertig seid ihr aber noch nicht. Da ihr jetzt echten Wert im Wallet
-		gespeichert habt, müsst ihr für eine Sicherung sorgen, falls ihr das Handy
-		mal verliert oder es kaputtgeht. Das muss nicht sofort passieren, aber
-		solltet ihr später nicht vergessen.
+		Ganz fertig seid ihr aber noch nicht. ☝️ Da ihr jetzt echten Wert im
+		Wallet gespeichert habt, müsst ihr für eine Sicherung sorgen, falls ihr
+		das Handy mal verliert oder es kaputtgeht. Das muss nicht sofort
+		passieren, aber solltet ihr später nicht vergessen.
 		<br />
 		<br />
 		Hier der Hinweis, wie ihr das macht: Wählt dazu oben links das
@@ -60,7 +60,7 @@ const buhoGoStepTexts = [
 		Anschließend werden sie noch einmal abgefragt, nur zu eurer Sicherheit.
 		<br />
 		<br />
-		Viel Spaß mit BuhoGO!
+		Viel Freude mit BuhoGO! 🚀
 	</>,
 ];
 
@@ -85,7 +85,7 @@ const wosStepTexts = [
 	'Bestätigt den Empfang.',
 	<>
 		Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei
-		euch im Wallet. 🚀
+		euch im Wallet. 🎉
 		<br />
 		<br />
 		Ganz fertig seid ihr aber noch nicht. ☝️ Da ihr jetzt echten Wert im
@@ -103,7 +103,7 @@ const wosStepTexts = [
 		Anschließend werden sie noch einmal abgefragt, nur zu eurer Sicherheit.
 		<br />
 		<br />
-		Viel Freude mit Wallet of Satoshi!
+		Viel Freude mit Wallet of Satoshi! 🚀
 	</>,
 ];
 
@@ -168,7 +168,7 @@ export default function Muenzer63() {
 							<button
 								type="button"
 								onClick={() => setStep(0)}
-								className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+								className="inline-flex items-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-forest-700"
 							>
 								Start BuhoGO
 							</button>
@@ -181,7 +181,7 @@ export default function Muenzer63() {
 							<button
 								type="button"
 								onClick={() => setStep(WOS_START)}
-								className={outlineButtonClass}
+								className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-600"
 							>
 								Start Wallet-of-Satoshi
 							</button>
