@@ -17,6 +17,7 @@ import EventBadges from '@/components/EventBadges';
 import Datenschutz from '@/components/Datenschutz';
 import WoS from '@/components/WoS';
 import BuhoGo from '@/components/BuhoGo';
+import Muenzer63 from '@/components/Muenzer63';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
 import { useStaleBuildReload } from '@/hooks/useStaleBuildReload';
@@ -67,6 +68,7 @@ function App() {
 						<Route path="/de/datenschutz" element={<Datenschutz />} />
 						<Route path="/WoS-Tutorial" element={<WoS />} />
 						<Route path="/BuhoGo-Tutorial" element={<BuhoGo />} />
+						<Route path="/Muenzer63-Tutorial" element={<Muenzer63 />} />
 					</Routes>
 				</main>
 				<Footer />
