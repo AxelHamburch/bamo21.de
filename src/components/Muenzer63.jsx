@@ -34,6 +34,10 @@ const stepTexts = [
 	'Jetzt müsst ihr nur noch bestätigen, dass ihr die Satoshis empfangen möchtet.',
 	'Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei euch im Wallet. 🚀',
 	<>
+		Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei
+		euch im Wallet. 🚀
+		<br />
+		<br />
 		Ganz fertig seid ihr aber noch nicht. Da ihr jetzt echten Wert im Wallet
 		gespeichert habt, müsst ihr für eine Sicherung sorgen, falls ihr das Handy
 		mal verliert oder es kaputtgeht. Das muss nicht sofort passieren, aber
@@ -41,11 +45,16 @@ const stepTexts = [
 		<br />
 		<br />
 		Hier der Hinweis, wie ihr das macht: Wählt dazu oben links das
-		Schlüsselbund-Symbol.
+		Schlüsselbund-Symbol. 🔑
 	</>,
-	'Wählt jetzt "Bitcoin Backup". 🔐',
 	'Bestätigt, dass ihr die Sicherheitshinweise verstanden habt.',
-	'Jetzt werden euch die 12 Wörter angezeigt. Schreibt sie bitte sorgfältig auf und bewahrt sie gut auf, das ist eure Versicherung. Anschließend werden sie noch einmal abgefragt, nur zu eurer Sicherheit.',
+	'Jetzt werden euch die 12 Wörter angezeigt. Schreibt sie bitte sorgfältig auf und bewahrt sie gut auf, das ist eure Versicherung.',
+	<>
+		Anschließend werden sie noch einmal abgefragt, nur zu eurer Sicherheit.
+		<br />
+		<br />
+		Viel Spaß mit BuhoGO!
+	</>,
 ];
 
 const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
@@ -165,7 +174,9 @@ export default function Muenzer63() {
 			{step === OUTRO && (
 				<div>
 					<h1 className="text-3xl font-bold text-forest-800">Geschafft!</h1>
-					<p className="mt-6 leading-relaxed">Viel Spaß mit BuhoGO! 🎉</p>
+					<p className="mt-6 leading-relaxed">
+						Ihr seid jetzt startklar für den Münzer 63. 🎉
+					</p>
 
 					<div className="mt-8 flex flex-wrap items-center gap-4">
 						<button
