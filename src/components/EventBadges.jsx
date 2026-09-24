@@ -33,22 +33,27 @@ export default function EventBadges() {
 						oder bei Google Play.
 					</p>
 					<p className="mt-3">
-						Da Apple leider eine vollständige Identifizierung (KYC) verlangt,
-						ist die App aktuell noch nicht im offiziellen App Store verfügbar –
-						wir arbeiten aber bereits an einer Lösung!
+						iOS Geräte, siehe{' '}
+						<a
+							href="https://media.einundzwanzig.space/s/einundzwanzig-news/draft-9017b6e5-4cbc-4ac0-8441-bd50385dc4f3"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand-600 underline hover:text-brand-500"
+						>
+							21Meetup-App endlich für iOS
+						</a>
 					</p>
 					<blockquote className="mt-4 rounded-2xl border border-brand-200 bg-brand-50 px-5 py-4 text-earth-900">
-						Für alle iPhone-Nutzer: Keine Sorge, ihr müsst nicht draußen
-						bleiben! Nutzt einfach die praktische Web-App, die auch auf dem
-						„Apfel“ hervorragend funktioniert:{' '}
+						Alternativ gibt es aber auch die praktische{' '}
 						<a
 							href="https://razue.github.io/Einundzwanzig-Meetup-App/"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-brand-600 underline hover:text-brand-500"
 						>
-							razue.github.io/Einundzwanzig-Meetup-App
+							Web-App
 						</a>
+						, ohne Installation.
 					</blockquote>
 				</div>
 
