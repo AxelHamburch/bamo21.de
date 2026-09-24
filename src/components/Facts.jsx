@@ -37,10 +37,10 @@ export default function Facts() {
 						target="_blank"
 						rel="noopener noreferrer"
 						title="BAMO21 auf btcmap.org ansehen"
-						className="flex h-28 w-28 -rotate-[6deg] flex-col items-center justify-center gap-1 rounded-full border-[3px] border-dashed border-forest-500/70 bg-white/70 text-center text-forest-600 transition hover:rotate-0 hover:border-forest-500 hover:text-forest-700 md:h-32 md:w-32"
+						className="flex h-[17.5rem] w-[17.5rem] -rotate-[6deg] flex-col items-center justify-center gap-2 rounded-full border-[3px] border-dashed border-forest-500/70 bg-white/70 text-center text-forest-600 transition hover:rotate-0 hover:border-forest-500 hover:text-forest-700 md:h-80 md:w-80"
 					>
-						<img src={btcmapLogo} alt="" aria-hidden="true" className="h-6 w-6" />
-						<span className="text-[11px] font-bold uppercase leading-tight tracking-[0.08em] md:text-xs">
+						<img src={btcmapLogo} alt="" aria-hidden="true" className="h-14 w-14 md:h-16 md:w-16" />
+						<span className="text-2xl font-bold uppercase leading-tight tracking-[0.08em] md:text-3xl">
 							Jetzt auch auf
 							<br />
 							btcmap.org
