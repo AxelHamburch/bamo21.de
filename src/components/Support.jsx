@@ -82,7 +82,7 @@ export default function Support() {
 					to="/muenzer63-tutorial"
 					className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
 				>
-					Anrufen …
+					☎️ Anrufen …
 				</Link>
 			</div>
 
