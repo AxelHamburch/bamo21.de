@@ -88,14 +88,12 @@ const tracks = [
 				title: (
 					<>
 						Lightning Wallet für Einsteiger – erklärt und gezeigt am{' '}
-						<a
-							href="https://home.mybuho.de/de/buhogo"
-							target="_blank"
-							rel="noopener noreferrer"
+						<Link
+							to="/buhogo-tutorial"
 							className="text-brand-600 underline hover:text-brand-500"
 						>
 							BuhoGo
-						</a>{' '}
+						</Link>{' '}
 						Wallet
 					</>
 				),

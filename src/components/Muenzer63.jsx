@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-const images = import.meta.glob('../../assets/Muenzer/Muenzer-BuhoGo-*.webp', {
+const buhoGoImages = import.meta.glob('../../assets/Muenzer/Muenzer-BuhoGo-*.webp', {
+	eager: true,
+	import: 'default',
+});
+const wosImages = import.meta.glob('../../assets/Muenzer/Muenzer-WoS-*.webp', {
 	eager: true,
 	import: 'default',
 });
 
-const imageList = Object.keys(images)
+const buhoGoImageList = Object.keys(buhoGoImages)
 	.sort()
-	.map((path) => images[path]);
+	.map((path) => buhoGoImages[path]);
+const wosImageList = Object.keys(wosImages)
+	.sort()
+	.map((path) => wosImages[path]);
 
 const externalLinkClass = 'text-brand-600 underline hover:text-brand-500';
 
-const stepTexts = [
+const buhoGoStepTexts = [
 	<>
 		Öffnet die Seite von{' '}
 		<a
@@ -57,10 +64,65 @@ const stepTexts = [
 	</>,
 ];
 
-const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
+const wosStepTexts = [
+	<>
+		Öffnet die Seite von{' '}
+		<a
+			href="https://www.walletofsatoshi.com/"
+			target="_blank"
+			rel="noopener noreferrer"
+			className={externalLinkClass}
+		>
+			Wallet of Satoshi
+		</a>{' '}
+		und installiert darüber das WoS-Wallet.
+	</>,
+	'Wählt "Create a New Wallet".',
+	'Erlaubt der App, dass sie euch benachrichtigen kann, damit ihr Zahlungseingänge auch mitbekommt.',
+	'Wählt jetzt rechts unten den "[SCAN] Send" Button.',
+	'Bestätigt "Bei Nutzung der App" für die Kamerafreigabe.',
+	'Jetzt könnt ihr am Münzer den QR-Code scannen.',
+	'Bestätigt den Empfang.',
+	<>
+		Der Empfang wird euch bestätigt und anschließend seht ihr Satoshis bei
+		euch im Wallet. 🚀
+		<br />
+		<br />
+		Ganz fertig seid ihr aber noch nicht. ☝️ Da ihr jetzt echten Wert im
+		Wallet gespeichert habt, müsst ihr für eine Sicherung sorgen, falls ihr
+		das Handy mal verliert oder es kaputtgeht. Das muss nicht sofort
+		passieren, aber solltet ihr später nicht vergessen.
+		<br />
+		<br />
+		Hier der Hinweis, wie ihr das macht: Wählt dazu oben links das
+		Schlüsselbund-Symbol. 🔑
+	</>,
+	'Bestätigt, dass ihr die Sicherheitshinweise verstanden habt.',
+	'Jetzt werden euch die 12 Wörter angezeigt. Schreibt sie bitte sorgfältig auf und bewahrt sie gut auf, das ist eure Versicherung. 🧷',
+	<>
+		Anschließend werden sie noch einmal abgefragt, nur zu eurer Sicherheit.
+		<br />
+		<br />
+		Viel Freude mit Wallet of Satoshi!
+	</>,
+];
+
+const buhoGoSteps = buhoGoImageList.map((src, i) => ({
+	src,
+	text: buhoGoStepTexts[i],
+}));
+const wosSteps = wosImageList.map((src, i) => ({ src, text: wosStepTexts[i] }));
+
+// Combined step list: BuhoGO branch first, then the Wallet-of-Satoshi branch.
+const steps = [...buhoGoSteps, ...wosSteps];
 
 const INTRO = -1;
-const OUTRO = steps.length;
+const OUTRO = -2;
+const WOS_START = buhoGoSteps.length;
+const BUHOGO_LAST = WOS_START - 1;
+
+const outlineButtonClass =
+	'inline-flex items-center gap-2 rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-700 transition hover:border-forest-500 hover:text-forest-800';
 
 export default function Muenzer63() {
 	const [step, setStep] = useState(INTRO);
@@ -69,7 +131,9 @@ export default function Muenzer63() {
 		<section className="mx-auto max-w-[900px] px-6 py-20 text-earth-800">
 			{step === INTRO && (
 				<div>
-					<h1 className="text-3xl font-bold text-forest-800">Der Münzer 63</h1>
+					<h1 className="text-3xl font-bold text-forest-800">
+						Der Münzer 63 ☎️🏧
+					</h1>
 					<p className="mt-6 leading-relaxed">
 						Vor Ort werdet ihr auch die Gelegenheit bekommen, euch gegen ein
 						paar Münzen eure ersten Satoshis zu ziehen. Es erwartet euch der{' '}
@@ -116,14 +180,13 @@ export default function Muenzer63() {
 						<div className="flex flex-col items-center gap-1">
 							<button
 								type="button"
-								disabled
-								aria-disabled="true"
-								className="inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-forest-200 px-6 py-3 text-sm font-semibold text-forest-400"
+								onClick={() => setStep(WOS_START)}
+								className={outlineButtonClass}
 							>
 								Start Wallet-of-Satoshi
 							</button>
 							<span className="text-xs text-earth-500">
-								Empfohlen für Android & iOS · bald verfügbar
+								Empfohlen für Android & iOS
 							</span>
 						</div>
 					</div>
@@ -136,7 +199,7 @@ export default function Muenzer63() {
 						<p className="leading-relaxed">{steps[step].text}</p>
 
 						<div className="mt-8 flex items-center gap-4">
-							{step > 0 && (
+							{step > 0 && step !== WOS_START && (
 								<button
 									type="button"
 									onClick={() => setStep((s) => s - 1)}
@@ -149,16 +212,24 @@ export default function Muenzer63() {
 
 							{step > 0 && (
 								<span className="text-sm font-medium text-earth-500">
-									{step + 1}/{steps.length}
+									{step >= WOS_START
+										? `${step - WOS_START + 1}/${steps.length - WOS_START}`
+										: `${step + 1}/${WOS_START}`}
 								</span>
 							)}
 
 							<button
 								type="button"
-								onClick={() => setStep((s) => s + 1)}
+								onClick={() =>
+									setStep((s) =>
+										s === BUHOGO_LAST || s === steps.length - 1 ? OUTRO : s + 1,
+									)
+								}
 								className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
 							>
-								{step === steps.length - 1 ? 'Fertig' : 'Nächste'}
+								{step === BUHOGO_LAST || step === steps.length - 1
+									? 'Fertig'
+									: 'Nächste'}
 								<ArrowRight size={16} />
 							</button>
 						</div>
@@ -166,7 +237,9 @@ export default function Muenzer63() {
 
 					<img
 						src={steps[step].src}
-						alt={`Münzer 63 Einrichtung Schritt ${step + 1}`}
+						alt={`Münzer 63 Einrichtung Schritt ${
+							step >= WOS_START ? step - WOS_START + 1 : step + 1
+						}`}
 						className="mx-auto max-h-[600px] w-auto rounded-2xl border border-earth-200 shadow-sm"
 					/>
 				</div>
@@ -183,7 +256,7 @@ export default function Muenzer63() {
 						<button
 							type="button"
 							onClick={() => setStep(INTRO)}
-							className="inline-flex items-center gap-2 rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-700 transition hover:border-forest-500 hover:text-forest-800"
+							className={outlineButtonClass}
 						>
 							Von vorn beginnen
 						</button>
