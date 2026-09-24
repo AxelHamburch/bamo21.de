@@ -136,6 +136,8 @@ const stepTexts = [
 		verantwortungsvoll aufpassen müsst.{' '}
 		<strong>Gebt diesen nsec niemals an andere weiter!</strong>
 	</>,
+	'Jetzt, wo ihr das Profil einmal aufgerufen habt, erscheint auf dem Hauptscreen oben zusätzlich der Hinweis auf das Backup der Identität. Dafür bekommt ihr ebenfalls einen 12-Wörter-Seed, mit dem sich die Nostr-Schlüssel ableiten lassen. Berührt wieder den Schlüsselbund oben links.',
+	'Jetzt seht ihr das zusätzliche Feld "Identity backup". Es ist die gleiche Prozedur wie schon bekannt. Schreibt euch die Wörter gut auf, das ist eure Versicherung, falls ihr die Nostr-Identität einmal wiederherstellen oder in eine andere App importieren möchtet, z. B. Amber unter Android als Nostr Event Signer.',
 ];
 
 const steps = imageList.map((src, i) => ({ src, text: stepTexts[i] }));
