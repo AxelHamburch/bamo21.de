@@ -81,11 +81,12 @@ export default function Muenzer63() {
 						>
 							Münzer 63
 						</a>
-						. Das ist ein alter Münzfernsprecher, der ein neues Leben
+						. Das ist ein alter Münzfernsprecher ☎️, der ein neues Leben
 						eingehaucht bekommen hat. Er zeigt kleinen, aber manchmal auch
 						großen Kindern ;), wie man damals mit der Wählscheibe telefoniert
-						hat. Aber er hat auch einen kleinen, etwas versteckten ATM drin.
-						Die Nummer 9 sagt euch, wo ihr ihn findet.
+						hat. Aber er hat auch einen kleinen, etwas versteckten ATM 🏧 drin.
+						Hebt den Hörer ab und wählt die Nummer 9. Der Münzer wird euch
+						sagen, wo ihr den ATM findet.
 					</p>
 					<p className="mt-4 leading-relaxed">
 						Habt ihr den ATM aktiviert, könnt ihr mal 5 Cent einwerfen. Der
