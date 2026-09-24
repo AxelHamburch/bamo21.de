@@ -150,7 +150,7 @@ const tracks = [
 // Programmpunkte ohne festen Zeitpunkt – werden vor Ort per Aushang bekannt gegeben.
 const openSlots = [
 	'Hofführung durch den Eigner (ca. 20 Minuten), 14:00 Uhr beim Hofladen',
-	'Naturerlebnis für Kinder - Kinderbespaßung mit Aukse. 🎈 11 Uhr Natur entdecken🌿& 15 Uhr malen 🤗😘. Wer kann Stifte und Papier mitnehmen/mitbringen ☺️💓. Treffpunkt: Hüpfburg. 🏰',
+	'Naturerlebnis für Kinder - Kinderbespaßung mit Aukse. 🎈 11 Uhr Natur entdecken🌿& 15 Uhr malen 🤗😘. Treffpunkt: Hüpfburg. 🏰',
 	{
 		text: 'Schatzsuche am Ottisee – ',
 		link: {
