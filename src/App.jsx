@@ -18,6 +18,7 @@ import Datenschutz from '@/components/Datenschutz';
 import WoS from '@/components/WoS';
 import BuhoGo from '@/components/BuhoGo';
 import Muenzer63 from '@/components/Muenzer63';
+import ZapOMat from '@/components/ZapOMat';
 import TelegramModal from '@/components/TelegramModal';
 import { TelegramModalProvider } from '@/context/TelegramModalContext';
 import { useStaleBuildReload } from '@/hooks/useStaleBuildReload';
@@ -69,6 +70,7 @@ function App() {
 						<Route path="/WoS-Tutorial" element={<WoS />} />
 						<Route path="/BuhoGo-Tutorial" element={<BuhoGo />} />
 						<Route path="/Muenzer63-Tutorial" element={<Muenzer63 />} />
+						<Route path="/zapomat" element={<ZapOMat />} />
 					</Routes>
 				</main>
 				<Footer />

@@ -16,6 +16,7 @@ const otherLinks = [
 	{ href: 'https://bamo21.de/buhogo-tutorial', label: 'BuhoGO Tutorial' },
 	{ href: '/event-badges', label: '₿AMO Event-Badges' },
 	{ href: 'https://bamo21.de/muenzer63-tutorial', label: 'Münzer 63 ☎️🏧' },
+	{ href: 'https://bamo21.de/zapomat', label: 'Der ZapOMat⚡️⚙️' },
 ];
 
 export default function Navigation() {
