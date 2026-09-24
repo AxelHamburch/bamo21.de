@@ -46,6 +46,46 @@ export default function Support() {
 				</Link>
 			</div>
 
+			<div className="mx-auto mb-8 max-w-3xl rounded-3xl border border-forest-200 bg-white/80 p-10 text-center">
+				<h2 className="text-xl font-semibold text-earth-900">
+					Tutorial für Lightning⚡Wallets
+				</h2>
+				<p className="mt-4 text-sm text-earth-700">Wir möchten euch Brücken bauen.</p>
+				<div className="mt-6 flex flex-wrap items-start justify-center gap-6">
+					<div className="flex flex-col items-center gap-1">
+						<Link
+							to="/buhogo-tutorial"
+							className="inline-flex items-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-forest-700"
+						>
+							BuhoGO
+						</Link>
+						<span className="text-xs text-earth-600">Empfohlen für Android</span>
+					</div>
+					<div className="flex flex-col items-center gap-1">
+						<Link
+							to="/wos-tutorial"
+							className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-600"
+						>
+							Wallet-of-Satoshi
+						</Link>
+						<span className="text-xs text-earth-600">
+							Empfohlen für Android & iOS
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div className="mx-auto mb-8 max-w-3xl rounded-3xl border border-forest-200 bg-white/80 p-10 text-center">
+				<h2 className="text-xl font-semibold text-earth-900">Der Münzer 63 ☎️🏧</h2>
+				<p className="mt-4 text-sm text-earth-700">Eine ganz spezielle Besonderheit.</p>
+				<Link
+					to="/muenzer63-tutorial"
+					className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+				>
+					Anrufen …
+				</Link>
+			</div>
+
 			<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-forest-200 bg-white/80 p-10 text-center">
 				<HandHeart className="text-brand-500" size={24} />
 				<h2 className="text-xl font-semibold text-earth-900">Ein Event von Plebs für Plebs</h2>
