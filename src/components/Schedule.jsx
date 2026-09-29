@@ -32,8 +32,8 @@ const tracks = [
 			{ time: '11:15–11:30', title: 'Zeit für Diskussionen & Kleine Pause' },
 			{
 				time: '11:30–12:15',
-				title: 'Die Entwicklung der Gesellschaft nach der Entkopplung des Dollars vom Gold',
-				speaker: 'Robert',
+				title: 'Nostr - der kleine Bruder von Bitcoin - eine andere Sicht auf Nostr',
+				speaker: 'Ralph21',
 			},
 			{ time: '12:15–13:00', title: 'Große Pause' },
 			{ time: '13:00–13:30', title: 'Bitcoin für Bauern – HODL DEIN HOF', speaker: 'Timo' },
@@ -138,7 +138,7 @@ const tracks = [
 				title: 'Nostr - keine Plattform, sondern ein Protokoll mit Bitcoin⚡Lightning',
 				speaker: 'Noerdlicht',
 				description:
-					'Einfach und verständlich für Noobs, anschließend legen wir gemeinsam einen Nostr-Account an. Es gibt ein Handout mit den nötigen Apps und Schritten.',
+					'Der Workshop zu Nostr',
 			},
 			{ time: '15:30–16:00', title: 'Raum für Diskussion oder etwas Anderes' },
 		],
@@ -181,7 +181,7 @@ const openSlots = [
 const speakerContacts = [
 	{ name: 'axelhamburch', url: 'https://t.me/axelhamburch' },
 	{ name: 'willitowner', url: 'https://t.me/willitowner' },
-	{ name: 'Robert', url: 'https://t.me/TreborEnno' },
+	{ name: 'Ralph21', url: 'https://t.me/ralph21_btcraoul' },
 	{ name: 'Timo', url: 'https://t.me/machbarland' },
 	{ name: 'FinanzBewusst', url: 'https://t.me/finanz_bewusstsein' },
 	{ name: 'Juniormind', url: 'https://t.me/juniormind1' },
