@@ -9,6 +9,16 @@ export default function Verlosung() {
 
 	return (
 		<section className="mx-auto max-w-3xl px-6 py-20 text-earth-800">
+			<div className="mb-8 flex flex-col items-center gap-6 text-center">
+				<div className="-rotate-6 rounded-lg border-4 border-red-600 px-6 py-2 text-2xl font-extrabold uppercase tracking-wide text-red-600">
+					Verlosung beendet!
+				</div>
+				<p className="max-w-xl text-sm text-earth-600">
+					Alle Gewinne wurden ausgegeben oder die Gewinner wurden benachrichtigt.
+					<br />
+					Vielen Dank für Eure Teilnahme.
+				</p>
+			</div>
 			<h1 className="text-3xl font-bold text-forest-800">BAMO Verlosung</h1>
 			<p className="mt-4 leading-relaxed">
 				BAMO ist ein Projekt von Plebs für Plebs — der Eintritt ist frei, damit
