@@ -73,7 +73,7 @@ export default function ZapOMatEn() {
 
 			<div className="mt-6 inline-block -rotate-2 rounded-2xl border-[3px] border-dashed border-brand-500 bg-brand-50 px-6 py-4 text-center">
 				<p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-					Today for BAMO
+					Today for bitcoin++
 				</p>
 				<p className="text-3xl font-bold text-brand-600">21% off everything</p>
 				<p className="text-sm text-brand-700">except gin</p>

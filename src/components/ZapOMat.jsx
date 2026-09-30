@@ -43,9 +43,9 @@ export default function ZapOMat() {
 					to="/zapomat_en"
 					aria-label="English version"
 					title="English version"
-					className="text-3xl leading-none transition hover:opacity-75"
+					className="text-xl font-bold text-forest-800 transition hover:opacity-75"
 				>
-					🇬🇧
+					EN
 				</Link>
 			</div>
 
