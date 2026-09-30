@@ -9,6 +9,7 @@ import zapomat04 from '../../assets/ZapOMat/ZapOMat-04.webp';
 import zapomat05 from '../../assets/ZapOMat/ZapOMat-05.webp';
 import zapomat06 from '../../assets/ZapOMat/ZapOMat-06.webp';
 import zapomat07 from '../../assets/ZapOMat/ZapOMat-07.webp';
+import zapomat08 from '../../assets/ZapOMat/ZapOMat-08.webp';
 
 const externalLinkClass = 'text-brand-600 underline hover:text-brand-500';
 
@@ -100,6 +101,13 @@ export default function ZapOMat() {
 					</p>
 					<div className="mt-4">
 						<Shot src={zapomat03} alt="ZapBox Simple" onExpand={expand} />
+					</div>
+					<div className="mt-4">
+						<Shot
+							src={zapomat08}
+							alt="Rückseite der ZapBox Simple"
+							onExpand={expand}
+						/>
 					</div>
 				</div>
 
