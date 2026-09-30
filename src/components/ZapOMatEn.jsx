@@ -260,6 +260,16 @@ export default function ZapOMatEn() {
 						.
 					</p>
 				</div>
+
+				<div>
+					<h3 className="text-lg font-semibold text-forest-800">
+						Offline Lightning⚡️ATM 🏧
+					</h3>
+					<p className="mt-2 leading-relaxed">
+						Fully set up cash-to-Bitcoin ATM that works offline. Includes an
+						LNbits backend wallet and instructions.
+					</p>
+				</div>
 			</div>
 
 			{expanded && (

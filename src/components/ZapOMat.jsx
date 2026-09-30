@@ -266,6 +266,16 @@ export default function ZapOMat() {
 						.
 					</p>
 				</div>
+
+				<div>
+					<h3 className="text-lg font-semibold text-forest-800">
+						Offline Lightning⚡️ATM 🏧
+					</h3>
+					<p className="mt-2 leading-relaxed">
+						Fertig eingerichteter Münz-Geldautomat, der offline funktioniert.
+						Mit LNbits-Backend-Wallet und Anleitung.
+					</p>
+				</div>
 			</div>
 
 			{expanded && (
