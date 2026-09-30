@@ -12,13 +12,13 @@ import zapomat07 from '../../assets/ZapOMat/ZapOMat-07.webp';
 
 const externalLinkClass = 'text-brand-600 underline hover:text-brand-500';
 
-// Klickbares Vorschaubild, das sich beim Anklicken vergrößert öffnet.
+// Clickable preview image that opens enlarged on click.
 function Shot({ src, alt, onExpand }) {
 	return (
 		<button
 			type="button"
 			onClick={() => onExpand(src, alt)}
-			aria-label={`${alt} vergrößern`}
+			aria-label={`Enlarge ${alt}`}
 			className="block w-full"
 		>
 			<img
@@ -30,7 +30,7 @@ function Shot({ src, alt, onExpand }) {
 	);
 }
 
-export default function ZapOMat() {
+export default function ZapOMatEn() {
 	const [expanded, setExpanded] = useState(null); // { src, alt } | null
 
 	const expand = (src, alt) => setExpanded({ src, alt });
@@ -38,46 +38,45 @@ export default function ZapOMat() {
 	return (
 		<section className="mx-auto max-w-3xl px-6 py-20 text-earth-800">
 			<div className="flex items-center justify-between gap-4">
-				<h1 className="text-3xl font-bold text-forest-800">Der ZapOMat⚡️⚙️</h1>
+				<h1 className="text-3xl font-bold text-forest-800">The ZapOMat⚡️⚙️</h1>
 				<Link
-					to="/zapomat_en"
-					aria-label="English version"
-					title="English version"
+					to="/zapomat"
+					aria-label="Deutsche Version"
+					title="Deutsche Version"
 					className="text-3xl leading-none transition hover:opacity-75"
 				>
-					🇬🇧
+					🇩🇪
 				</Link>
 			</div>
 
 			<p className="mt-4 leading-relaxed">
-				Der ZapOMat⚡️⚙️ ist ein 12-Fächer-Klappenautomat mit einer ZapBox.
+				The ZapOMat⚡️⚙️ is a 12-slot flap vending machine with a ZapBox.
 			</p>
 
 			<div className="mt-6">
-				<Shot src={zapomat01} alt="Der ZapOMat" onExpand={expand} />
+				<Shot src={zapomat01} alt="The ZapOMat" onExpand={expand} />
 			</div>
 
 			<p className="mt-6 leading-relaxed">
-				Man muss nur die Produktnummer wählen und mit Bitcoin⚡Lightning
-				bezahlen. Dazu kann man entweder den QR-Code scannen, das NFC-Modul
-				des Smartphones verwenden oder eine Bolt Card, einen Bolt Ring oder
-				einen sonstigen NTAG 424 nutzen. ✅
+				Just select the product number and pay with Bitcoin⚡Lightning. You
+				can either scan the QR code, use your smartphone's NFC module, or tap
+				a Bolt Card, a Bolt Ring, or any other NTAG 424. ✅
 			</p>
 
 			<div className="mt-6">
-				<Shot src={zapomat02} alt="Bezahlvorgang am ZapOMat" onExpand={expand} />
+				<Shot src={zapomat02} alt="Payment process at the ZapOMat" onExpand={expand} />
 			</div>
 
 			<h2 className="mt-12 text-xl font-bold text-forest-800">
-				Hier ein paar Beispielprodukte des ZapOMat⚡️⚙️
+				A few example products from the ZapOMat⚡️⚙️
 			</h2>
 
 			<div className="mt-6 inline-block -rotate-2 rounded-2xl border-[3px] border-dashed border-brand-500 bg-brand-50 px-6 py-4 text-center">
 				<p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-					Heute für BAMO
+					Today for BAMO
 				</p>
-				<p className="text-3xl font-bold text-brand-600">21 % auf alles</p>
-				<p className="text-sm text-brand-700">außer Gin</p>
+				<p className="text-3xl font-bold text-brand-600">21% off everything</p>
+				<p className="text-sm text-brand-700">except gin</p>
 			</div>
 
 			<div className="mt-10 space-y-10">
@@ -86,8 +85,8 @@ export default function ZapOMat() {
 						ZapBox Simple
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Die einfache ZapBox mit komfortablem Display für Rückmeldung und
-						Anzeige des QR-Codes. Dual USB-A und USB-C für Input und Output.
+						The simple ZapBox with a comfortable display for feedback and
+						showing the QR code. Dual USB-A and USB-C for input and output.
 					</p>
 					<div className="mt-4">
 						<Shot src={zapomat03} alt="ZapBox Simple" onExpand={expand} />
@@ -99,10 +98,10 @@ export default function ZapOMat() {
 						ZapBox Headless Simple
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Die minimalistische und kostengünstige ZapBox für einfache
-						Schaltanwendungen. Statusrückmeldung über zwei LEDs, die den
-						Zustand der ZapBox anzeigen. Die ZapBox benötigt einen separaten
-						QR-Code, den man selbst ausdrucken kann.
+						The minimalist and low-cost ZapBox for simple switching
+						applications. Status feedback via two LEDs that show the state
+						of the ZapBox. The ZapBox needs a separate QR code, which you can
+						print yourself.
 					</p>
 					<div className="mt-4">
 						<Shot
@@ -115,20 +114,19 @@ export default function ZapOMat() {
 
 				<div className="leading-relaxed">
 					<p>
-						Die ZapBox Simple und ZapBox Headless Simple gibt es jeweils in
-						zwei Versionen – „Ready to use" und „Bulk".
+						The ZapBox Simple and ZapBox Headless Simple are each available in
+						two versions – "Ready to use" and "Bulk".
 					</p>
 					<p className="mt-3">
-						Die <strong>„Ready to use"</strong>-Version ist vollständig
-						getestet und eingerichtet. Bedienungsanleitung,
-						Dokumentationsblatt zu den eingestellten Parametern und ein
-						USB-Kabel liegen bei.
+						The <strong>"Ready to use"</strong> version is fully tested and
+						configured. A user manual, a documentation sheet listing the
+						configured parameters, and a USB cable are included.
 					</p>
 					<p className="mt-3">
-						Die <strong>„Bulk"</strong>-Version ist ebenfalls vollständig
-						getestet und mit der aktuellen Firmware vorinstalliert, sie ist
-						aber nicht parametriert. Eine Bedienungsanleitung liegt bei. Zur
-						Einrichtung bitte den Webinstaller{' '}
+						The <strong>"Bulk"</strong> version is also fully tested and comes
+						pre-installed with the current firmware, but it is not
+						configured. A user manual is included. To set it up, please use
+						the web installer{' '}
 						<a
 							href="https://installer.zapbox.space"
 							target="_blank"
@@ -137,7 +135,7 @@ export default function ZapOMat() {
 						>
 							installer.zapbox.space
 						</a>{' '}
-						bzw.{' '}
+						or{' '}
 						<a
 							href="https://installer.zapbox.space/headless"
 							target="_blank"
@@ -145,26 +143,25 @@ export default function ZapOMat() {
 							className={externalLinkClass}
 						>
 							installer.zapbox.space/headless
-						</a>{' '}
-						verwenden.
+						</a>
+						.
 					</p>
 					<p className="mt-3">
-						Ein Hinweis zu den ZapBoxen: Alle ZapBoxen sind deutsche
-						Ingenieurskunst und mit viel Liebe in Handarbeit zusammengebaut.
-						Ihr könnt sie gerne nachbauen, alles ist Free and Open Source und
-						nicht nur die Software. Ihr findet alle Informationen,
-						Anleitungen, Datenblätter, 3D-Druckfiles und die elektrischen
-						Schaltpläne auf dem{' '}
+						A note on the ZapBoxes: all ZapBoxes are German engineering,
+						hand-assembled with a lot of care. Feel free to build your own,
+						everything is free and open source, not just the software. You'll
+						find all information, instructions, datasheets, 3D print files,
+						and the electrical schematics on the{' '}
 						<a
 							href="https://github.com/AxelHamburch/ZapBox"
 							target="_blank"
 							rel="noopener noreferrer"
 							className={externalLinkClass}
 						>
-							GitHub-Repository
+							GitHub repository
 						</a>
-						. Eine Übersicht zu allen ZapBoxen mit Links zu den
-						Einrichtungsanleitungen findet ihr unter{' '}
+						. An overview of all ZapBoxes with links to the setup guides can
+						be found at{' '}
 						<a
 							href="https://zapbox.space"
 							target="_blank"
@@ -179,23 +176,22 @@ export default function ZapOMat() {
 
 				<div>
 					<h3 className="text-lg font-semibold text-forest-800">
-						Die Candy Machine 🍬⚙️
+						The Candy Machine 🍬⚙️
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Die Candy Machine ist ein Süßigkeitenspender, der ursprünglich
-						einen Touch-Sensor an der Unterseite hatte. Dieser wurde durch ein
-						Relais ersetzt, das jetzt von der ZapBox angesteuert wird.
-						Batterien sind nicht mehr nötig, und der Schalter auf der
-						Rückseite hat keine Funktion mehr. Die Touch-Funktion ist
-						deaktiviert. Das USB-Kabel wird an den Ausgang der ZapBox
-						angeschlossen. Die Schaltzeit der ZapBox bestimmt die Dauer des
-						Spindelvorschubs und damit die ausgegebene Bonbonmenge.
+						The Candy Machine is a candy dispenser that originally had a touch
+						sensor on the bottom. This was replaced with a relay that is now
+						controlled by the ZapBox. Batteries are no longer needed, and the
+						switch on the back no longer has any function. The touch feature
+						is disabled. The USB cable is connected to the ZapBox's output.
+						The ZapBox's switching time determines the duration of the screw
+						feed and thus the amount of candy dispensed.
 					</p>
 					<div className="mt-4 grid gap-4 sm:grid-cols-2">
-						<Shot src={zapomat05} alt="Die Candy Machine" onExpand={expand} />
+						<Shot src={zapomat05} alt="The Candy Machine" onExpand={expand} />
 						<Shot
 							src={zapomat06}
-							alt="Die Candy Machine im Einsatz"
+							alt="The Candy Machine in action"
 							onExpand={expand}
 						/>
 					</div>
@@ -203,31 +199,29 @@ export default function ZapOMat() {
 
 				<div>
 					<h3 className="text-lg font-semibold text-forest-800">
-						Der Candy Grabber 🫳🍬
+						The Candy Grabber 🫳🍬
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Der Candy Grabber ist ein Automat mit mehreren Achsen, die mit
-						verschiedenen Joysticks bedient werden. Ursprünglich wurde der
-						Automat durch Spielmünzen gestartet, die man durch einen Schlitz
-						einwerfen konnte. Er wurde umgebaut und ist jetzt mit einem
-						Relais versehen, das über eine externe ZapBox angesteuert wird.
-						Die ZapBox löst also den Start des Spiels aus. Das Spiel dauert
-						ungefähr 60 Sekunden, in denen alle Achsen bewegt werden können.
-						Fällt ein Produkt in den Auswurf, ist das Spiel gewonnen und
-						sofort zu Ende.
+						The Candy Grabber is a machine with several axes, operated with
+						different joysticks. Originally the machine was started with
+						game tokens dropped through a slot. It has been converted and now
+						has a relay controlled by an external ZapBox. The ZapBox triggers
+						the start of the game. The game lasts about 60 seconds, during
+						which all axes can be moved. If a product falls into the chute,
+						the game is won and ends immediately.
 					</p>
 					<div className="mt-4">
-						<Shot src={zapomat07} alt="Der Candy Grabber" onExpand={expand} />
+						<Shot src={zapomat07} alt="The Candy Grabber" onExpand={expand} />
 					</div>
 				</div>
 
 				<div>
 					<h3 className="text-lg font-semibold text-forest-800">
-						Skittles 38 g und 136 g 🍬
+						Skittles 38 g and 136 g 🍬
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Kleine bunte Kaudragees für die Candy Machine oder nur zum
-						Naschen. 😋
+						Small colorful chewy candies for the Candy Machine, or just for
+						snacking. 😋
 					</p>
 				</div>
 
@@ -236,8 +230,8 @@ export default function ZapOMat() {
 						Bolt Card – Black &amp; Naked
 					</h3>
 					<p className="mt-2 leading-relaxed">
-						Blanko oder Bulk Bolt Cards vom Typ NTAG 424 DNA. Ihr könnt sie
-						für den Workshop nutzen oder selbst einrichten. Siehe{' '}
+						Blank or bulk Bolt Cards of type NTAG 424 DNA. You can use them
+						for the workshop or set them up yourself. See{' '}
 						<a
 							href="https://ereignishorizont.xyz/boltcard/"
 							target="_blank"
@@ -263,7 +257,7 @@ export default function ZapOMat() {
 						<button
 							type="button"
 							onClick={() => setExpanded(null)}
-							aria-label="Bild schließen"
+							aria-label="Close image"
 							className="absolute -right-3 -top-3 rounded-full bg-white p-1 text-earth-800 shadow-md transition hover:text-brand-600"
 						>
 							<X size={20} />
