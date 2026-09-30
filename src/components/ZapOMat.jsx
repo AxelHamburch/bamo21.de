@@ -50,7 +50,16 @@ export default function ZapOMat() {
 			</div>
 
 			<p className="mt-4 leading-relaxed">
-				Der ZapOMat⚡️⚙️ ist ein 12-Fächer-Klappenautomat mit einer ZapBox.
+				Der ZapOMat⚡️⚙️ ist ein 12-Fächer-Klappenautomat mit einer{' '}
+				<a
+					href="https://zapbox.space/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className={externalLinkClass}
+				>
+					ZapBox
+				</a>
+				.
 			</p>
 
 			<div className="mt-6">

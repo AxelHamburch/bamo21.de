@@ -43,14 +43,23 @@ export default function ZapOMatEn() {
 					to="/zapomat"
 					aria-label="Deutsche Version"
 					title="Deutsche Version"
-					className="text-3xl leading-none transition hover:opacity-75"
+					className="text-xl font-bold text-forest-800 transition hover:opacity-75"
 				>
-					🇩🇪
+					DE
 				</Link>
 			</div>
 
 			<p className="mt-4 leading-relaxed">
-				The ZapOMat⚡️⚙️ is a 12-slot flap vending machine with a ZapBox.
+				The ZapOMat⚡️⚙️ is a 12-slot flap vending machine with a{' '}
+				<a
+					href="https://zapbox.space/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className={externalLinkClass}
+				>
+					ZapBox
+				</a>
+				.
 			</p>
 
 			<div className="mt-6">
