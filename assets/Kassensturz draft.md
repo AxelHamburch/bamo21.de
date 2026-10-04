@@ -6,13 +6,32 @@ Viel Arbeit und Zeit steckte in der Planung und Organisation von "Bitcoin am Ott
 
 Wer hätte gedacht, dass wir so ein vollumfängliches Programm auf einem Naturhof am See, mit Vorträgen, Workshops, Ausstellungen, Bitcoin-Shops und Lightning⚡Automaten, direkt bei Hamburg auf die Beine stellen und dass dann auch noch so viele Menschen kommen würden – Danke an alle! 🫶😍
 
+<p align="center">
+<img src="Material/webside/photo_2026-09-30_20-13-08.jpg" alt="Der Naturhof" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-27.jpg" alt="Vortrag zu Nostr" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-14.jpg" alt="Mining-Ausstellung" height="160">
+<img src="Material/webside/photo_2026-10-04_15-23-44.jpg" alt="Kunst-Ausstellung" height="160">
+</p>
+
 Wir haben viel positives Feedback bekommen, und ich glaube, jeder konnte selbst die Vibes einer echten Bitcoin-Veranstaltung spüren. Wer so etwas schon mal besuchen durfte, weiß: Bitcoin ist etwas Besonderes. Bitcoiner sind offen und voller Zuversicht – genau die richtige Mischung an Menschen, mit denen man sich gerne umgibt. 🤗🥰
+
+<p align="center">
+<img src="Material/webside/photo_2026-10-04_15-26-31.jpg" alt="Grillen am Abend" height="160">
+<img src="Material/webside/photo_2026-10-04_15-23-45.jpg" alt="Sammelkarten" height="160">
+<img src="Material/webside/photo_2026-10-04_15-25-03.jpg" alt="Bitcoin-Shop" height="160">
+</p>
 
 ## Kassensturz
 
 Wir haben es versprochen, also liefern wir, volle Transparenz!
 
 Wir listen sämtliche Einnahmen und Ausgaben auf und machen einen Kassensturz.
+
+<p align="center">
+<img src="Material/webside/photo_2026-09-30_20-12-49.jpg" alt="Vortragsbereich in der Halle" height="160">
+<img src="Material/webside/photo_2026-10-04_15-23-39.jpg" alt="Festzelt mit Solarpanelen" height="160">
+<img src="Material/webside/photo_2026-09-30_20-13-04.jpg" alt="Abendsonne am Ottisee" height="160">
+</p>
 
 ### Die Ausgaben
 - A2-Plakate (25 Stück) 26,- €
@@ -34,6 +53,12 @@ Wir listen sämtliche Einnahmen und Ausgaben auf und machen einen Kassensturz.
 - BAMO-Telegram-Ticketverkauf (700 sats) 0,50 €
 - BAMO-Nostr-Zaps und Lightning Piggy (6.250 sats) 4,50 €
 
+<p align="center">
+<img src="Material/webside/photo_2026-10-04_15-26-02.jpg" alt="ZapBox-Automat" height="160">
+<img src="Material/webside/photo_2026-10-04_15-26-06.jpg" alt="Münzer 63" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-09.jpg" alt="Gemüse gegen Sats" height="160">
+</p>
+
 ### Bilanz
 
 - **Ausgaben gesamt: 1.368,- €**
@@ -48,6 +73,14 @@ Durch die EINUNDZWANZIG-Förderung sind wir mit 927,- € (1,27 Mio. Satoshis, S
 
 Wir hoffen, wir konnten in euch etwas bewegen und vielleicht sogar einen kleinen Samen setzen, aus dem eine kleine Pflanze für Bitcoin wächst. Wir brauchen mehr solcher Events, um zu zeigen, dass Bitcoin etwas Gutes ist und den Menschen ihre Souveränität und Freiheit zurückgeben kann. Wenn auch ihr das Gefühl hattet, mal etwas Wichtiges für Bitcoin tun zu wollen – warum dann nicht ein ähnliches Event wie BAMO planen?
 
+<p align="center">
+<img src="Material/webside/photo_2026-10-04_15-26-32.jpg" alt="Bitcoin-Pflänzchen" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-56.jpg" alt="Kohlrabi" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-53.jpg" alt="Chili-Pflanze" height="160">
+<img src="Material/webside/photo_2026-10-04_15-24-37.jpg" alt="Tomaten im Gewächshaus" height="160">
+<img src="Material/webside/photo_2026-10-04_15-23-29.jpg" alt="Kürbisse" height="160">
+</p>
+
 Was ihr braucht, ist eine Location, ein Ort, an dem das Ganze stattfindet. Und dann braucht ihr eine oder zwei Personen, die das wirklich wollen und einfach mal machen. Das Team findet sich, die Menschen haben Lust, einmal bei etwas wirklich Großartigem dabei zu sein.
 
 Wenn ihr einen Ort kennt und wirklich bereit seid, die Verantwortung auf euch zu nehmen, dann meldet euch gerne bei uns: [next@bamo21.de](mailto:next@bamo21.de). Wir können euch auch beim Aufbau einer Webseite und bei der Bereitstellung einer Kommunikations- oder Finanzinfrastruktur helfen. Vorträge und Workshops werden sich finden – die Menschen haben Lust, ihr Wissen zu teilen und anderen damit zu helfen, ihr müsst es nur bereitstellen.
@@ -59,6 +92,12 @@ Sollte sich bis 31.12.2026 kein Projekt finden, gehen die 1 Mio. Satoshis zurüc
 ## Noch ein letzter Dank
 
 Danke auch an alle, die auf die eine oder andere Weise beigetragen haben, auch wenn sie hier nicht explizit genannt sind. Die Familie Sannmann, die den Hof zur Verfügung gestellt und uns bewirtet hat, Axel, der die Webseite gehostet, die finanzielle Infrastruktur bereitgestellt und einen Großteil der Organisation getragen hat, Lars, der die Ausstellung, die Event-Badges, das Geocaching und die Nostr-Seite organisiert hat und auch sonst immer proaktiv mitgewirkt hat, um BAMO voranzubringen, an die Vortragenden und Workshop-Organisatoren, die das Event erst richtig mit Leben gefüllt haben, an die Helfer, die aktiv mitgeholfen haben, das Event auf die Beine zu stellen, und dafür Zeit, Kraft und Material investiert haben, an die Freiwillige Feuerwehr, die uns Material zur Verfügung gestellt und es dadurch finanzierbar gemacht hat, an die Shops, die vor Ort waren und das Event bereichert haben, an die Spender der Verlosungsartikel, die geholfen haben, eine Spende erst richtig attraktiv zu machen, und natürlich an alle Spender selbst, die – mehr oder weniger – dazu beigetragen haben, ein solches Event größtenteils zu finanzieren, damit es auch wieder stattfinden kann.
+
+<p align="center">
+<img src="Material/webside/photo_2026-10-04_15-23-34.jpg" alt="Hüpfburg" height="160">
+<img src="Material/webside/photo_2026-10-04_15-25-22.jpg" alt="Shop-Stand" height="160">
+<img src="Material/webside/photo_2026-10-04_15-26-33.jpg" alt="Sonnenaufgang am See" height="160">
+</p>
 
 ## Anhang: Infos und Material zu den Vorträgen & Workshops
 
