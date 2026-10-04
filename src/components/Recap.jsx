@@ -18,9 +18,11 @@ const sparkles = [
 	{ left: '93%', top: '18%', size: 16, delay: '0.2s', color: 'text-forest-300' },
 ];
 
+const link = 'text-brand-600 underline hover:text-brand-500';
+
 const expenses = [
 	['A2-Plakate (25 Stück)', '26,- €'],
-	['2x Shoutout (je 10k Sats)', '15,- €'],
+	[<>2x <a href="https://shoutout.einundzwanzig.space/" target="_blank" rel="noopener noreferrer" className={link}>Shoutout</a> (je 10k Sats)</>, '15,- €'],
 	['Papierrolle/Deko', '22,- €'],
 	['Miettoilette', '173,- €'],
 	['Helfer-Getränke', '80,- €'],
@@ -42,8 +44,6 @@ const income = [
 	['BAMO-Telegram-Ticketverkauf (700 sats)', '0,50 €'],
 	['BAMO-Nostr-Zaps und Lightning Piggy (6.250 sats)', '4,50 €'],
 ];
-
-const link = 'text-brand-600 underline hover:text-brand-500';
 
 const talks = [
 	{
@@ -144,8 +144,8 @@ function MoneyList({ title, rows, tone }) {
 		<div className={`rounded-2xl border p-5 ${tone}`}>
 			<h4 className="text-lg font-bold text-forest-800">{title}</h4>
 			<ul className="mt-3 divide-y divide-earth-200/70 text-sm">
-				{rows.map(([label, amount]) => (
-					<li key={label} className="flex justify-between gap-4 py-1.5">
+				{rows.map(([label, amount], i) => (
+					<li key={i} className="flex justify-between gap-4 py-1.5">
 						<span>{label}</span>
 						<span className="shrink-0 font-semibold tabular-nums">{amount}</span>
 					</li>
@@ -277,8 +277,8 @@ export default function Recap() {
 					<p>
 						Durch die EINUNDZWANZIG-Förderung sind wir mit 927,- € (1,27 Mio. Satoshis,
 						Stichtag 29.09.2026) im Plus. Diesen Betrag möchten wir nicht behalten, sondern
-						sinnvoll weiterverwenden. Wir haben uns daher entschlossen, 270k Sats als
-						Shoutout an den EINUNDZWANZIG-Verein zurückzugeben, und stellen die verbleibenden
+						sinnvoll weiterverwenden. Wir haben uns daher entschlossen, 270k Sats als{' '}
+						<a href="https://shoutout.einundzwanzig.space/" target="_blank" rel="noopener noreferrer" className={link}>Shoutout</a> an den EINUNDZWANZIG-Verein zurückzugeben, und stellen die verbleibenden
 						1 Mio. Satoshis für ein weiteres Bitcoin-Event in Aussicht.
 					</p>
 				</div>
