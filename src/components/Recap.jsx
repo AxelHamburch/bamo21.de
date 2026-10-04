@@ -327,7 +327,7 @@ export default function Recap() {
 				</p>
 				<p>
 					Um euch den Start zu erleichtern und eine gewisse finanzielle Basis zu geben,
-					würden wir das Projekt mit 1 Mio. Satoshis fördern. Voraussetzung ist ein Projekt,
+					würden wir das Projekt mit{' '}<strong className="font-extrabold text-brand-600">1 Mio. Satoshis</strong> fördern. Voraussetzung ist ein Projekt,
 					das ordentlich begründet ist und auch eine realistische Chance hat, umgesetzt zu
 					werden. Wenn das Projekt geeignet ist, werden wir es hier bekannt machen und
 					unterstützen. Die finanzielle Unterstützung erfolgt dann ab dem Moment, an dem das
