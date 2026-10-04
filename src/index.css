@@ -13,3 +13,30 @@ body {
 ::selection {
 	@apply bg-brand-300 text-earth-900;
 }
+
+/* Recap-Glitzer ("Schön war's..") */
+@keyframes recap-twinkle {
+	0%, 100% { opacity: 0.15; transform: scale(0.6) rotate(0deg); }
+	50% { opacity: 1; transform: scale(1.15) rotate(20deg); }
+}
+
+@keyframes recap-shimmer {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 200% 50%; }
+}
+
+.recap-sparkle {
+	animation: recap-twinkle 2.6s ease-in-out infinite;
+}
+
+.recap-shimmer {
+	background-size: 200% 100%;
+	animation: recap-shimmer 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.recap-sparkle,
+	.recap-shimmer {
+		animation: none;
+	}
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarDays, MapPin } from 'lucide-react';
+import Recap from './Recap';
 
 export default function Hero() {
 	return (
@@ -55,6 +56,8 @@ export default function Hero() {
 					Bitcoin – zwischen Gemüsebeeten, Wiese und See. Offen für alle, vom
 					Einsteiger bis zum alten Hasen.
 				</motion.p>
+
+				<Recap />
 
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
