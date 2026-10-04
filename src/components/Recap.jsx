@@ -226,6 +226,7 @@ export default function Recap() {
 					['10-04_15-23-39', 'Festzelt mit Solarpanelen'],
 					['10-04_15-24-27', 'Vortrag zu Nostr'],
 					['10-04_15-24-14', 'Mining-Ausstellung'],
+					['10-04_15-24-03', 'Der Ottisee'],
 				]}
 			/>
 
