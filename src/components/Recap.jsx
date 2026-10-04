@@ -278,7 +278,7 @@ export default function Recap() {
 						Durch die EINUNDZWANZIG-Förderung sind wir mit 927,- € (1,27 Mio. Satoshis,
 						Stichtag 29.09.2026) im Plus. Diesen Betrag möchten wir nicht behalten, sondern
 						sinnvoll weiterverwenden. Wir haben uns daher entschlossen, 270k Sats als{' '}
-						<a href="https://shoutout.einundzwanzig.space/" target="_blank" rel="noopener noreferrer" className={link}>Shoutout</a> an den EINUNDZWANZIG-Verein zurückzugeben, und stellen die verbleibenden
+						<a href="https://shoutout.einundzwanzig.space/" target="_blank" rel="noopener noreferrer" className={link}>Shoutout</a> an den EINUNDZWANZIG-Verein zurückzugeben, und stellen die verbleibenden{' '}
 						<strong className="text-xl font-extrabold text-brand-600">1 Mio. Satoshis</strong> für ein weiteres Bitcoin-Event in Aussicht.
 					</p>
 				</div>
