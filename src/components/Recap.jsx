@@ -22,7 +22,7 @@ const link = 'text-brand-600 underline hover:text-brand-500';
 
 const expenses = [
 	['A2-Plakate (25 Stück)', '26,- €'],
-	[<>2x <a href="https://shoutout.einundzwanzig.space/" target="_blank" rel="noopener noreferrer" className={link}>Shoutout</a> (je 10k Sats)</>, '15,- €'],
+	['2x Shoutout (je 10k Sats)', '15,- €'],
 	['Papierrolle/Deko', '22,- €'],
 	['Miettoilette', '173,- €'],
 	['Helfer-Getränke', '80,- €'],
