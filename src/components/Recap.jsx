@@ -385,9 +385,8 @@ export default function Recap() {
 										<a
 											href={href}
 											className={link}
-											{...(href.startsWith('http')
-												? { target: '_blank', rel: 'noopener noreferrer' }
-												: {})}
+											target="_blank"
+											rel="noopener noreferrer"
 										>
 											{label}
 										</a>
